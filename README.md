@@ -14,17 +14,19 @@ Where stated for an individual release, macOS installers are Developer ID signed
 - Architecture: Universal — Apple Silicon and Intel
 - Formats: Standalone, Audio Unit (AU), VST3
 - Installer: `StudioZIO-Mastering-Suite-2.1.1.pkg`
-- SHA256: `97dcd2f55e317054fd15dbbee098a755623838345fc37cb89b114864d1e3da5d`
+- SHA256: `2345deeb3d9cf97e80ca12109de120af9b2896f14799f4e67825e148a1feb7b1`
 - Release: [`mastering-suite-v2.1.1-flicker-hold-2026.09.08`](https://github.com/StudioZIO/StudioZIO-Releases/releases/tag/mastering-suite-v2.1.1-flicker-hold-2026.09.08)
 - Product site: <https://studioziomasteringsuite.vercel.app/>
 
-**2.1.1 shipped twice.** The 8 September build above is the current one. An
+**2.1.1 shipped twice.** The flicker-hold release above is the current download. An
 earlier 2.1.1, tagged `mastering-suite-v2.1.1-signed-2026.09.07`, is still
 published and still downloadable, and it is a different file — 15,551,052 bytes
-with SHA-256 `68e7abb8…`, against 15,564,737 bytes and `97dcd2f5…` here. The
+with SHA-256 `68e7abb8…`, against 15,521,564 bytes and `2345deeb…` here. The
 version number is the same on both, so the checksum is the only thing that
 tells them apart. If yours reads `68e7abb8…` you have the older build: it is
 genuine and correctly signed, but download the one above instead.
+
+**Note on the 8 September build:** The `flicker-hold` artifact originally published on 8 September had a size of 15,564,737 bytes and SHA-256 `97dcd2f55e317054fd15dbbee098a755623838345fc37cb89b114864d1e3da5d`. On 9 September, the 2.1.1 installer was rebuilt to remove the obsolete OS selection parameter. The rebuilt binary was republished under the same tag and filename. The `97dcd2f5…` SHA therefore identifies the earlier 8 September artifact, not the currently downloadable artifact.
 
 ### StudioZIO Tempo Delay 4.0.1
 
@@ -38,6 +40,16 @@ genuine and correctly signed, but download the one above instead.
 
 Both products are free. All StudioZIO products are listed on the hub:
 <https://studiozio.vercel.app/>
+
+## Release artifact immutability
+
+Once a release artifact is public:
+
+same version + same tag + same filename
+
+must always refer to the same bytes.
+
+Future rebuilds, repacks, installer changes, signing changes, or binary replacements MUST use a new release identity/tag. Do not silently replace release assets under an existing published identity. The purpose is checksum traceability and reproducibility.
 
 ## Verifying a download
 
