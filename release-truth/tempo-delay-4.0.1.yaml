@@ -1,0 +1,67 @@
+product:
+  id: tempo-delay
+  name: StudioZIO Tempo Delay
+  version: 4.0.1
+  release_tag: tempo-delay-v4.0.1-aax-2026.09.10
+
+artifact:
+  filename: StudioZIOTempoDelay-v4.0.1-macOS-arm64-AAX.pkg
+  sha256: 4e919c509cca196e178a0a991d24c02eb7e1ba81c5890e0f4fce16aba94ec055
+  byte_size: 15884262
+
+formats:
+  au:
+    present: true
+    bundle: StudioZIOTempoDelay.component
+    executable: Contents/MacOS/StudioZIOTempoDelay
+    destination: /Library/Audio/Plug-Ins/Components
+    architectures:
+      - arm64
+    universal: false
+  vst3:
+    present: true
+    bundle: StudioZIOTempoDelay.vst3
+    executable: Contents/MacOS/StudioZIOTempoDelay
+    destination: /Library/Audio/Plug-Ins/VST3
+    architectures:
+      - arm64
+    universal: false
+  aax:
+    present: true
+    bundle: StudioZIOTempoDelay.aaxplugin
+    executable: Contents/MacOS/StudioZIOTempoDelay
+    destination: /Library/Application Support/Avid/Audio/Plug-Ins
+    architectures:
+      - arm64
+    universal: false
+  standalone:
+    present: true
+    bundle: StudioZIOTempoDelay.app
+    executable: Contents/MacOS/StudioZIOTempoDelay
+    destination: /Applications
+    architectures:
+      - arm64
+    universal: false
+
+architecture:
+  all_formats_identical: true
+  safe_product_wide_claim: Apple Silicon (arm64) only
+
+host_validation:
+  pro_tools:
+    validated: true
+    claim: AAX validated in Pro Tools
+
+signing:
+  package: Developer ID signed
+  au: Developer ID signed
+  vst3: Developer ID signed
+  aax: Developer ID signed
+  standalone: Developer ID signed
+  notarization: true
+
+publication_status:
+  capability_gate_passed: true
+  source_surfaces_synchronized: true
+  live_surfaces_verified: true
+  third_party_verified: true

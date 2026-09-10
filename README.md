@@ -63,3 +63,11 @@ The output must match the SHA256 listed above for that exact file. If it does no
 **A checksum belongs to one release, not to one version number.** Every release is a different file, so an installer from an earlier release will not match the value above — check it against the release you actually downloaded from, and each release on the Releases page carries its own assets and notes.
 
 Earlier versions stay published so that existing links keep working. The versions listed above are the current ones.
+
+## Release Truth & Publication Governance
+
+Current public format and architecture truth is strictly governed by the [StudioZIO Format Truth Publication Contract](FORMAT_TRUTH_PUBLICATION_CONTRACT.md).
+
+- Every finalized release must map to a formal [Release Truth Manifest](release-truth/) established directly from artifact binaries.
+- Release filenames (e.g. `-macOS-arm64`) are not a valid source of architecture truth.
+- Final artifact inspection outranks all filenames, assumptions, and legacy documentation.

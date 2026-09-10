@@ -1,0 +1,63 @@
+product:
+  id:
+  name:
+  version:
+  release_tag:
+
+artifact:
+  filename:
+  sha256:
+  byte_size:
+
+formats:
+  au:
+    present:
+    bundle:
+    executable:
+    destination:
+    architectures:
+    universal:
+  vst3:
+    present:
+    bundle:
+    executable:
+    destination:
+    architectures:
+    universal:
+  aax:
+    present:
+    bundle:
+    executable:
+    destination:
+    architectures:
+    universal:
+  standalone:
+    present:
+    bundle:
+    executable:
+    destination:
+    architectures:
+    universal:
+
+architecture:
+  all_formats_identical:
+  safe_product_wide_claim:
+
+host_validation:
+  pro_tools:
+    validated:
+    claim:
+
+signing:
+  package:
+  au:
+  vst3:
+  aax:
+  standalone:
+  notarization:
+
+publication_status:
+  capability_gate_passed:
+  source_surfaces_synchronized:
+  live_surfaces_verified:
+  third_party_verified:
