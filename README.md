@@ -11,8 +11,8 @@ Where stated for an individual release, macOS installers are Developer ID signed
 ### StudioZIO Mastering Suite 2.1.1
 
 - Platform: macOS 11 or later
-- Architecture: Universal — Apple Silicon and Intel
-- Formats: Standalone, Audio Unit (AU), VST3, AAX
+- Architecture: Apple Silicon / arm64
+- Formats: AU / VST3 / AAX
 - Installer: `StudioZIO-Mastering-Suite-v2.1.1-macOS-arm64.pkg`
 - SHA256: `7ac80cb1a340a92b1dc606254604b58b83907b0a1d594e29a77a39d807319ceb`
 - Release: [`mastering-suite-v2.1.1-aax-2026.09.10`](https://github.com/StudioZIO/StudioZIO-Releases/releases/tag/mastering-suite-v2.1.1-aax-2026.09.10)
