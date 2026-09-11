@@ -66,6 +66,6 @@ signing:
 
 publication_status:
   capability_gate_passed: true
-  source_surfaces_synchronized: false
+  source_surfaces_synchronized: true
   live_surfaces_verified: false
   third_party_verified: false
