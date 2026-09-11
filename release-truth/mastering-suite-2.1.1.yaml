@@ -1,3 +1,27 @@
+# EXPLICIT DOCUMENTED CORRECTION — 2026-09-11
+#
+# This artifact does not install. Everything recorded below was read from it
+# correctly and is left exactly as it was committed, including the
+# architectures, which were re-checked against the artifact on 11 September
+# 2026 and are accurate: all four executables are Universal. What the original
+# inspection did not establish is that three of the four components never
+# reach disk, and the manifest carried no sign of it.
+#
+# Read the superseded block before treating anything below as current truth.
+superseded:
+  by_release_tag: mastering-suite-v2.1.1-install-fix-2026.09.11
+  by_manifest: mastering-suite-2.1.1-install-fix-2026.09.11.yaml
+  superseded_on: 2026-09-11
+  install_status: does_not_install
+  do_not_install: true
+  reason: >-
+    The AU, VST3 and Standalone component payloads in this artifact are stored
+    as folders rather than archives. The macOS Installer has nothing to unpack,
+    so it skips all three while still reporting success; only the AAX component
+    installs. The formats recorded below are inside the package, but only AAX
+    reaches its destination. The plug-in code is unaffected and is identical to
+    the superseding release.
+
 product:
   id: mastering-suite
   name: StudioZIO Mastering Suite
@@ -64,8 +88,14 @@ signing:
   standalone: Developer ID signed
   notarization: true
 
+# The propagation gates were true while this was the current release. They are
+# false now: no StudioZIO download surface points at this artifact any more,
+# and none should. capability_gate_passed stays true because the Rule 17
+# inspection did happen and what it recorded is accurate — it simply did not
+# cover whether the components install, which is the gap the superseded block
+# above records and which tools/verify_release_package.py now closes.
 publication_status:
   capability_gate_passed: true
-  source_surfaces_synchronized: true
-  live_surfaces_verified: true
-  third_party_verified: true
+  source_surfaces_synchronized: false
+  live_surfaces_verified: false
+  third_party_verified: false
