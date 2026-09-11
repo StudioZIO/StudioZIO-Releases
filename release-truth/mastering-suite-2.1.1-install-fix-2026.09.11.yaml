@@ -1,0 +1,71 @@
+product:
+  id: mastering-suite
+  name: StudioZIO Mastering Suite
+  version: 2.1.1
+  release_tag: mastering-suite-v2.1.1-install-fix-2026.09.11
+
+artifact:
+  filename: StudioZIO-Mastering-Suite-2.1.1.pkg
+  sha256: b054098c4f6565e5e469efd41554425d468830a001c9d4c531e72ab8c50f4cf1
+  byte_size: 20680791
+
+formats:
+  au:
+    present: true
+    bundle: StudioZIO Mastering Suite.component
+    executable: Contents/MacOS/StudioZIO Mastering Suite
+    destination: /Library/Audio/Plug-Ins/Components
+    architectures:
+      - arm64
+      - x86_64
+    universal: true
+  vst3:
+    present: true
+    bundle: StudioZIO Mastering Suite.vst3
+    executable: Contents/MacOS/StudioZIO Mastering Suite
+    destination: /Library/Audio/Plug-Ins/VST3
+    architectures:
+      - arm64
+      - x86_64
+    universal: true
+  aax:
+    present: true
+    bundle: StudioZIO Mastering Suite.aaxplugin
+    executable: Contents/MacOS/StudioZIO Mastering Suite
+    destination: /Library/Application Support/Avid/Audio/Plug-Ins
+    architectures:
+      - arm64
+      - x86_64
+    universal: true
+  standalone:
+    present: true
+    bundle: StudioZIO Mastering Suite.app
+    executable: Contents/MacOS/StudioZIO Mastering Suite
+    destination: /Applications
+    architectures:
+      - arm64
+      - x86_64
+    universal: true
+
+architecture:
+  all_formats_identical: true
+  safe_product_wide_claim: Universal — Apple Silicon and Intel
+
+host_validation:
+  pro_tools:
+    validated: true
+    claim: AAX validated in Pro Tools
+
+signing:
+  package: Developer ID signed
+  au: Developer ID signed
+  vst3: Developer ID signed
+  aax: Developer ID signed
+  standalone: Developer ID signed
+  notarization: true
+
+publication_status:
+  capability_gate_passed: true
+  source_surfaces_synchronized: false
+  live_surfaces_verified: false
+  third_party_verified: false
