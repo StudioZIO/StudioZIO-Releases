@@ -13,13 +13,21 @@ Where stated for an individual release, macOS installers are Developer ID signed
 - Platform: macOS 11 or later
 - Architecture: Universal — Apple Silicon and Intel
 - Formats: AU / VST3 / AAX / Standalone
-- Installer: `StudioZIO-Mastering-Suite-v2.1.1-macOS-arm64.pkg`
-- SHA256: `7ac80cb1a340a92b1dc606254604b58b83907b0a1d594e29a77a39d807319ceb`
-- Release: [`mastering-suite-v2.1.1-aax-2026.09.10`](https://github.com/StudioZIO/StudioZIO-Releases/releases/tag/mastering-suite-v2.1.1-aax-2026.09.10)
+- Installer: `StudioZIO-Mastering-Suite-2.1.1.pkg`
+- SHA256: `b054098c4f6565e5e469efd41554425d468830a001c9d4c531e72ab8c50f4cf1`
+- Release: [`mastering-suite-v2.1.1-install-fix-2026.09.11`](https://github.com/StudioZIO/StudioZIO-Releases/releases/tag/mastering-suite-v2.1.1-install-fix-2026.09.11)
 - Status: AAX validated in Pro Tools
 - Product site: <https://studioziomasteringsuite.vercel.app/>
 
+This release republishes the same 2.1.1 build with corrected installer
+packaging. In the previous release the AU, VST3 and Standalone components
+each stored their payload as a folder rather than an archive, so the macOS
+Installer had nothing to unpack and installed none of them while still
+reporting success. Only the AAX component installed. The plug-in code is
+unchanged.
+
 **Historical 2.1.1 releases:**
+- The `aax` release (`StudioZIO-Mastering-Suite-v2.1.1-macOS-arm64.pkg`, SHA-256 `7ac80cb1...`) published on 10 September remains available. Do not install it: its AU, VST3 and Standalone components do not install.
 - The `flicker-hold` release (`StudioZIO-Mastering-Suite-2.1.1.pkg`, SHA-256 `2345deeb...`) published on 8/9 September remains available.
 - The `signed` release (`StudioZIO-Mastering-Suite-2.1.1.pkg`, SHA-256 `68e7abb8...`) published on 7 September remains available.
 
@@ -55,7 +63,7 @@ Future rebuilds, repacks, installer changes, signing changes, or binary replacem
 Download the installer from the [Releases](https://github.com/StudioZIO/StudioZIO-Releases/releases) page, then in Terminal:
 
 ```sh
-shasum -a 256 ~/Downloads/StudioZIO-Mastering-Suite-v2.1.1-macOS-arm64.pkg
+shasum -a 256 ~/Downloads/StudioZIO-Mastering-Suite-2.1.1.pkg
 ```
 
 The output must match the SHA256 listed above for that exact file. If it does not, do not install it — delete the file and download it again.
