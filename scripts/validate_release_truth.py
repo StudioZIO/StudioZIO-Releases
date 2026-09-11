@@ -92,6 +92,28 @@ def validate_manifest(filepath):
         if check_pending(data):
             errors.append("capability_gate_passed is true but contains 'pending_artifact_inspection'")
 
+    # 10. A superseded release is not a published one. Its propagation gates
+    # describe surfaces that no longer point at it, so leaving them true is how
+    # a replaced artifact keeps reading as current truth to anyone -- or
+    # anything -- that stops at the first manifest it finds.
+    superseded = data.get('superseded')
+    if superseded:
+        if not isinstance(superseded, dict):
+            errors.append("superseded must be a dictionary")
+        else:
+            for fld in ['by_release_tag', 'superseded_on', 'reason']:
+                if not superseded.get(fld):
+                    errors.append(f"superseded block missing '{fld}'")
+            for gate in ['source_surfaces_synchronized', 'live_surfaces_verified',
+                         'third_party_verified']:
+                if data['publication_status'].get(gate) is True:
+                    errors.append(
+                        f"manifest is superseded but publication_status.{gate} is true")
+            if superseded.get('do_not_install') is True \
+                    and superseded.get('install_status') != 'does_not_install':
+                errors.append(
+                    "superseded.do_not_install is true but install_status does not say so")
+
     return errors
 
 if __name__ == '__main__':
