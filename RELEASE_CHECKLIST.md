@@ -31,10 +31,42 @@ Global announcements are blocked until:
 - [ ] Homebrew casks reconciled (URL/SHA and accurate uninstall receipts)
 - [ ] Third-party (KVR) verification is complete
 
-## 4. Final Cutover
-- [ ] Announce release globally
+## 4. External Communication
+Only after Stage 3 (Pre-Announcement Publication Gate) is fully complete.
 
-## 5. Canonical Pipeline Architecture
+Each item below must be marked with one of:
+`NOT_APPLICABLE` · `PENDING` · `COMPLETE` · `BLOCKED`
+
+### 4a. Owned surfaces
+- [ ] StudioZIO Hub product cards reflect release truth
+- [ ] Hub /community/roadmap/ status updated if relevant
+- [ ] Hub /community/known-issues/ updated if any known issue was closed
+- [ ] Hub /community/compatibility/ updated if new host coverage changed
+- [ ] Hub /notes/ — new technical note if release warrants it (NOT_APPLICABLE if no new engineering story)
+- [ ] Mastering Suite product site updated if Mastering Suite released
+- [ ] Tempo Delay product site updated if Tempo Delay released (no local repo — requires browser action)
+- [ ] GitHub Releases page verified live and correct
+- [ ] Homebrew cask formula verified up to date
+
+### 4b. External channels — no communication may precede 4a completion
+- [ ] KVR listing updated (product description, version, download link, changelog entry)
+- [ ] LinkedIn post or update — product announcement, link to product site
+- [ ] Reddit post — appropriate audio/plugin forum (e.g. r/audioproduction, REAPER forum, VI-Control) — NOT_APPLICABLE if no material user news
+- [ ] YouTube — overview or walkthrough video — NOT_APPLICABLE if no video prepared
+- [ ] Instagram — short-form announcement — NOT_APPLICABLE if no visual prepared
+- [ ] Press outreach — studiozioplugins@gmail.com from press page — send to any previously interested writers
+- [ ] Mailing list / MixRack notify — send release email via Formspree if applicable (NOT_APPLICABLE for standard patch releases unless user impact is high)
+
+### 4c. Verification after external communication
+- [ ] KVR listing reflects exact version, formats, architecture and price after update
+- [ ] No external claim contradicts the Release Truth Manifest
+- [ ] Any third-party article or listing that gets the facts wrong has been flagged for correction
+
+## 5. Final Cutover
+- [ ] All external communication complete
+- [ ] Announce release internally as complete
+
+## 6. Canonical Pipeline Architecture
 
 To ensure immutable reproducibility, the release process follows a strict canonical pipeline:
 
@@ -46,7 +78,7 @@ To ensure immutable reproducibility, the release process follows a strict canoni
 - **Homebrew Reconciliation:** Must happen during the Pre-Announcement Publication Gate (Stage 3), after the Release Truth Manifest is valid but before global announcement.
 - **Third-Party Listings:** Checked at the very end of Stage 3 (Pre-Announcement Publication Gate) to ensure perfect alignment with the artifact truth.
 
-## 6. Manual Packaging Prohibition
+## 7. Manual Packaging Prohibition
 
 **PRODUCTION RELEASE PKGS MUST NOT BE MANUALLY ASSEMBLED.**
 
@@ -60,7 +92,7 @@ Forbidden actions:
 
 If canonical packaging fails: **fix the canonical pipeline**. Do not create a workaround package.
 
-## 7. Format-Addition Governance
+## 8. Format-Addition Governance
 
 When a new format is added, the following must be verified:
 1. build target

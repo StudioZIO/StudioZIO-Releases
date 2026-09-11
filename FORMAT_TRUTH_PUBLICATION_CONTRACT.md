@@ -92,3 +92,38 @@ Before any AI agent modifies current StudioZIO public release information, it MU
 3. Derive format/architecture claims only from that manifest.
 4. Stop if the manifest is missing, incomplete, or conflicts with the artifact.
 No agent inference allowed.
+
+## Communication Source-of-Truth Rule
+Added 2026-09-11.
+
+No release communication — including LinkedIn posts, Reddit threads, forum announcements,
+press emails, KVR updates, YouTube descriptions, or Instagram captions — may state
+product truth independently of the Release Truth Manifest.
+
+The authorised derivation chain is:
+
+```
+FINAL ARTIFACT
+  → RELEASE TRUTH MANIFEST (release-truth/*.yaml)
+    → RELEASE METADATA (catalog.mjs, product site HTML)
+      → PUBLIC COMMUNICATION (every external statement)
+```
+
+### What this means in practice
+- Format lists (AU / VST3 / AAX / Standalone) must be copied from the manifest, not recalled from memory.
+- Architecture claims (Universal / arm64-only) must come from the manifest `architecture.safe_product_wide_claim` field.
+- SHA-256 checksums must be copied verbatim from the manifest `artifact.sha256` field.
+- Version numbers must come from the manifest `product.version` field.
+- Installer filenames must come from the manifest `artifact.filename` field.
+- Pricing ("Free permanently") is stable and may be stated without manifest reference, but product format and architecture claims may not.
+
+### Scope
+This rule applies to both human authors and AI agents acting on behalf of StudioZIO.
+The Agent Consumption Rule already requires AI agents to locate and
+verify the manifest before modifying product information. This rule extends that
+requirement to all downstream communication, not just source-code changes.
+
+### Enforcement
+Any external communication that contradicts the Release Truth Manifest must be
+corrected immediately. The Contradiction Rule (Section 12) applies to all public
+surfaces, including third-party platforms.
