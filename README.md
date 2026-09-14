@@ -31,6 +31,18 @@ unchanged.
 - The `flicker-hold` release (`StudioZIO-Mastering-Suite-2.1.1.pkg`, SHA-256 `2345deeb...`) published on 8/9 September remains available.
 - The `signed` release (`StudioZIO-Mastering-Suite-2.1.1.pkg`, SHA-256 `68e7abb8...`) published on 7 September remains available.
 
+### StudioZIO Maximizer 1.0.2
+
+- Platform: macOS 11 or later
+- Architecture: Universal — Apple Silicon and Intel
+- Formats: AU / VST3 / AAX / Standalone
+- Installer: `StudioZIO-Maximizer-1.0.2.pkg`
+- SHA256: `673da7c759b0cac3741ee816920a5ff2c199d01b975a1c6ffe7a48f65bcb3db6`
+- Release: [`maximizer-v1.0.2`](https://github.com/StudioZIO/StudioZIO-Releases/releases/tag/maximizer-v1.0.2)
+- Status: Developer ID signed and Apple notarized; AAX PACE signing verified (Signing Only)
+
+This maintenance release stabilizes the public metering path, prevents startup true-peak display transients, and updates the standalone GUI version label to `v1.0.2`. The audio/DSP path is unchanged. Pro Tools host validation is not claimed for this release.
+
 ### StudioZIO Tempo Delay 4.0.1
 
 - Platform: macOS 12 or later

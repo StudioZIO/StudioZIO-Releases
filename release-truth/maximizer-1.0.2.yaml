@@ -1,0 +1,71 @@
+product:
+  id: maximizer
+  name: StudioZIO Maximizer
+  version: 1.0.2
+  release_tag: maximizer-v1.0.2
+
+artifact:
+  filename: StudioZIO-Maximizer-1.0.2.pkg
+  sha256: 673da7c759b0cac3741ee816920a5ff2c199d01b975a1c6ffe7a48f65bcb3db6
+  byte_size: 28012337
+
+formats:
+  au:
+    present: true
+    bundle: StudioZIO Maximizer.component
+    executable: Contents/MacOS/StudioZIO Maximizer
+    destination: /Library/Audio/Plug-Ins/Components
+    architectures:
+      - arm64
+      - x86_64
+    universal: true
+  vst3:
+    present: true
+    bundle: StudioZIO Maximizer.vst3
+    executable: Contents/MacOS/StudioZIO Maximizer
+    destination: /Library/Audio/Plug-Ins/VST3
+    architectures:
+      - arm64
+      - x86_64
+    universal: true
+  aax:
+    present: true
+    bundle: StudioZIO Maximizer.aaxplugin
+    executable: Contents/MacOS/StudioZIO Maximizer
+    destination: /Library/Application Support/Avid/Audio/Plug-Ins
+    architectures:
+      - arm64
+      - x86_64
+    universal: true
+  standalone:
+    present: true
+    bundle: StudioZIO Maximizer.app
+    executable: Contents/MacOS/StudioZIO Maximizer
+    destination: /Applications
+    architectures:
+      - arm64
+      - x86_64
+    universal: true
+
+architecture:
+  all_formats_identical: true
+  safe_product_wide_claim: Universal — Apple Silicon and Intel
+
+host_validation:
+  pro_tools:
+    validated: false
+    claim: AAX signing and PACE marker verified; Pro Tools host validation not performed in this release run
+
+signing:
+  package: Developer ID Installer signed
+  au: Developer ID signed
+  vst3: Developer ID signed
+  aax: Developer ID signed and PACE signed (Signing Only; canonical Wrap GUID C24B3EC0-AF7D-11F1-8437-00505692AD3E)
+  standalone: Developer ID signed
+  notarization: true
+
+publication_status:
+  capability_gate_passed: true
+  source_surfaces_synchronized: false
+  live_surfaces_verified: false
+  third_party_verified: false
