@@ -43,6 +43,18 @@ unchanged.
 
 This maintenance release stabilizes the public metering path, prevents startup true-peak display transients, and updates the standalone GUI version label to `v1.0.2`. The audio/DSP path is unchanged. Pro Tools host validation is not claimed for this release.
 
+### StudioZIO Inflator 1.0.0
+
+- Platform: macOS 11.0 or later
+- Architecture: Universal — Apple Silicon and Intel
+- Formats: AU / VST3 / AAX / Standalone
+- Installer: `StudioZIO-Inflator-1.0.0.pkg`
+- SHA256: `c138a979cb80bd04b755ab4c308a1b0dc8ccad518d6483076e2b8a3ba05fabde`
+- Release: [`inflator-v1.0.0`](https://github.com/StudioZIO/StudioZIO-Releases/releases/tag/inflator-v1.0.0)
+- Status: Developer ID signed and Apple notarized
+
+Pro Tools host validation is not claimed for this release.
+
 ### StudioZIO Tempo Delay 4.0.1
 
 - Platform: macOS 12 or later

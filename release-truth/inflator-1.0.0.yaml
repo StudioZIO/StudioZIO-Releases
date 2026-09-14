@@ -1,0 +1,71 @@
+product:
+  id: inflator
+  name: StudioZIO Inflator
+  version: 1.0.0
+  release_tag: inflator-v1.0.0
+
+artifact:
+  filename: StudioZIO-Inflator-1.0.0.pkg
+  sha256: c138a979cb80bd04b755ab4c308a1b0dc8ccad518d6483076e2b8a3ba05fabde
+  byte_size: 31895065
+
+formats:
+  au:
+    present: true
+    bundle: StudioZIO Inflator.component
+    executable: Contents/MacOS/StudioZIO Inflator
+    destination: /Library/Audio/Plug-Ins/Components
+    architectures:
+      - arm64
+      - x86_64
+    universal: true
+  vst3:
+    present: true
+    bundle: StudioZIO Inflator.vst3
+    executable: Contents/MacOS/StudioZIO Inflator
+    destination: /Library/Audio/Plug-Ins/VST3
+    architectures:
+      - arm64
+      - x86_64
+    universal: true
+  aax:
+    present: true
+    bundle: StudioZIO Inflator.aaxplugin
+    executable: Contents/MacOS/StudioZIO Inflator
+    destination: /Library/Application Support/Avid/Audio/Plug-Ins
+    architectures:
+      - arm64
+      - x86_64
+    universal: true
+  standalone:
+    present: true
+    bundle: StudioZIO Inflator.app
+    executable: Contents/MacOS/StudioZIO Inflator
+    destination: /Applications
+    architectures:
+      - arm64
+      - x86_64
+    universal: true
+
+architecture:
+  all_formats_identical: true
+  safe_product_wide_claim: Universal — Apple Silicon and Intel
+
+host_validation:
+  pro_tools:
+    validated: false
+    claim: Pro Tools host validation not established by the final artifact inspection
+
+signing:
+  package: Developer ID signed
+  au: Developer ID signed
+  vst3: Developer ID signed
+  aax: Developer ID signed and PACE marker present
+  standalone: Developer ID signed
+  notarization: true
+
+publication_status:
+  capability_gate_passed: true
+  source_surfaces_synchronized: false
+  live_surfaces_verified: false
+  third_party_verified: false
