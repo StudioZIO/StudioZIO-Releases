@@ -8,6 +8,20 @@ Where stated for an individual release, macOS installers are Developer ID signed
 
 ## Current releases
 
+### StudioZIO Compressor 1.0.0
+
+- Platform: macOS 11 or later
+- Architecture: Universal — Apple Silicon and Intel
+- Formats: AU / VST3 / AAX / Standalone
+- Installer: `StudioZIO-Compressor-1.0.0.pkg`
+- SHA256: `49db1dddf2a86f115bfe35d76e3a49435a8a31c607c93f536e8b10838dea7ab5`
+- Release: [`compressor-v1.0.0`](https://github.com/StudioZIO/StudioZIO-Releases/releases/tag/compressor-v1.0.0)
+- Status: Developer ID signed and Apple notarized; AAX PACE signing verified (Signing Only)
+
+StudioZIO Compressor provides two modes: Adaptive for fast, transparent,
+general-purpose compression, and Glue for slower, cohesive compression with a
+natural release.
+
 ### StudioZIO Mastering Suite 2.1.1
 
 - Platform: macOS 11 or later

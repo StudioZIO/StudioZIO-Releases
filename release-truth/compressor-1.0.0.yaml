@@ -1,0 +1,71 @@
+product:
+  id: compressor
+  name: StudioZIO Compressor
+  version: 1.0.0
+  release_tag: compressor-v1.0.0
+
+artifact:
+  filename: StudioZIO-Compressor-1.0.0.pkg
+  sha256: 49db1dddf2a86f115bfe35d76e3a49435a8a31c607c93f536e8b10838dea7ab5
+  byte_size: 27232129
+
+formats:
+  au:
+    present: true
+    bundle: StudioZIO Compressor.component
+    executable: Contents/MacOS/StudioZIO Compressor
+    destination: /Library/Audio/Plug-Ins/Components
+    architectures:
+      - arm64
+      - x86_64
+    universal: true
+  vst3:
+    present: true
+    bundle: StudioZIO Compressor.vst3
+    executable: Contents/MacOS/StudioZIO Compressor
+    destination: /Library/Audio/Plug-Ins/VST3
+    architectures:
+      - arm64
+      - x86_64
+    universal: true
+  aax:
+    present: true
+    bundle: StudioZIO Compressor.aaxplugin
+    executable: Contents/MacOS/StudioZIO Compressor
+    destination: /Library/Application Support/Avid/Audio/Plug-Ins
+    architectures:
+      - arm64
+      - x86_64
+    universal: true
+  standalone:
+    present: true
+    bundle: StudioZIO Compressor.app
+    executable: Contents/MacOS/StudioZIO Compressor
+    destination: /Applications
+    architectures:
+      - arm64
+      - x86_64
+    universal: true
+
+architecture:
+  all_formats_identical: true
+  safe_product_wide_claim: Universal — Apple Silicon and Intel
+
+host_validation:
+  pro_tools:
+    validated: false
+    claim: AAX signing and PACE marker verified; Pro Tools host validation not performed in this release run
+
+signing:
+  package: Developer ID Installer signed and Apple notarized
+  au: Developer ID signed
+  vst3: Developer ID signed
+  aax: Developer ID signed and PACE signed (Signing Only)
+  standalone: Developer ID signed
+  notarization: true
+
+publication_status:
+  capability_gate_passed: true
+  source_surfaces_synchronized: true
+  live_surfaces_verified: false
+  third_party_verified: false
