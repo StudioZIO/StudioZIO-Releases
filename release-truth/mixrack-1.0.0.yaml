@@ -1,0 +1,80 @@
+product:
+  id: mixrack
+  name: StudioZIO Mixrack
+  version: 1.0.0
+  release_tag: mixrack-v1.0.0
+
+artifact:
+  filename: StudioZIO-Mixrack-1.0.0.pkg
+  sha256: 9452403bf1150bd4188cbfe550f1ad0840087c68fe0b56f5036f08e17b4a4fda
+  byte_size: 31947497
+
+formats:
+  au:
+    present: true
+    bundle: StudioZIO Mixrack.component
+    executable: Contents/MacOS/StudioZIO Mixrack
+    destination: /Library/Audio/Plug-Ins/Components
+    architectures:
+      - arm64
+      - x86_64
+    universal: true
+  vst3:
+    present: true
+    bundle: StudioZIO Mixrack.vst3
+    executable: Contents/MacOS/StudioZIO Mixrack
+    destination: /Library/Audio/Plug-Ins/VST3
+    architectures:
+      - arm64
+      - x86_64
+    universal: true
+  aax:
+    present: true
+    bundle: StudioZIO Mixrack.aaxplugin
+    executable: Contents/MacOS/StudioZIO Mixrack
+    destination: /Library/Application Support/Avid/Audio/Plug-Ins
+    architectures:
+      - arm64
+      - x86_64
+    universal: true
+  standalone:
+    present: true
+    bundle: StudioZIO Mixrack.app
+    executable: Contents/MacOS/StudioZIO Mixrack
+    destination: /Applications
+    architectures:
+      - arm64
+      - x86_64
+    universal: true
+
+architecture:
+  all_formats_identical: true
+  safe_product_wide_claim: Universal — Apple Silicon and Intel
+
+host_validation:
+  pro_tools:
+    validated: false
+    claim: Pro Tools host validation not established by the final artifact inspection
+
+signing:
+  package: Developer ID Installer signed (MERT ERKAN, 3734G7VLNA), stapled
+  au: Developer ID signed
+  vst3: Developer ID signed
+  aax: Developer ID signed and PACE marker present
+  standalone: Developer ID signed
+  notarization: true
+
+# Component packages inside the artifact (read-only inspection 2026-09-16):
+#   com.studiozio.ziomixrack.pkg.standalone -> /Applications
+#   com.studiozio.ziomixrack.pkg.au         -> /Library/Audio/Plug-Ins/Components
+#   com.studiozio.ziomixrack.pkg.vst3       -> /Library/Audio/Plug-Ins/VST3
+#   com.studiozio.ziomixrack.pkg.aax        -> /Library/Application Support/Avid/Audio/Plug-Ins
+#   AppleDouble records in payloads: 0. Package id: com.studiozio.ziomixrack.pkg.
+# Record created from the immutable artifact by direct inspection (xar, lsbom, lipo, codesign);
+# the product was not rebuilt or modified.
+
+publication_status:
+  capability_gate_passed: true
+  source_surfaces_synchronized: false
+  live_surfaces_verified: false
+  third_party_verified: false
