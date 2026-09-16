@@ -83,8 +83,8 @@ Pro Tools host validation is not claimed for this release.
 **Historical 4.0.1 releases:**
 - The initial `tempo-delay-v4.0.1` release (`StudioZIOTempoDelay-v4.0.1-macOS-arm64.pkg`, SHA-256 `adae5102...`) remains available.
 
-Both products are free. All StudioZIO products are listed on the hub:
-<https://studiozio.vercel.app/>
+All StudioZIO products are free and are listed on the hub:
+<https://www.studiozio.tech/>
 
 ## Release artifact immutability
 
