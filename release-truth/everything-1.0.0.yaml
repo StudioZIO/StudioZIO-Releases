@@ -1,0 +1,434 @@
+# StudioZIO Everything 1.0.0 — canonical release-truth record (2026-09-16).
+# Aggregate installer composed from the seven qualified canonical individual
+# installers; every component package lifted byte-for-byte; no product bundle
+# rebuilt, re-signed, PACE-signed or wrapped. Not published.
+product:
+  id: everything
+  name: StudioZIO Everything
+  version: 1.0.0
+  package_id: com.studiozio.everything.pkg
+  installer_title: StudioZIO Everything
+  release_tag: everything-v1.0.0
+artifact:
+  filename: StudioZIO-Everything-1.0.0.pkg
+  path: /Users/mert/StudioZIO-Verification/Canonical-Releases/Everything-1.0.0/StudioZIO-Everything-1.0.0.pkg
+  sha256: 0f148ecd72c03bc38de9f6129f375f253f5a814f5606b812ce6c4f45ad248bcb
+  byte_size: 170122606
+  pre_sign_sha256: 5802e8c6805959089139b92a2f1fc6951fc7baa3f267e3685b0e6fbdcfa2f926
+  status: CANONICAL
+signing:
+  installer_identity: 'Developer ID Installer: MERT ERKAN (3734G7VLNA)'
+  pkgutil_check_signature: PASS
+  notarization:
+    submission_id: ce141d0e-b7aa-4026-8ba5-f333f3590c45
+    status: Accepted
+    issues: none
+  stapled: true
+  gatekeeper: accepted (Notarized Developer ID)
+eula:
+  title: StudioZIO Everything End User License Agreement (EULA)
+  version_line: 'Version: 1.0.0'
+  source: Distribution/Everything/Legal/EULA-Everything-CANDIDATE.txt.in
+  eula_text_sha256: 1f0d01f4337a5cf8b611b3d158e81eec6b4cca3b957ae07c9e4553d37100a138
+  license_panel_sha256: 2f48c34bab7f9abe09fcc9578e582fa20ce3e9de8cc924ae5df9583cdd4af405
+  owner_approved: true
+pace:
+  has_own_aax_binary: false
+  run_wraptool: false
+  pace_signing: false
+  pace_wrapping: false
+  wrap_guid_metadata_only: 96C51E90-B1AF-11F1-8437-00505692AD3E
+source_products:
+  - key: MasteringSuite
+    name: StudioZIO Mastering Suite
+    version: 2.1.1
+    source_pkg: MasteringSuite-2.1.1/StudioZIO-Mastering-Suite-2.1.1.pkg
+    sha256: b054098c4f6565e5e469efd41554425d468830a001c9d4c531e72ab8c50f4cf1
+    release_truth: mastering-suite-2.1.1-install-fix-2026.09.11.yaml
+    status: CANONICAL
+    admitted: true
+  - key: TempoDelay
+    name: StudioZIO Tempo Delay
+    version: 4.1.0
+    source_pkg: TempoDelay-4.1.0-clean-packaging-2026.09.16/StudioZIOTempoDelay-v4.1.0-macOS-arm64.pkg
+    sha256: fa16f0c9f04f5f56e446ae06074a0f3b0a8e193fa21089e0bf92c486d197910d
+    release_truth: tempo-delay-4.1.0-clean-packaging-2026.09.16.yaml
+    status: CANONICAL
+    admitted: true
+  - key: MixRack
+    name: StudioZIO Mixrack
+    version: 1.0.0
+    source_pkg: MixRack-1.0.0/StudioZIO-Mixrack-1.0.0.pkg
+    sha256: 9452403bf1150bd4188cbfe550f1ad0840087c68fe0b56f5036f08e17b4a4fda
+    release_truth: mixrack-1.0.0.yaml
+    status: CANONICAL
+    admitted: true
+  - key: Inflator
+    name: StudioZIO Inflator
+    version: 1.0.0
+    source_pkg: Inflator-1.0.0/StudioZIO-Inflator-1.0.0.pkg
+    sha256: c138a979cb80bd04b755ab4c308a1b0dc8ccad518d6483076e2b8a3ba05fabde
+    release_truth: inflator-1.0.0.yaml
+    status: CANONICAL
+    admitted: true
+  - key: Maximizer
+    name: StudioZIO Maximizer
+    version: 1.0.2
+    source_pkg: Maximizer-1.0.2-clean-packaging-2026.09.16/StudioZIO-Maximizer-1.0.2.pkg
+    sha256: 69510b08a118aece2f8e33feb0d10d13b45458864d5696c49d897876860eedfe
+    release_truth: maximizer-1.0.2-clean-packaging-2026.09.16.yaml
+    status: CANONICAL
+    admitted: true
+  - key: Compressor
+    name: StudioZIO Compressor
+    version: 1.0.0
+    source_pkg: Compressor-1.0.0-clean-packaging-2026.09.16/StudioZIO-Compressor-1.0.0.pkg
+    sha256: 96c9d4cccefc918ffef47b094464da901be742778b4fc6e97145ddcfa11d37bc
+    release_truth: compressor-1.0.0-clean-packaging-2026.09.16.yaml
+    status: CANONICAL
+    admitted: true
+  - key: DeEsser
+    name: StudioZIO De-Esser
+    version: 1.0.0
+    source_pkg: DeEsser-1.0.0/StudioZIO-De-Esser-1.0.0.pkg
+    sha256: 698a5c45dc530b97bd4fc3c9f6e401bf4cbb414a435ff1d4235f6afa66e661f2
+    release_truth: deesser-1.0.0.yaml (to be recorded at its individual public release)
+    status: CANONICAL
+    admitted: true
+components:
+  - id: com.studiozio.masteringsuite.pkg.standalone
+    product: StudioZIO Mastering Suite
+    version: 2.1.1
+    install_location: '/Applications'
+    format: Standalone
+    source_component: StudioZIOMasteringSuite-Standalone.pkg
+    packageinfo_sha256: 0b8525d4a5c698b81393965c5202b3ed428997b6abac474bc2a1bb6edfdec9ee
+    bom_sha256: 5f205484501df6b626698cb19ccdf5305b8d16fa494dd90ac206bbea588fb65e
+    payload_sha256: c3104d424a42503cc146bb731c6dd9e1909291d0bb0ed02362534897faff294f
+  - id: com.studiozio.masteringsuite.pkg.au
+    product: StudioZIO Mastering Suite
+    version: 2.1.1
+    install_location: '/Library/Audio/Plug-Ins/Components'
+    format: AU
+    source_component: StudioZIOMasteringSuite-AU.pkg
+    packageinfo_sha256: d42bb7d03e3be13202bf94554359e01a2d077149458898f4c35e5e9068c59cbc
+    bom_sha256: 08c249238d7f26d7976397bfde2af71e17a0979a558058584a3df91609abb195
+    payload_sha256: bfab2fafe649a4b7df42f140025faadd0d8d4a2cabac32fe45ea4084208e2ee3
+  - id: com.studiozio.masteringsuite.pkg.vst3
+    product: StudioZIO Mastering Suite
+    version: 2.1.1
+    install_location: '/Library/Audio/Plug-Ins/VST3'
+    format: VST3
+    source_component: StudioZIOMasteringSuite-VST3.pkg
+    packageinfo_sha256: 8571f5f4c2beacc372ac64744f94626b4567ed7dd20f07a5cf1f88e8761b2a0e
+    bom_sha256: f843b1b632e1ff4677334f43d01e909deaaef6c3f1b5804c619417c55c07c73a
+    payload_sha256: 452d72cb38e4a4cf0165abe25c8a0c386bf789e62ac862214316756721f91046
+  - id: com.studiozio.masteringsuite.pkg.aax
+    product: StudioZIO Mastering Suite
+    version: 2.1.1
+    install_location: '/Library/Application Support/Avid/Audio/Plug-Ins'
+    format: AAX
+    source_component: StudioZIOMasteringSuite-AAX.pkg
+    packageinfo_sha256: 6fe7206514c38a2c6fa34bb73220f8a326cc7eb9850db88a7856caf256135f77
+    bom_sha256: 6b56147f3adca403cf07082380b8bd6196e3c3f669bfdacc81067fb1193b8541
+    payload_sha256: 7985fad82c9d10b60100584d5b066e26cf8a42d61193f87b1765b77c1fb5affb
+  - id: com.StudioZIO.StudioZIOTempoDelay.component.pkg
+    product: StudioZIO Tempo Delay
+    version: 4.1.0
+    install_location: '/Library/Audio/Plug-Ins/Components'
+    format: AU
+    source_component: StudioZIOTempoDelay-AU.pkg
+    packageinfo_sha256: 2a68dfe073d4b0db6d2893a92bebfb6850f460ca961c06e8bee8003dca887099
+    bom_sha256: e11ea77a37b6b337a31b4e0b4bf0e5259395af6cadb81fd66d54f0838bf47a88
+    payload_sha256: 682d7f527ae1e5ec502a1b72f47cba846206cb7a3403d2ddc904d7f7c3daa729
+  - id: com.StudioZIO.StudioZIOTempoDelay.vst3.pkg
+    product: StudioZIO Tempo Delay
+    version: 4.1.0
+    install_location: '/Library/Audio/Plug-Ins/VST3'
+    format: VST3
+    source_component: StudioZIOTempoDelay-VST3.pkg
+    packageinfo_sha256: 6fcd28ff5de352d038593fd6d30575d0a08124883a542964185ef524069ebd69
+    bom_sha256: 7f95c249dba0237991c5637c5b998feffda4fafb9928774d0e4deaceb631cd8f
+    payload_sha256: f8f66650e691a9559e66452ff69273377e1e2f884da1fcc73bf562d03618e979
+  - id: com.StudioZIO.StudioZIOTempoDelay.aax.pkg
+    product: StudioZIO Tempo Delay
+    version: 4.1.0
+    install_location: '/Library/Application Support/Avid/Audio/Plug-Ins'
+    format: AAX
+    source_component: StudioZIOTempoDelay-AAX.pkg
+    packageinfo_sha256: 2e90bb08744d56754e6f45617073dccc35f04495784c6b59ba9703a056694ccb
+    bom_sha256: ff5aefa24bce23e0ad2bfe38f27ac8efda37825ea64ca156d174fb2a0237117a
+    payload_sha256: a05b95136bd5d59d25863e5ebe7816d81ead880ab8dffcea020e973b9bd9ba71
+  - id: com.StudioZIO.StudioZIOTempoDelay.app.pkg
+    product: StudioZIO Tempo Delay
+    version: 4.1.0
+    install_location: '/Applications'
+    format: Standalone
+    source_component: StudioZIOTempoDelay-App.pkg
+    packageinfo_sha256: c4c7d5f6cd47192eb873f68cb9a55e9d59e5aa033cb9af461943facef2852a9b
+    bom_sha256: 008495cfa6736206f22000b90fdebe12e5af03a3071ebd531cdd54e6317cf276
+    payload_sha256: b2633b95f29f9b1a0d001444384cbf481717fa3a937dcdd5084eddf27eebcba0
+  - id: com.studiozio.ziomixrack.pkg.standalone
+    product: StudioZIO Mixrack
+    version: 1.0.0
+    install_location: '/Applications'
+    format: Standalone
+    source_component: StudioZIOMixrack-Standalone.pkg
+    packageinfo_sha256: c01dc002b1556ef9147e36b06d64d2e0babe8521922bebd46df66e3cf777c6c2
+    bom_sha256: e8406c83b5e419759bdf2578ea2a563ec26b56212d61dca4925c00436d4490ca
+    payload_sha256: 74d08b33e43e7bdd76f7d7f3839f3ff85d646b9946c24051bb443031ae18d7d3
+  - id: com.studiozio.ziomixrack.pkg.au
+    product: StudioZIO Mixrack
+    version: 1.0.0
+    install_location: '/Library/Audio/Plug-Ins/Components'
+    format: AU
+    source_component: StudioZIOMixrack-AU.pkg
+    packageinfo_sha256: c47615491534d44846492ac255bd63ed53923f39439185ceb70fd4eaca74e878
+    bom_sha256: 89e75c81ecda7ad566f3ad2103a19f30594342c964abd6bc2087024255454571
+    payload_sha256: 19cfcf2ec72642fb48d433212c6822b1a2fd923385f0f673023d30e47984397e
+  - id: com.studiozio.ziomixrack.pkg.vst3
+    product: StudioZIO Mixrack
+    version: 1.0.0
+    install_location: '/Library/Audio/Plug-Ins/VST3'
+    format: VST3
+    source_component: StudioZIOMixrack-VST3.pkg
+    packageinfo_sha256: 83c05885cd5e3ae992fe8ecc6be8f8c845f25222a39b98896270eb4e6eedae94
+    bom_sha256: e0bc4504545413eec5d8ffa4094b81f11a54cebe0ea1307f1adce4392a868f51
+    payload_sha256: 27054fcd64310e9e36c3857c9c3f792bf896213979562f710374df0041245228
+  - id: com.studiozio.ziomixrack.pkg.aax
+    product: StudioZIO Mixrack
+    version: 1.0.0
+    install_location: '/Library/Application Support/Avid/Audio/Plug-Ins'
+    format: AAX
+    source_component: StudioZIOMixrack-AAX.pkg
+    packageinfo_sha256: fe5b68bf318a21316b0d4d0a1f400eed8ff039e0f232f2256643c98cf9faada7
+    bom_sha256: 36f6c4f10f5aca4d33c78425c6965cf8dfb2c9a3161bda2bb6d6919d095483da
+    payload_sha256: bef15cd1078f6c08cfbd2deb27705e1d88e2f477223afeaa43c831a42c88729a
+  - id: com.studiozio.inflator.pkg.standalone
+    product: StudioZIO Inflator
+    version: 1.0.0
+    install_location: '/Applications'
+    format: Standalone
+    source_component: StudioZIOInflator-Standalone.pkg
+    packageinfo_sha256: 0eab902a151dbbad524e1b74df6ab1f7357dc56d28185424ac25435d818fb02d
+    bom_sha256: b642e1871435f82d407a3f49eae3750997b046b6b75fa04ea70b386376e3fa1a
+    payload_sha256: 40919bc0fc262a11b2b5481d77f1f48867d74e16a7904a76fc1053a8e21f7743
+  - id: com.studiozio.inflator.pkg.au
+    product: StudioZIO Inflator
+    version: 1.0.0
+    install_location: '/Library/Audio/Plug-Ins/Components'
+    format: AU
+    source_component: StudioZIOInflator-AU.pkg
+    packageinfo_sha256: a3a787e25581f93e9e21cfc3087ef778693bf6a74c8fc143b3d9d9a552015c73
+    bom_sha256: cb462444369b9ff82e2d5a12afda8a7bb62cc9c857c1ea8564619d41946ebe82
+    payload_sha256: 45efc5f7d5b2d685971002ee9defde32137bb934a158c9658fbcee2e0b9c992c
+  - id: com.studiozio.inflator.pkg.vst3
+    product: StudioZIO Inflator
+    version: 1.0.0
+    install_location: '/Library/Audio/Plug-Ins/VST3'
+    format: VST3
+    source_component: StudioZIOInflator-VST3.pkg
+    packageinfo_sha256: 6f4886921dcaf491bc286486168d136dc3c3a5edae357094b63fc0600196dc6d
+    bom_sha256: c3bdb8e17cbbd8152a53868339460bf8256e2cdd0cfde417082324f24d22fc09
+    payload_sha256: 69510e19fa256dd06a0c09cba277b7f72a2ba6f239b9ac93bb8edafe8b6f1a30
+  - id: com.studiozio.inflator.pkg.aax
+    product: StudioZIO Inflator
+    version: 1.0.0
+    install_location: '/Library/Application Support/Avid/Audio/Plug-Ins'
+    format: AAX
+    source_component: StudioZIOInflator-AAX.pkg
+    packageinfo_sha256: d116ff18a5fb7c36db122971527ac6c9a540a30a25ff050365a8c32842d1ef23
+    bom_sha256: b8888775d1f3903628b24f566c380e13b8e276b1c1952a1b233eb7d37b849edc
+    payload_sha256: 4f363e3b4e54edb291c999d03c0aab3915bb6c8cb9712003e6a5a2e5b44d7d88
+  - id: com.studiozio.maximizer.pkg.standalone
+    product: StudioZIO Maximizer
+    version: 1.0.2
+    install_location: '/Applications'
+    format: Standalone
+    source_component: StudioZIOMaximizer-Standalone.pkg
+    packageinfo_sha256: 4c0b4f8091bbdb6e3992efcdaf02305a6fe993551b5b26dafa00f82dd1ddcf85
+    bom_sha256: 7eb77f4debefa19bea554120950213f80208a26801710dc7aaec11c089e45e90
+    payload_sha256: 968e3dbd12a530699ff28f9b252620a32d4a03c5e815d5dc77543535fc16ca79
+  - id: com.studiozio.maximizer.pkg.au
+    product: StudioZIO Maximizer
+    version: 1.0.2
+    install_location: '/Library/Audio/Plug-Ins/Components'
+    format: AU
+    source_component: StudioZIOMaximizer-AU.pkg
+    packageinfo_sha256: 759a59d463e5cb99e4e8ee9615d7b51a03b2aa150abbe74ee2ae7c435b0fc70d
+    bom_sha256: fcba1764456136dc4a0467c1f152fe6223b472aa995c7b5127ee438c5a66682f
+    payload_sha256: 7c442d7a0fb11af97c223d22e0e41299d7556a1f369966cb9214c89043b0a4f5
+  - id: com.studiozio.maximizer.pkg.vst3
+    product: StudioZIO Maximizer
+    version: 1.0.2
+    install_location: '/Library/Audio/Plug-Ins/VST3'
+    format: VST3
+    source_component: StudioZIOMaximizer-VST3.pkg
+    packageinfo_sha256: f62db568d15c5d0fb349a3766f32dd47c6ec30c6d96506282759af544184bee0
+    bom_sha256: 73faff690f6e4635ab4d85376a725f6611309c5ee14ce809a4cfb9faaab58935
+    payload_sha256: af5bd73bf150376609ff11db995e192a1a585957ed3545ddd00d818346f96f0a
+  - id: com.studiozio.maximizer.pkg.aax
+    product: StudioZIO Maximizer
+    version: 1.0.2
+    install_location: '/Library/Application Support/Avid/Audio/Plug-Ins'
+    format: AAX
+    source_component: StudioZIOMaximizer-AAX.pkg
+    packageinfo_sha256: f2293c2fefb4a6d84a7f83e9d7b9e8aab383484c9667b8ba8bb31f76b805515c
+    bom_sha256: 280b306fdf0c28a005b16fd13d9fdf12b5a5925c28c16fa41e6745be41523eb3
+    payload_sha256: 16f59a58213b1bf9e3bb4f5ab9bca91c183efc2d254d6393f02e9dba02967c98
+  - id: com.studiozio.compressor.pkg.standalone
+    product: StudioZIO Compressor
+    version: 1.0.0
+    install_location: '/Applications'
+    format: Standalone
+    source_component: StudioZIOCompressor-Standalone.pkg
+    packageinfo_sha256: c089813feb1cba1ff656c8be5ae6bea8a93ddbb073c864475e6425c896850826
+    bom_sha256: 926ee6242b1b3501499f9bdb92b8cb0de864182e114c5010cab0a160df5ff649
+    payload_sha256: 7a832376263d14d5ed2b668cde04863ca7c876a688b48bbf31e54a30532f1c68
+  - id: com.studiozio.compressor.pkg.au
+    product: StudioZIO Compressor
+    version: 1.0.0
+    install_location: '/Library/Audio/Plug-Ins/Components'
+    format: AU
+    source_component: StudioZIOCompressor-AU.pkg
+    packageinfo_sha256: d3eec7b40398bc4eca8d1a6bca95fee11d66528f5e5dc6084434176b63941b61
+    bom_sha256: 8a1c3e90a7a929bffce85081cd3760c4fd1fd4ac9cbde40794c023545c316332
+    payload_sha256: e8e80c67d986ec9b96239b004561545756c9fe8d7b7d312e024044da7a0b3b88
+  - id: com.studiozio.compressor.pkg.vst3
+    product: StudioZIO Compressor
+    version: 1.0.0
+    install_location: '/Library/Audio/Plug-Ins/VST3'
+    format: VST3
+    source_component: StudioZIOCompressor-VST3.pkg
+    packageinfo_sha256: 2e6a79a97f8c856430f2ac1374d0e1544810629b8cbccec930c1e47af938313e
+    bom_sha256: 60841ac68d62a1ecaa2f296aba684e5a0a0de618a00783933b65a1e4272d6d59
+    payload_sha256: 6c54632ba1282aedfe37a62b838df16b97e05b4cd29541b1ccaae63d1edfc74a
+  - id: com.studiozio.compressor.pkg.aax
+    product: StudioZIO Compressor
+    version: 1.0.0
+    install_location: '/Library/Application Support/Avid/Audio/Plug-Ins'
+    format: AAX
+    source_component: StudioZIOCompressor-AAX.pkg
+    packageinfo_sha256: 2a964a37e8a11e992950128418564cbb586f0d58337f3686a470ce642a98dbfb
+    bom_sha256: 143cb7f1718ee51b7c4618485d5a2c831418a27c10e92f9c7dc4248b0e14b63f
+    payload_sha256: 5e2ec1b4d76f862b5ab88b9c37298080a88d6d578181ace398b63e0ed6d04366
+  - id: com.studiozio.deesser.pkg.standalone
+    product: StudioZIO De-Esser
+    version: 1.0.0
+    install_location: '/Applications'
+    format: Standalone
+    source_component: StudioZIODe-Esser-Standalone.pkg
+    packageinfo_sha256: 5acedffb5a54dcc9794c38ef2592bc695fc51a2627bb9569742b199c12963a60
+    bom_sha256: 2366a40ca13b7e4b698003064c0facc62e214da0ea1f88f468018a69935a0395
+    payload_sha256: c6882a4e18044e7171b123a299353812e82c7e4cf7b02a0a963e970796181c74
+  - id: com.studiozio.deesser.pkg.au
+    product: StudioZIO De-Esser
+    version: 1.0.0
+    install_location: '/Library/Audio/Plug-Ins/Components'
+    format: AU
+    source_component: StudioZIODe-Esser-AU.pkg
+    packageinfo_sha256: 6fc61ad760be610be0a27cea91ea8f7cadac5f0cf783e75f1a32f240a95b08e0
+    bom_sha256: 9bd26526d3b223d46fbc41744560f3e7ab13a3a8a5fe84f9f4d3c33b100d6a63
+    payload_sha256: 7301eafe70962113f91a4cf3ede2f2b2c283c959740b5caf52b555cf79d95563
+  - id: com.studiozio.deesser.pkg.vst3
+    product: StudioZIO De-Esser
+    version: 1.0.0
+    install_location: '/Library/Audio/Plug-Ins/VST3'
+    format: VST3
+    source_component: StudioZIODe-Esser-VST3.pkg
+    packageinfo_sha256: b151ff46f60af10235c57b662a988632da086298a84d3406b50312afde64f14a
+    bom_sha256: b8d269fd2d88059a035fc09bc56f355f563fa6ca4ccf03d8a50786c28738bbe2
+    payload_sha256: ae6393e47d7ff5483f200652b0741b1de726576a6b61a3ec913b7191ebe8c0a8
+  - id: com.studiozio.deesser.pkg.aax
+    product: StudioZIO De-Esser
+    version: 1.0.0
+    install_location: '/Library/Application Support/Avid/Audio/Plug-Ins'
+    format: AAX
+    source_component: StudioZIODe-Esser-AAX.pkg
+    packageinfo_sha256: 5471e8c353d2dcb4a7a38010142d2b63bd74e12215d6b4917d38609fc4d97105
+    bom_sha256: b13f2b1136ce73af2477dd5a2c5557020496bac6a32d33adf2753b35b525351e
+    payload_sha256: 20fe36595adf6cf83b51157d65bf7519d8fd4bebec8c2e0923d995850996435e
+inventory:
+  product_count: 7
+  component_count: 28
+  unique_component_ids: 28
+  final_component_byte_identity: 28/28 PASS
+  appledouble_count_total: 0
+  ds_store_count_total: 0
+  resource_fork_sidecar_total: 0
+choice_model:
+  product_choices: 7
+  all_selected_by_default: true
+  all_enabled: true
+  all_visible: true
+  each_choice_owns_exactly_its_four_components: true
+clean_install:
+  performed_by: owner (sudo /usr/sbin/installer -target /)
+  installed_utc: 2026-09-16T10:15:52Z
+  result: PASS
+  receipts: 28/28 expected versions, one install time
+  bundles_present: 28/28
+  missing_files: 0
+  unexpected_files: 0
+  appledouble_installed: 0
+  ds_store_installed: 0
+  installed_product_identity: 28/28 (tree digests equal pre-install baseline; Tempo Delay and Maximizer equal admitted digests)
+  user_domain_shadow_copies: 0 (13 developer copies quarantined to ~/StudioZIO-Verification/Pre-Everything-UserDomain-Backup-2026.09.16/, not deleted)
+  tempo_delay_version_distinction: receipts 4.1.0, plug-in binaries 4.0.1 (per release truth)
+validation:
+  MASTERING_SUITE:
+    au: PASS (auval; pluginval strictness 10)
+    vst3: PASS (pluginval strictness 10)
+    aax: PASS (codesign strict; PACE marker; wraptool verify signed-not-wrapped; Avid dsh describe_validation/load_unload/parameters E_COMPLETED_PASS)
+    aax_info_helper: ENVIRONMENT_ABORT (validator SysInfo; not a plug-in verdict)
+    standalone: PASS (Gatekeeper accepted; alive after 10 s; quit cleanly; no crash report)
+  TEMPO_DELAY:
+    au: PASS (auval; pluginval strictness 10)
+    vst3: PASS (pluginval strictness 10)
+    aax: PASS (codesign strict; PACE marker; wraptool verify signed-not-wrapped; Avid dsh describe_validation/load_unload/parameters E_COMPLETED_PASS)
+    aax_info_helper: ENVIRONMENT_ABORT (validator SysInfo; not a plug-in verdict)
+    standalone: PASS (Gatekeeper accepted; alive after 10 s; quit cleanly; no crash report)
+  MIXRACK:
+    au: PASS (auval; pluginval strictness 10)
+    vst3: PASS (pluginval strictness 10)
+    aax: PASS (codesign strict; PACE marker; wraptool verify signed-not-wrapped; Avid dsh describe_validation/load_unload/parameters E_COMPLETED_PASS)
+    aax_info_helper: ENVIRONMENT_ABORT (validator SysInfo; not a plug-in verdict)
+    standalone: PASS (Gatekeeper accepted; alive after 10 s; quit cleanly; no crash report)
+  INFLATOR:
+    au: PASS (auval; pluginval strictness 10)
+    vst3: PASS (pluginval strictness 10)
+    aax: PASS (codesign strict; PACE marker; wraptool verify signed-not-wrapped; Avid dsh describe_validation/load_unload/parameters E_COMPLETED_PASS)
+    aax_info_helper: ENVIRONMENT_ABORT (validator SysInfo; not a plug-in verdict)
+    standalone: PASS (Gatekeeper accepted; alive after 10 s; quit cleanly; no crash report)
+  MAXIMIZER:
+    au: PASS (auval; pluginval strictness 10)
+    vst3: PASS (pluginval strictness 10)
+    aax: PASS (codesign strict; PACE marker; wraptool verify signed-not-wrapped; Avid dsh describe_validation/load_unload/parameters E_COMPLETED_PASS)
+    aax_info_helper: ENVIRONMENT_ABORT (validator SysInfo; not a plug-in verdict)
+    standalone: PASS (Gatekeeper accepted; alive after 10 s; quit cleanly; no crash report)
+  COMPRESSOR:
+    au: PASS (auval; pluginval strictness 10)
+    vst3: PASS (pluginval strictness 10)
+    aax: PASS (codesign strict; PACE marker; wraptool verify signed-not-wrapped; Avid dsh describe_validation/load_unload/parameters E_COMPLETED_PASS)
+    aax_info_helper: ENVIRONMENT_ABORT (validator SysInfo; not a plug-in verdict)
+    standalone: PASS (Gatekeeper accepted; alive after 10 s; quit cleanly; no crash report)
+  DEESSER:
+    au: PASS (auval; pluginval strictness 10)
+    vst3: PASS (pluginval strictness 10)
+    aax: PASS (codesign strict; PACE marker; wraptool verify signed-not-wrapped; Avid dsh describe_validation/load_unload/parameters E_COMPLETED_PASS)
+    aax_info_helper: ENVIRONMENT_ABORT (validator SysInfo; not a plug-in verdict)
+    standalone: PASS (Gatekeeper accepted; alive after 10 s; quit cleanly; no crash report)
+cross_product_regression:
+  au_still_validate: PASS
+  vst3_still_validate: PASS
+  aax_still_validate: PASS
+  standalones_launch: PASS
+  no_product_overwrite: PASS (all 28 bundles byte-identical to the pre-install baseline)
+  no_component_destination_collision: PASS (28 unique destinations, 7 entries per canonical folder)
+  no_stale_product_replacement: PASS
+  no_wrong_identity: PASS
+publication_status:
+  public_release_performed: false
+  website_updated: false
+  kvr_updated: false
+  github_release: false
