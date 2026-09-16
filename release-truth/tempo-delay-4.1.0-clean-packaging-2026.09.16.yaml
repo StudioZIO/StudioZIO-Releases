@@ -1,0 +1,90 @@
+# StudioZIO Tempo Delay 4.1.0 — clean canonical four-component installer around
+# the unchanged, already-qualified 4.0.1 bundles (packaging-hygiene correction,
+# 2026-09-16). Plug-in binaries stay 4.0.1 and were not rebuilt, re-signed or
+# PACE-signed again; the installer and its four component receipts are 4.1.0,
+# the version the canonical Tempo Delay packager assigns to the four-component
+# topology (build_pkg.sh --with-aax, receipt token AAX-v4.1.0-receipt-4.1.0).
+# Produced from a launchd clean process at StudioZIO-Tempo-Delay commit
+# 72e85e897b3ebe0a053c3c5e9b8670d1d8dda249 (branch tempo-delay/clean-canonical-4.1.0).
+# Not published: no GitHub release, tag, website or KVR action.
+supersedes:
+  manifest: tempo-delay-4.0.1.yaml
+  artifact_sha256: 4e919c509cca196e178a0a991d24c02eb7e1ba81c5890e0f4fce16aba94ec055
+  status: SUPERSEDED_PACKAGING_ARTIFACT
+  reason: >-
+    Payload carried 50 AppleDouble "._" records. No product defect; the
+    installed files were correct. The StudioZIO Everything payload-metadata
+    policy admits only artifacts with zero such records.
+
+product:
+  id: tempo-delay
+  name: StudioZIO Tempo Delay
+  version: 4.1.0
+  release_tag: tempo-delay-v4.1.0-clean-packaging-2026.09.16
+  plugin_binary_version: 4.0.1
+  installer_version: 4.1.0
+  component_receipt_version: 4.1.0
+
+artifact:
+  filename: StudioZIOTempoDelay-v4.1.0-macOS-arm64.pkg
+  sha256: fa16f0c9f04f5f56e446ae06074a0f3b0a8e193fa21089e0bf92c486d197910d
+  byte_size: 15879406
+  status: CANONICAL
+
+formats:
+  au:
+    present: true
+    bundle: StudioZIOTempoDelay.component
+    executable: Contents/MacOS/StudioZIOTempoDelay
+    destination: /Library/Audio/Plug-Ins/Components
+    architectures:
+      - arm64
+    universal: false
+  vst3:
+    present: true
+    bundle: StudioZIOTempoDelay.vst3
+    executable: Contents/MacOS/StudioZIOTempoDelay
+    destination: /Library/Audio/Plug-Ins/VST3
+    architectures:
+      - arm64
+    universal: false
+  aax:
+    present: true
+    bundle: StudioZIOTempoDelay.aaxplugin
+    executable: Contents/MacOS/StudioZIOTempoDelay
+    destination: /Library/Application Support/Avid/Audio/Plug-Ins
+    architectures:
+      - arm64
+    universal: false
+  standalone:
+    present: true
+    bundle: StudioZIOTempoDelay.app
+    executable: Contents/MacOS/StudioZIOTempoDelay
+    destination: /Applications
+    architectures:
+      - arm64
+    universal: false
+
+architecture:
+  all_formats_identical: true
+  safe_product_wide_claim: Apple Silicon (arm64) only
+
+host_validation:
+  pro_tools:
+    validated: true
+    claim: AAX validated in Pro Tools
+
+signing:
+  package: Developer ID Installer signed and Apple notarized, stapled
+  au: Developer ID signed
+  vst3: Developer ID signed
+  aax: Developer ID signed
+  standalone: Developer ID signed
+  notarization: true
+
+publication_status:
+  capability_gate_passed: true
+  source_surfaces_synchronized: false
+  live_surfaces_verified: false
+  third_party_verified: false
+  note: not published; the public 4.0.1 release is untouched

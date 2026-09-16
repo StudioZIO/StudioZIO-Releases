@@ -1,3 +1,19 @@
+# Read the superseded block before treating anything below as current truth.
+superseded:
+  by_release_tag: tempo-delay-v4.1.0-clean-packaging-2026.09.16
+  by_manifest: tempo-delay-4.1.0-clean-packaging-2026.09.16.yaml
+  superseded_on: 2026-09-16
+  status: SUPERSEDED_PACKAGING_ARTIFACT
+  install_status: installs_correctly
+  do_not_install: false
+  reason: >-
+    This package's payload carries 50 AppleDouble "._" records (dropped by the
+    macOS Installer, so the installed files were correct). It remains the
+    public 4.0.1 release and is not withdrawn; it is not admissible into
+    StudioZIO Everything, whose policy admits only artifacts with zero such
+    records. The corrected installer packages the same 4.0.1 bundles unchanged
+    under receipt version 4.1.0.
+
 product:
   id: tempo-delay
   name: StudioZIO Tempo Delay
