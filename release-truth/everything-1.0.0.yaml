@@ -74,7 +74,7 @@ architecture:
   safe_product_wide_claim: "Apple Silicon; Intel supported by every included product except Tempo Delay (arm64 only)"
 
 platform_note: >-
-  The installer's Distribution allows x86_64 and arm64 hosts and macOS 11.0, but the included Tempo Delay is arm64 only and needs macOS 12.0; on Intel Macs or macOS 11 Tempo Delay must be deselected in Customize (it is selected by default) or it installs and never loads. Measured 2026-09-16 from the frozen artifact.
+  The installer's Distribution allows x86_64 and arm64 hosts and macOS 11.0, but the included Tempo Delay is arm64 only and needs macOS 12.0; on Intel Macs or macOS 11 Tempo Delay must be deselected in Customize (it is selected by default) or it installs and never loads. Measured 2026-09-16 from the frozen artifact. Owner decision 2026-09-16: accepted as documented; no rebuild.
 
 host_validation:
   pro_tools:
