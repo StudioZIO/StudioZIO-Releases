@@ -1,0 +1,159 @@
+# StudioZIO Compressor 1.0.0 — corrected canonical installer (packaging-hygiene
+# correction, 2026-09-16). Same product, same version, new artifact identity.
+# The historical 1.0.0 artifact (compressor-1.0.0.yaml, sha256 49db1ddd…7ab5)
+# is SUPERSEDED_PACKAGING_ARTIFACT: hand-assembled, single component, 65
+# AppleDouble records in its payload. This artifact was produced by the
+# canonical multi-product pipeline (Distribution/Compressor/QualifyCandidate.sh
+# in StudioZIO-Master-Plugin-Suite, branch compressor/canonical-repackage-1.0.0,
+# commit 8f9e854a90cc1595ef29f65fb2cd0408b464bdfb) from a launchd-started clean
+# process. Not yet published: no GitHub release, tag, website or KVR action.
+supersedes:
+  manifest: compressor-1.0.0.yaml
+  artifact_sha256: 49db1dddf2a86f115bfe35d76e3a49435a8a31c607c93f536e8b10838dea7ab5
+  status: SUPERSEDED_PACKAGING_ARTIFACT
+  reason: >-
+    Payload carried 65 AppleDouble "._" records (single-component package
+    assembled outside the canonical pipeline). No product defect; the installed
+    files were correct. The Whole Bundle payload-metadata policy admits only
+    artifacts with zero such records.
+
+product:
+  id: compressor
+  name: StudioZIO Compressor
+  version: 1.0.0
+  release_tag: compressor-v1.0.0-clean-packaging-2026.09.16
+
+artifact:
+  filename: StudioZIO-Compressor-1.0.0.pkg
+  sha256: 96c9d4cccefc918ffef47b094464da901be742778b4fc6e97145ddcfa11d37bc
+  byte_size: 27246260
+  status: CANONICAL
+  local_path: /Users/mert/StudioZIO-Verification/Canonical-Releases/Compressor-1.0.0-clean-packaging-2026.09.16/StudioZIO-Compressor-1.0.0.pkg
+
+package:
+  identifier: com.studiozio.compressor.pkg
+  version: 1.0.0
+  components:
+    - id: com.studiozio.compressor.pkg.standalone
+      install_location: /Applications
+      payload: StudioZIO Compressor.app
+    - id: com.studiozio.compressor.pkg.au
+      install_location: /Library/Audio/Plug-Ins/Components
+      payload: StudioZIO Compressor.component
+    - id: com.studiozio.compressor.pkg.vst3
+      install_location: /Library/Audio/Plug-Ins/VST3
+      payload: StudioZIO Compressor.vst3
+    - id: com.studiozio.compressor.pkg.aax
+      install_location: /Library/Application Support/Avid/Audio/Plug-Ins
+      payload: StudioZIO Compressor.aaxplugin
+  metadata_policy: CLEAN_PROCESS_ZERO
+  appledouble_records: 0
+  ds_store_entries: 0
+  resource_fork_sidecars: 0
+  release_verifier: tools/verify_release_package.py PASS
+
+formats:
+  au:
+    present: true
+    bundle: StudioZIO Compressor.component
+    executable: Contents/MacOS/StudioZIO Compressor
+    destination: /Library/Audio/Plug-Ins/Components
+    architectures:
+      - arm64
+      - x86_64
+    universal: true
+    executable_sha256_unsigned_build: 69e7bcb2f6dbc3a428f884825eb525a1d778d681e54d0627c625ec20f7be131e
+    executable_sha256_installed: 41b264016d69f24e662eaa957c0651f371e862f9db29e9aaf5f10900a475aa0f
+  vst3:
+    present: true
+    bundle: StudioZIO Compressor.vst3
+    executable: Contents/MacOS/StudioZIO Compressor
+    destination: /Library/Audio/Plug-Ins/VST3
+    architectures:
+      - arm64
+      - x86_64
+    universal: true
+    executable_sha256_unsigned_build: 3559ffaac48bd353fcdfb9dd9fae47b986bf8d724ca5d08f2a9996815ce93527
+    executable_sha256_installed: 04630504ed604980d9a2b4acc490a8a4f7d96b0464d7fedf0c128c6825c49835
+  aax:
+    present: true
+    bundle: StudioZIO Compressor.aaxplugin
+    executable: Contents/MacOS/StudioZIO Compressor
+    destination: /Library/Application Support/Avid/Audio/Plug-Ins
+    architectures:
+      - arm64
+      - x86_64
+    universal: true
+    executable_sha256_unsigned_build: 8cbb76266af0b2f5a1c177979ac0c48afe0b2a5415b997f109a1b02e48f386e9
+    executable_sha256_installed: 01ba04a400e4ef97877bff0e8cca5ca9cbdb9abfdd2d406b6b3557d804af0ec6
+  standalone:
+    present: true
+    bundle: StudioZIO Compressor.app
+    executable: Contents/MacOS/StudioZIO Compressor
+    destination: /Applications
+    architectures:
+      - arm64
+      - x86_64
+    universal: true
+    executable_sha256_unsigned_build: 595749233218fffe41e34be2910dc3d55df6a9517cfdd90d8c830e5b5c856f01
+    executable_sha256_installed: ad480cdaadfef5e5b4d6de3037d5acc8381af65fbb592a1bc98a99a08bece382
+
+identity:
+  bundle_identifier: com.studiozio.compressor
+  manufacturer_code: Szio
+  plugin_code: Cmpr
+  au_name: "StudioZIO: StudioZIO Compressor"
+  aax_identifier: com.studiozio.compressor
+  aax_category: Dynamics
+  vst3_processor_class_id: ABCDEF019182FAEB537A696F436D7072
+  vst3_controller_class_id: ABCDEF011234ABCD537A696F436D7072
+
+architecture:
+  all_formats_identical: true
+  safe_product_wide_claim: Universal — Apple Silicon and Intel
+
+invariance:
+  source: byte-identical to the work copy that produced the historical 1.0.0 binaries (SHA-256 compared)
+  binaries_vs_historical: >-
+    After stripping signatures, each executable is the same size as the
+    historical one and differs only in the Mach-O LC_UUID (16 bytes), the
+    compiled build date/time string, and a __LINKEDIT size field; every code
+    byte is identical. Focused regression (15 tests) and bundle contract PASS.
+  dsp_changed: false
+  gui_changed: false
+  parameters_changed: false
+  defaults_changed: false
+  identity_changed: false
+
+host_validation:
+  pro_tools:
+    validated: false
+    claim: PACE signing-only verified (wraptool verify, "signed, but not wrapped"); Pro Tools host validation not performed in this release run
+  auval: AU VALIDATION SUCCEEDED (aufx Cmpr Szio, installed component)
+  pluginval_au: SUCCESS strictness 10 (pluginval 1.0.4, installed component)
+  pluginval_vst3: SUCCESS strictness 10 (pluginval 1.0.4, installed bundle)
+  standalone: launched from /Applications, running, terminated cleanly, spctl execute accepted (Notarized Developer ID)
+  install: >-
+    Installed over the existing 1.0.0 (historical artifact) on the owner's Mac:
+    all four bundles replaced (executable hashes changed), four new receipts
+    written, zero AppleDouble or .DS_Store files installed, InstalledContract
+    PASS. The historical receipt com.studiozio.compressor.pkg remains (stale,
+    harmless; forgettable with pkgutil --forget by an administrator).
+
+signing:
+  package: Developer ID Installer signed (MERT ERKAN, 3734G7VLNA), stapled
+  au: Developer ID signed, hardened runtime
+  vst3: Developer ID signed, hardened runtime
+  aax: Developer ID signed via PACE wraptool sign (Signing Only, __Pace_Eden.bundle present, not wrapped)
+  standalone: Developer ID signed, hardened runtime
+  notarization: true
+  notarization_submission: 57806bb8-bfc1-44c6-8988-7e82e7eb8c31
+  notarization_status: Accepted
+  stapled: true
+  gatekeeper: accepted (source=Notarized Developer ID)
+
+publication_status:
+  capability_gate_passed: true
+  source_surfaces_synchronized: false
+  live_surfaces_verified: false
+  third_party_verified: false

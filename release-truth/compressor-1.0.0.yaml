@@ -1,3 +1,27 @@
+# SUPERSEDED PACKAGING ARTIFACT — 2026-09-16
+#
+# Everything recorded below was read from the artifact correctly and is left
+# exactly as committed. The artifact installs correctly and the product is not
+# defective; what it fails is the Whole Bundle payload-metadata policy.
+#
+# Read the superseded block before treating anything below as current truth.
+superseded:
+  by_release_tag: compressor-v1.0.0-clean-packaging-2026.09.16
+  by_manifest: compressor-1.0.0-clean-packaging-2026.09.16.yaml
+  superseded_on: 2026-09-16
+  status: SUPERSEDED_PACKAGING_ARTIFACT
+  install_status: installs_correctly
+  do_not_install: false
+  reason: >-
+    This package was hand-assembled as a single component
+    (com.studiozio.compressor.pkg, install-location /) outside the canonical
+    multi-product pipeline and its payload carries 65 AppleDouble "._"
+    records. They do not reach the installed system, but the Whole Bundle
+    admits only payloads with zero such records. The superseding release is
+    the same 1.0.0 product rebuilt through the canonical pipeline: four
+    component packages, zero AppleDouble records, signed, notarized, stapled.
+    This artifact and its SHA-256 remain historical evidence.
+
 product:
   id: compressor
   name: StudioZIO Compressor
@@ -66,6 +90,9 @@ signing:
 
 publication_status:
   capability_gate_passed: true
-  source_surfaces_synchronized: true
+  # false since 2026-09-16: the current truth is the superseding manifest. The
+  # public release compressor-v1.0.0 still serves this artifact until the
+  # corrected package is published under its own release identity.
+  source_surfaces_synchronized: false
   live_surfaces_verified: false
   third_party_verified: false
