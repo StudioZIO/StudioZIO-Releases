@@ -9,18 +9,11 @@ Where stated for an individual release, macOS installers are Developer ID signed
 ## Current releases
 
 ### StudioZIO Compressor 1.0.0
-
-- Platform: macOS 11 or later
-- Architecture: Universal — Apple Silicon and Intel
-- Formats: AU / VST3 / AAX / Standalone
-- Installer: `StudioZIO-Compressor-1.0.0.pkg`
-- SHA256: `49db1dddf2a86f115bfe35d76e3a49435a8a31c607c93f536e8b10838dea7ab5`
-- Release: [`compressor-v1.0.0`](https://github.com/StudioZIO/StudioZIO-Releases/releases/tag/compressor-v1.0.0)
-- Status: Developer ID signed and Apple notarized; AAX PACE signing verified (Signing Only)
-
-StudioZIO Compressor provides two modes: Adaptive for fast, transparent,
-general-purpose compression, and Glue for slower, cohesive compression with a
-natural release.
+Bus/glue compressor. AU, VST3, AAX and Standalone; Universal (Apple Silicon and Intel). Developer ID signed, Apple notarized, stapled.
+- Installer: `StudioZIO-Compressor-1.0.0.pkg` (release `compressor-v1.0.0-clean-packaging-2026.09.16`)
+- SHA256: `96c9d4cccefc918ffef47b094464da901be742778b4fc6e97145ddcfa11d37bc`
+- Release truth: `release-truth/compressor-1.0.0-clean-packaging-2026.09.16.yaml`
+- Historical: the `compressor-v1.0.0` release (`StudioZIO-Compressor-1.0.0.pkg`, SHA-256 `49db1ddd...`) remains available. Same plug-in code; superseded packaging (single component, AppleDouble metadata records in its payload).
 
 ### StudioZIO Mastering Suite 2.1.1
 
@@ -46,16 +39,11 @@ unchanged.
 - The `signed` release (`StudioZIO-Mastering-Suite-2.1.1.pkg`, SHA-256 `68e7abb8...`) published on 7 September remains available.
 
 ### StudioZIO Maximizer 1.0.2
-
-- Platform: macOS 11 or later
-- Architecture: Universal — Apple Silicon and Intel
-- Formats: AU / VST3 / AAX / Standalone
-- Installer: `StudioZIO-Maximizer-1.0.2.pkg`
-- SHA256: `673da7c759b0cac3741ee816920a5ff2c199d01b975a1c6ffe7a48f65bcb3db6`
-- Release: [`maximizer-v1.0.2`](https://github.com/StudioZIO/StudioZIO-Releases/releases/tag/maximizer-v1.0.2)
-- Status: Developer ID signed and Apple notarized; AAX PACE signing verified (Signing Only)
-
-This maintenance release stabilizes the public metering path, prevents startup true-peak display transients, and updates the standalone GUI version label to `v1.0.2`. The audio/DSP path is unchanged. Pro Tools host validation is not claimed for this release.
+True-peak maximizer. AU, VST3, AAX and Standalone; Universal (Apple Silicon and Intel). Developer ID signed, Apple notarized, stapled.
+- Installer: `StudioZIO-Maximizer-1.0.2.pkg` (release `maximizer-v1.0.2-clean-packaging-2026.09.16`)
+- SHA256: `69510b08a118aece2f8e33feb0d10d13b45458864d5696c49d897876860eedfe`
+- Release truth: `release-truth/maximizer-1.0.2-clean-packaging-2026.09.16.yaml`
+- Historical: the `maximizer-v1.0.2` release (`StudioZIO-Maximizer-1.0.2.pkg`, SHA-256 `673da7c7...`) remains available. Same plug-in binaries; superseded packaging (AppleDouble metadata records in its payload).
 
 ### StudioZIO Inflator 1.0.0
 
@@ -69,22 +57,13 @@ This maintenance release stabilizes the public metering path, prevents startup t
 
 Pro Tools host validation is not claimed for this release.
 
-### StudioZIO Tempo Delay 4.0.1
-
-- Platform: macOS 12 or later
-- Architecture: Apple Silicon (arm64) only — there is no Intel build
-- Formats: Standalone, Audio Unit (AU), VST3, AAX
-- Installer: `StudioZIOTempoDelay-v4.0.1-macOS-arm64-AAX.pkg`
-- SHA256: `4e919c509cca196e178a0a991d24c02eb7e1ba81c5890e0f4fce16aba94ec055`
-- Release: [`tempo-delay-v4.0.1-aax-2026.09.10`](https://github.com/StudioZIO/StudioZIO-Releases/releases/tag/tempo-delay-v4.0.1-aax-2026.09.10)
-- Status: AAX validated in Pro Tools
-- Product site: <https://www.tempodelay.tech/>
-
-**Historical 4.0.1 releases:**
-- The initial `tempo-delay-v4.0.1` release (`StudioZIOTempoDelay-v4.0.1-macOS-arm64.pkg`, SHA-256 `adae5102...`) remains available.
-
-All StudioZIO products are free and are listed on the hub:
-<https://www.studiozio.tech/>
+### StudioZIO Tempo Delay 4.1.0
+Tempo-synced delay. AU, VST3, AAX and Standalone; Apple Silicon (arm64) only. Developer ID signed, Apple notarized, stapled.
+The plug-in binaries are the 4.0.1 release's, unchanged; the installer and its component receipts are 4.1.0 (the four-component package topology).
+- Installer: `StudioZIOTempoDelay-v4.1.0-macOS-arm64.pkg` (release `tempo-delay-v4.1.0-clean-packaging-2026.09.16`)
+- SHA256: `fa16f0c9f04f5f56e446ae06074a0f3b0a8e193fa21089e0bf92c486d197910d`
+- Release truth: `release-truth/tempo-delay-4.1.0-clean-packaging-2026.09.16.yaml`
+- Historical: the `tempo-delay-v4.0.1-aax-2026.09.10` release (`StudioZIOTempoDelay-v4.0.1-macOS-arm64-AAX.pkg`, SHA-256 `4e919c50...`) remains available; same plug-ins, superseded packaging. The initial `tempo-delay-v4.0.1` release (`StudioZIOTempoDelay-v4.0.1-macOS-arm64.pkg`, SHA-256 `adae5102...`) remains available.
 
 ## Release artifact immutability
 
