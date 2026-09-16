@@ -1,28 +1,32 @@
-# Read the superseded block before treating anything below as current truth.
-superseded:
-  by_release_tag: maximizer-v1.0.2-clean-packaging-2026.09.16
-  by_manifest: maximizer-1.0.2-clean-packaging-2026.09.16.yaml
-  superseded_on: 2026-09-16
+# StudioZIO Maximizer 1.0.2 — clean canonical installer around the unchanged,
+# already-qualified 1.0.2 bundles (packaging-hygiene correction, 2026-09-16).
+# Same product, same version, new artifact identity. The bundles were lifted
+# byte-for-byte from the shipped 1.0.2 installer and packaged by the canonical
+# multi-product pipeline's PACKAGING_ONLY mode from a launchd clean process:
+# not rebuilt, not re-signed, not PACE-signed again, no plist edited. The
+# historical 1.0.2 artifact (673da7c7…3db6) is SUPERSEDED_PACKAGING_ARTIFACT:
+# hand-assembled outside the pipeline, 51 AppleDouble records in its payload.
+# Not published: no GitHub release, tag, website or KVR action.
+supersedes:
+  manifest: maximizer-1.0.2.yaml
+  artifact_sha256: 673da7c759b0cac3741ee816920a5ff2c199d01b975a1c6ffe7a48f65bcb3db6
   status: SUPERSEDED_PACKAGING_ARTIFACT
-  install_status: installs_correctly
-  do_not_install: false
   reason: >-
-    This package's payload carries 51 AppleDouble "._" records (dropped by the
-    macOS Installer, so the installed files were correct). It was assembled by
-    hand outside the canonical pipeline. It is not admissible into StudioZIO
-    Everything; the corrected installer packages the same 1.0.2 bundles
-    unchanged.
+    Payload carried 51 AppleDouble "._" records. No product defect; the
+    installed files were correct. The StudioZIO Everything payload-metadata
+    policy admits only artifacts with zero such records.
 
 product:
   id: maximizer
   name: StudioZIO Maximizer
   version: 1.0.2
-  release_tag: maximizer-v1.0.2
+  release_tag: maximizer-v1.0.2-clean-packaging-2026.09.16
 
 artifact:
   filename: StudioZIO-Maximizer-1.0.2.pkg
-  sha256: 673da7c759b0cac3741ee816920a5ff2c199d01b975a1c6ffe7a48f65bcb3db6
-  byte_size: 28012337
+  sha256: 69510b08a118aece2f8e33feb0d10d13b45458864d5696c49d897876860eedfe
+  byte_size: 28024521
+  status: CANONICAL
 
 formats:
   au:
@@ -72,7 +76,7 @@ host_validation:
     claim: AAX signing and PACE marker verified; Pro Tools host validation not performed in this release run
 
 signing:
-  package: Developer ID Installer signed
+  package: Developer ID Installer signed and Apple notarized, stapled
   au: Developer ID signed
   vst3: Developer ID signed
   aax: Developer ID signed and PACE signed (Signing Only; canonical Wrap GUID C24B3EC0-AF7D-11F1-8437-00505692AD3E)
