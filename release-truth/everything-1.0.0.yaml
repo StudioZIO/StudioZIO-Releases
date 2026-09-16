@@ -32,6 +32,55 @@ eula:
   eula_text_sha256: 1f0d01f4337a5cf8b611b3d158e81eec6b4cca3b957ae07c9e4553d37100a138
   license_panel_sha256: 2f48c34bab7f9abe09fcc9578e582fa20ce3e9de8cc924ae5df9583cdd4af405
   owner_approved: true
+formats:
+  # Aggregate: every format is present for every included product. Only arm64 is
+  # common to all seven; six products are also x86_64 (Tempo Delay is arm64 only).
+  # Per-product architecture is in each source product's own record.
+  au:
+    present: true
+    bundle: one .component per included product (7)
+    executable: per product
+    destination: /Library/Audio/Plug-Ins/Components
+    architectures:
+      - arm64
+    universal: false
+  vst3:
+    present: true
+    bundle: one .vst3 per included product (7)
+    executable: per product
+    destination: /Library/Audio/Plug-Ins/VST3
+    architectures:
+      - arm64
+    universal: false
+  aax:
+    present: true
+    bundle: one .aaxplugin per included product (7)
+    executable: per product
+    destination: /Library/Application Support/Avid/Audio/Plug-Ins
+    architectures:
+      - arm64
+    universal: false
+  standalone:
+    present: true
+    bundle: one .app per included product (7)
+    executable: per product
+    destination: /Applications
+    architectures:
+      - arm64
+    universal: false
+
+architecture:
+  all_formats_identical: true
+  safe_product_wide_claim: "Apple Silicon; Intel supported by every included product except Tempo Delay (arm64 only)"
+
+platform_note: >-
+  The installer's Distribution allows x86_64 and arm64 hosts and macOS 11.0, but the included Tempo Delay is arm64 only and needs macOS 12.0; on Intel Macs or macOS 11 Tempo Delay must be deselected in Customize (it is selected by default) or it installs and never loads. Measured 2026-09-16 from the frozen artifact.
+
+host_validation:
+  pro_tools:
+    validated: false
+    claim: "Avid dsh describe_validation/load_unload/parameters PASS for all seven AAX bundles after the Everything install; Pro Tools host session not run for the aggregate"
+
 pace:
   has_own_aax_binary: false
   run_wraptool: false
