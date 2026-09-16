@@ -8,6 +8,32 @@ Where stated for an individual release, macOS installers are Developer ID signed
 
 ## Current releases
 
+### StudioZIO Everything 1.0.0
+
+- Platform: macOS 11.0 or later (Tempo Delay requires macOS 12.0 or later)
+- Architecture: Universal — Apple Silicon and Intel, except Tempo Delay, which is Apple Silicon only
+- Formats: AU / VST3 / AAX / Standalone for every included product
+- Installer: [`StudioZIO-Everything-1.0.0.pkg`](https://github.com/StudioZIO/StudioZIO-Releases/releases/download/everything-v1.0.0/StudioZIO-Everything-1.0.0.pkg)
+- SHA256: `0f148ecd72c03bc38de9f6129f375f253f5a814f5606b812ce6c4f45ad248bcb`
+- Release: [`everything-v1.0.0`](https://github.com/StudioZIO/StudioZIO-Releases/releases/tag/everything-v1.0.0)
+- Release truth: [`release-truth/everything-1.0.0.yaml`](https://github.com/StudioZIO/StudioZIO-Releases/blob/main/release-truth/everything-1.0.0.yaml)
+- Status: Developer ID signed, Apple notarized and stapled
+
+One installer for all seven StudioZIO products: Mastering Suite 2.1.1, Tempo Delay 4.0.1, MixRack 1.0.0, Inflator 1.0.0, Maximizer 1.0.2, Compressor 1.0.0 and De-Esser 1.0.0. Every component package is the qualified individual installer's, byte for byte. Products are selectable in the installer's Customize panel; all seven are selected by default.
+
+**Intel Macs and macOS 11:** the installer runs on Intel Macs and on macOS 11, but the Tempo Delay it contains is Apple Silicon only and needs macOS 12. On those Macs, deselect Tempo Delay in the Customize panel; if it is installed there it will not load in any host. The other six products install and run.
+
+### StudioZIO De-Esser 1.0.0
+
+- Platform: macOS 11.0 or later
+- Architecture: Universal — Apple Silicon and Intel
+- Formats: AU / VST3 / AAX / Standalone
+- Installer: [`StudioZIO-De-Esser-1.0.0.pkg`](https://github.com/StudioZIO/StudioZIO-Releases/releases/download/deesser-v1.0.0/StudioZIO-De-Esser-1.0.0.pkg)
+- SHA256: `698a5c45dc530b97bd4fc3c9f6e401bf4cbb414a435ff1d4235f6afa66e661f2`
+- Release: [`deesser-v1.0.0`](https://github.com/StudioZIO/StudioZIO-Releases/releases/tag/deesser-v1.0.0)
+- Release truth: [`release-truth/deesser-1.0.0.yaml`](https://github.com/StudioZIO/StudioZIO-Releases/blob/main/release-truth/deesser-1.0.0.yaml)
+- Status: Developer ID signed, Apple notarized and stapled; AAX validated in Pro Tools
+
 ### StudioZIO Compressor 1.0.0
 
 - Platform: macOS 11.0 or later
@@ -86,7 +112,7 @@ Pro Tools host validation is not claimed for this release.
 - Release truth: [`release-truth/mixrack-1.0.0.yaml`](https://github.com/StudioZIO/StudioZIO-Releases/blob/main/release-truth/mixrack-1.0.0.yaml)
 - Status: Developer ID signed, Apple notarized and stapled
 
-### StudioZIO Tempo Delay 4.1.0
+### StudioZIO Tempo Delay 4.0.1 (clean installer 2026-09-16)
 
 - Platform: macOS 12.0 or later
 - Architecture: Apple Silicon (arm64) only — no Intel build
@@ -97,7 +123,7 @@ Pro Tools host validation is not claimed for this release.
 - Release truth: [`release-truth/tempo-delay-4.1.0-clean-packaging-2026.09.16.yaml`](https://github.com/StudioZIO/StudioZIO-Releases/blob/main/release-truth/tempo-delay-4.1.0-clean-packaging-2026.09.16.yaml)
 - Status: Developer ID signed, Apple notarized and stapled
 
-The plug-in binaries are the 4.0.1 release's, unchanged; the installer and its four component receipts are 4.1.0, the version the four-component package topology carries.
+The product is 4.0.1: the plug-ins report 4.0.1 in every host. The installer file and its four component receipts carry 4.1.0, the version the four-component package topology uses; that number is an installer detail, not a plug-in version.
 
 **Historical 4.0.1 releases:**
 - [`tempo-delay-v4.0.1-aax-2026.09.10`](https://github.com/StudioZIO/StudioZIO-Releases/releases/tag/tempo-delay-v4.0.1-aax-2026.09.10) (`StudioZIOTempoDelay-v4.0.1-macOS-arm64-AAX.pkg`, SHA-256 `4e919c50...`) remains available; same plug-ins, superseded packaging.

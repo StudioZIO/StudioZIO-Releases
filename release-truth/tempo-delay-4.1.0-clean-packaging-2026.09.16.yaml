@@ -19,11 +19,12 @@ supersedes:
 product:
   id: tempo-delay
   name: StudioZIO Tempo Delay
-  version: 4.1.0
+  version: 4.0.1
   release_tag: tempo-delay-v4.1.0-clean-packaging-2026.09.16
   plugin_binary_version: 4.0.1
   installer_version: 4.1.0
   component_receipt_version: 4.1.0
+  version_note: the product is 4.0.1 (owner decision 2026-09-16); 4.1.0 is the installer/receipt version of the four-component package only
 
 artifact:
   filename: StudioZIOTempoDelay-v4.1.0-macOS-arm64.pkg

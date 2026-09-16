@@ -1,0 +1,76 @@
+# StudioZIO De-Esser 1.0.0 — canonical release-truth record, written 2026-09-16
+# from the immutable artifact and its release manifest (DeEsser-1.0.0-RELEASE-MANIFEST.json).
+# Not yet published: no GitHub release, tag, website or KVR action.
+product:
+  id: deesser
+  name: StudioZIO De-Esser
+  version: 1.0.0
+  release_tag: deesser-v1.0.0
+
+artifact:
+  filename: StudioZIO-De-Esser-1.0.0.pkg
+  sha256: 698a5c45dc530b97bd4fc3c9f6e401bf4cbb414a435ff1d4235f6afa66e661f2
+  byte_size: 14603727
+  status: CANONICAL
+
+formats:
+  au:
+    present: true
+    bundle: StudioZIO De-Esser.component
+    executable: Contents/MacOS/StudioZIO De-Esser
+    destination: /Library/Audio/Plug-Ins/Components
+    architectures:
+      - arm64
+      - x86_64
+    universal: true
+  vst3:
+    present: true
+    bundle: StudioZIO De-Esser.vst3
+    executable: Contents/MacOS/StudioZIO De-Esser
+    destination: /Library/Audio/Plug-Ins/VST3
+    architectures:
+      - arm64
+      - x86_64
+    universal: true
+  aax:
+    present: true
+    bundle: StudioZIO De-Esser.aaxplugin
+    executable: Contents/MacOS/StudioZIO De-Esser
+    destination: /Library/Application Support/Avid/Audio/Plug-Ins
+    architectures:
+      - arm64
+      - x86_64
+    universal: true
+  standalone:
+    present: true
+    bundle: StudioZIO De-Esser.app
+    executable: Contents/MacOS/StudioZIO De-Esser
+    destination: /Applications
+    architectures:
+      - arm64
+      - x86_64
+    universal: true
+
+architecture:
+  all_formats_identical: true
+  safe_product_wide_claim: Universal — Apple Silicon and Intel
+
+host_validation:
+  pro_tools:
+    validated: true
+    claim: AAX validated in Pro Tools (owner session recorded in the release manifest)
+
+signing:
+  package: Developer ID Installer signed and Apple notarized, stapled
+  au: Developer ID signed
+  vst3: Developer ID signed
+  aax: Developer ID signed and PACE signed (Signing Only; GUID 9F3F4450-B04D-11F1-8437-00505692AD3E)
+  standalone: Developer ID signed
+  notarization: true
+  notary_submission_id: dcddc8f3-c7cc-425c-a893-45c9bf1d5eac
+
+publication_status:
+  capability_gate_passed: true
+  source_surfaces_synchronized: false
+  live_surfaces_verified: false
+  third_party_verified: false

@@ -49,7 +49,7 @@ source_products:
     admitted: true
   - key: TempoDelay
     name: StudioZIO Tempo Delay
-    version: 4.1.0
+    version: 4.0.1 (installer/receipts 4.1.0)
     source_pkg: TempoDelay-4.1.0-clean-packaging-2026.09.16/StudioZIOTempoDelay-v4.1.0-macOS-arm64.pkg
     sha256: fa16f0c9f04f5f56e446ae06074a0f3b0a8e193fa21089e0bf92c486d197910d
     release_truth: tempo-delay-4.1.0-clean-packaging-2026.09.16.yaml
