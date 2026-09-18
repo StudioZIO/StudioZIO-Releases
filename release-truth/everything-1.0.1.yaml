@@ -1,0 +1,532 @@
+# StudioZIO Everything 1.0.1 — canonical release-truth record (2026-09-18).
+# Aggregate installer composed from the seven qualified canonical individual
+# installers; every component package lifted byte-for-byte; no product bundle
+# rebuilt, re-signed, PACE-signed or wrapped. Everything 1.0.0 stays historical
+# canonical evidence. Not published.
+product:
+  id: everything
+  name: StudioZIO Everything
+  version: 1.0.1
+  package_id: com.studiozio.everything.pkg
+  installer_title: StudioZIO Everything
+  release_tag: everything-v1.0.1
+previous_release:
+  manifest: everything-1.0.0.yaml
+  artifact_sha256: 0f148ecd72c03bc38de9f6129f375f253f5a814f5606b812ce6c4f45ad248bcb
+  status: HISTORICAL_CANONICAL_UNCHANGED
+change: 'Component patch update: StudioZIO Maximizer 1.0.2 -> 1.0.3 (Standalone microphone permission, Maximizer icon). Tempo
+  Delay default selection now follows the target Mac''s architecture.'
+source:
+  repository: StudioZIO/StudioZIO-Master-Plugin-Suite
+  branch: maximizer/1.0.3-hotfix
+  composition_commit: 2d751f8
+  audit_commit: 058d482
+artifact:
+  filename: StudioZIO-Everything-1.0.1.pkg
+  path: /Users/mert/StudioZIO-Verification/Canonical-Releases/Everything-1.0.1/StudioZIO-Everything-1.0.1.pkg
+  sha256: 45781858f38bca555b7e7056148e43b326ace0762f0332f3de55f20b833a7782
+  byte_size: 169208049
+  pre_notarization_sha256: ac5ad0d9964e35a008ef65950c168ca7e0eeb9a32c47096bea7066a4fa702c55
+  status: CANONICAL
+signing:
+  installer_identity: 'Developer ID Installer: MERT ERKAN (3734G7VLNA)'
+  pkgutil_check_signature: PASS
+  notarization:
+    submission_id: 1d4e63ca-804d-4b82-a667-282d7b3638f5
+    status: Accepted
+  stapled: true
+  gatekeeper: accepted (Notarized Developer ID)
+  product_binaries_resigned: false
+  pace:
+    bundle_pace_operation: false
+    wrap_guid_metadata_only: 96C51E90-B1AF-11F1-8437-00505692AD3E
+eula:
+  title: StudioZIO Everything End User License Agreement (EULA)
+  version_line: 'Version: 1.0.1'
+  source: Distribution/Everything/Legal/EULA-Everything-CANDIDATE.txt.in
+  eula_text_sha256: 5b25318ed8800abd97785b8ffa4c055cd95363fb2bf4caf9841d72f32e3a478d
+  license_panel_sha256: ee0ccf1bde2cec7eea226620b7ebeed388b98c3ad509e82c9031660b6c1b4fd3
+  owner_approved: true
+  note: Same owner-approved template as 1.0.0; only the version line differs.
+composition:
+  products: 7
+  formats_per_product: 4
+  components: 28
+  unchanged_from_1_0_0: 24
+  changed_from_1_0_0: 4
+  unexpected_component_drift: false
+  maximizer:
+    version: 1.0.3
+    source_sha256: d589be77a2d72355a86a2bd2b7d5ea70dcd9d2b5871ec61c6960e5754abecc50
+    release_truth: maximizer-1.0.3.yaml
+source_products:
+- product: StudioZIO Mastering Suite
+  version: 2.1.1
+  source_pkg: MasteringSuite-2.1.1/StudioZIO-Mastering-Suite-2.1.1.pkg
+  sha256: b054098c4f6565e5e469efd41554425d468830a001c9d4c531e72ab8c50f4cf1
+  release_truth: mastering-suite-2.1.1-install-fix-2026.09.11.yaml
+- product: StudioZIO Tempo Delay
+  version: 4.1.0
+  source_pkg: TempoDelay-4.1.0-clean-packaging-2026.09.16/StudioZIOTempoDelay-v4.1.0-macOS-arm64.pkg
+  sha256: fa16f0c9f04f5f56e446ae06074a0f3b0a8e193fa21089e0bf92c486d197910d
+  release_truth: tempo-delay-4.1.0-clean-packaging-2026.09.16.yaml
+- product: StudioZIO Mixrack
+  version: 1.0.0
+  source_pkg: MixRack-1.0.0/StudioZIO-Mixrack-1.0.0.pkg
+  sha256: 9452403bf1150bd4188cbfe550f1ad0840087c68fe0b56f5036f08e17b4a4fda
+  release_truth: mixrack-1.0.0.yaml
+- product: StudioZIO Inflator
+  version: 1.0.0
+  source_pkg: Inflator-1.0.0/StudioZIO-Inflator-1.0.0.pkg
+  sha256: c138a979cb80bd04b755ab4c308a1b0dc8ccad518d6483076e2b8a3ba05fabde
+  release_truth: inflator-1.0.0.yaml
+- product: StudioZIO Maximizer
+  version: 1.0.3
+  source_pkg: Maximizer-1.0.3/StudioZIO-Maximizer-1.0.3.pkg
+  sha256: d589be77a2d72355a86a2bd2b7d5ea70dcd9d2b5871ec61c6960e5754abecc50
+  release_truth: maximizer-1.0.3.yaml
+- product: StudioZIO Compressor
+  version: 1.0.0
+  source_pkg: Compressor-1.0.0-clean-packaging-2026.09.16/StudioZIO-Compressor-1.0.0.pkg
+  sha256: 96c9d4cccefc918ffef47b094464da901be742778b4fc6e97145ddcfa11d37bc
+  release_truth: compressor-1.0.0-clean-packaging-2026.09.16.yaml
+- product: StudioZIO De-Esser
+  version: 1.0.0
+  source_pkg: DeEsser-1.0.0/StudioZIO-De-Esser-1.0.0.pkg
+  sha256: 698a5c45dc530b97bd4fc3c9f6e401bf4cbb414a435ff1d4235f6afa66e661f2
+  release_truth: deesser-1.0.0.yaml (to be recorded at its individual public release)
+components:
+- product: StudioZIO Compressor
+  product_version: 1.0.0
+  format: AAX
+  component_id: com.studiozio.compressor.pkg.aax
+  component_version: 1.0.0
+  source_pkg: StudioZIO-Compressor-1.0.0.pkg
+  source_pkg_sha256: 96c9d4cccefc918ffef47b094464da901be742778b4fc6e97145ddcfa11d37bc
+  payload_sha256: 5e2ec1b4d76f862b5ab88b9c37298080a88d6d578181ace398b63e0ed6d04366
+  bom_sha256: 143cb7f1718ee51b7c4618485d5a2c831418a27c10e92f9c7dc4248b0e14b63f
+  packageinfo_sha256: 2a964a37e8a11e992950128418564cbb586f0d58337f3686a470ce642a98dbfb
+  architectures:
+  - arm64
+  - x86_64
+  changed_from_1_0_0: false
+- product: StudioZIO Compressor
+  product_version: 1.0.0
+  format: AU
+  component_id: com.studiozio.compressor.pkg.au
+  component_version: 1.0.0
+  source_pkg: StudioZIO-Compressor-1.0.0.pkg
+  source_pkg_sha256: 96c9d4cccefc918ffef47b094464da901be742778b4fc6e97145ddcfa11d37bc
+  payload_sha256: e8e80c67d986ec9b96239b004561545756c9fe8d7b7d312e024044da7a0b3b88
+  bom_sha256: 8a1c3e90a7a929bffce85081cd3760c4fd1fd4ac9cbde40794c023545c316332
+  packageinfo_sha256: d3eec7b40398bc4eca8d1a6bca95fee11d66528f5e5dc6084434176b63941b61
+  architectures:
+  - arm64
+  - x86_64
+  changed_from_1_0_0: false
+- product: StudioZIO Compressor
+  product_version: 1.0.0
+  format: Standalone
+  component_id: com.studiozio.compressor.pkg.standalone
+  component_version: 1.0.0
+  source_pkg: StudioZIO-Compressor-1.0.0.pkg
+  source_pkg_sha256: 96c9d4cccefc918ffef47b094464da901be742778b4fc6e97145ddcfa11d37bc
+  payload_sha256: 7a832376263d14d5ed2b668cde04863ca7c876a688b48bbf31e54a30532f1c68
+  bom_sha256: 926ee6242b1b3501499f9bdb92b8cb0de864182e114c5010cab0a160df5ff649
+  packageinfo_sha256: c089813feb1cba1ff656c8be5ae6bea8a93ddbb073c864475e6425c896850826
+  architectures:
+  - arm64
+  - x86_64
+  changed_from_1_0_0: false
+- product: StudioZIO Compressor
+  product_version: 1.0.0
+  format: VST3
+  component_id: com.studiozio.compressor.pkg.vst3
+  component_version: 1.0.0
+  source_pkg: StudioZIO-Compressor-1.0.0.pkg
+  source_pkg_sha256: 96c9d4cccefc918ffef47b094464da901be742778b4fc6e97145ddcfa11d37bc
+  payload_sha256: 6c54632ba1282aedfe37a62b838df16b97e05b4cd29541b1ccaae63d1edfc74a
+  bom_sha256: 60841ac68d62a1ecaa2f296aba684e5a0a0de618a00783933b65a1e4272d6d59
+  packageinfo_sha256: 2e6a79a97f8c856430f2ac1374d0e1544810629b8cbccec930c1e47af938313e
+  architectures:
+  - arm64
+  - x86_64
+  changed_from_1_0_0: false
+- product: StudioZIO De-Esser
+  product_version: 1.0.0
+  format: AAX
+  component_id: com.studiozio.deesser.pkg.aax
+  component_version: 1.0.0
+  source_pkg: StudioZIO-De-Esser-1.0.0.pkg
+  source_pkg_sha256: 698a5c45dc530b97bd4fc3c9f6e401bf4cbb414a435ff1d4235f6afa66e661f2
+  payload_sha256: 20fe36595adf6cf83b51157d65bf7519d8fd4bebec8c2e0923d995850996435e
+  bom_sha256: b13f2b1136ce73af2477dd5a2c5557020496bac6a32d33adf2753b35b525351e
+  packageinfo_sha256: 5471e8c353d2dcb4a7a38010142d2b63bd74e12215d6b4917d38609fc4d97105
+  architectures:
+  - arm64
+  - x86_64
+  changed_from_1_0_0: false
+- product: StudioZIO De-Esser
+  product_version: 1.0.0
+  format: AU
+  component_id: com.studiozio.deesser.pkg.au
+  component_version: 1.0.0
+  source_pkg: StudioZIO-De-Esser-1.0.0.pkg
+  source_pkg_sha256: 698a5c45dc530b97bd4fc3c9f6e401bf4cbb414a435ff1d4235f6afa66e661f2
+  payload_sha256: 7301eafe70962113f91a4cf3ede2f2b2c283c959740b5caf52b555cf79d95563
+  bom_sha256: 9bd26526d3b223d46fbc41744560f3e7ab13a3a8a5fe84f9f4d3c33b100d6a63
+  packageinfo_sha256: 6fc61ad760be610be0a27cea91ea8f7cadac5f0cf783e75f1a32f240a95b08e0
+  architectures:
+  - arm64
+  - x86_64
+  changed_from_1_0_0: false
+- product: StudioZIO De-Esser
+  product_version: 1.0.0
+  format: Standalone
+  component_id: com.studiozio.deesser.pkg.standalone
+  component_version: 1.0.0
+  source_pkg: StudioZIO-De-Esser-1.0.0.pkg
+  source_pkg_sha256: 698a5c45dc530b97bd4fc3c9f6e401bf4cbb414a435ff1d4235f6afa66e661f2
+  payload_sha256: c6882a4e18044e7171b123a299353812e82c7e4cf7b02a0a963e970796181c74
+  bom_sha256: 2366a40ca13b7e4b698003064c0facc62e214da0ea1f88f468018a69935a0395
+  packageinfo_sha256: 5acedffb5a54dcc9794c38ef2592bc695fc51a2627bb9569742b199c12963a60
+  architectures:
+  - arm64
+  - x86_64
+  changed_from_1_0_0: false
+- product: StudioZIO De-Esser
+  product_version: 1.0.0
+  format: VST3
+  component_id: com.studiozio.deesser.pkg.vst3
+  component_version: 1.0.0
+  source_pkg: StudioZIO-De-Esser-1.0.0.pkg
+  source_pkg_sha256: 698a5c45dc530b97bd4fc3c9f6e401bf4cbb414a435ff1d4235f6afa66e661f2
+  payload_sha256: ae6393e47d7ff5483f200652b0741b1de726576a6b61a3ec913b7191ebe8c0a8
+  bom_sha256: b8d269fd2d88059a035fc09bc56f355f563fa6ca4ccf03d8a50786c28738bbe2
+  packageinfo_sha256: b151ff46f60af10235c57b662a988632da086298a84d3406b50312afde64f14a
+  architectures:
+  - arm64
+  - x86_64
+  changed_from_1_0_0: false
+- product: StudioZIO Inflator
+  product_version: 1.0.0
+  format: AAX
+  component_id: com.studiozio.inflator.pkg.aax
+  component_version: 1.0.0
+  source_pkg: StudioZIO-Inflator-1.0.0.pkg
+  source_pkg_sha256: c138a979cb80bd04b755ab4c308a1b0dc8ccad518d6483076e2b8a3ba05fabde
+  payload_sha256: 4f363e3b4e54edb291c999d03c0aab3915bb6c8cb9712003e6a5a2e5b44d7d88
+  bom_sha256: b8888775d1f3903628b24f566c380e13b8e276b1c1952a1b233eb7d37b849edc
+  packageinfo_sha256: d116ff18a5fb7c36db122971527ac6c9a540a30a25ff050365a8c32842d1ef23
+  architectures:
+  - arm64
+  - x86_64
+  changed_from_1_0_0: false
+- product: StudioZIO Inflator
+  product_version: 1.0.0
+  format: AU
+  component_id: com.studiozio.inflator.pkg.au
+  component_version: 1.0.0
+  source_pkg: StudioZIO-Inflator-1.0.0.pkg
+  source_pkg_sha256: c138a979cb80bd04b755ab4c308a1b0dc8ccad518d6483076e2b8a3ba05fabde
+  payload_sha256: 45efc5f7d5b2d685971002ee9defde32137bb934a158c9658fbcee2e0b9c992c
+  bom_sha256: cb462444369b9ff82e2d5a12afda8a7bb62cc9c857c1ea8564619d41946ebe82
+  packageinfo_sha256: a3a787e25581f93e9e21cfc3087ef778693bf6a74c8fc143b3d9d9a552015c73
+  architectures:
+  - arm64
+  - x86_64
+  changed_from_1_0_0: false
+- product: StudioZIO Inflator
+  product_version: 1.0.0
+  format: Standalone
+  component_id: com.studiozio.inflator.pkg.standalone
+  component_version: 1.0.0
+  source_pkg: StudioZIO-Inflator-1.0.0.pkg
+  source_pkg_sha256: c138a979cb80bd04b755ab4c308a1b0dc8ccad518d6483076e2b8a3ba05fabde
+  payload_sha256: 40919bc0fc262a11b2b5481d77f1f48867d74e16a7904a76fc1053a8e21f7743
+  bom_sha256: b642e1871435f82d407a3f49eae3750997b046b6b75fa04ea70b386376e3fa1a
+  packageinfo_sha256: 0eab902a151dbbad524e1b74df6ab1f7357dc56d28185424ac25435d818fb02d
+  architectures:
+  - arm64
+  - x86_64
+  changed_from_1_0_0: false
+- product: StudioZIO Inflator
+  product_version: 1.0.0
+  format: VST3
+  component_id: com.studiozio.inflator.pkg.vst3
+  component_version: 1.0.0
+  source_pkg: StudioZIO-Inflator-1.0.0.pkg
+  source_pkg_sha256: c138a979cb80bd04b755ab4c308a1b0dc8ccad518d6483076e2b8a3ba05fabde
+  payload_sha256: 69510e19fa256dd06a0c09cba277b7f72a2ba6f239b9ac93bb8edafe8b6f1a30
+  bom_sha256: c3bdb8e17cbbd8152a53868339460bf8256e2cdd0cfde417082324f24d22fc09
+  packageinfo_sha256: 6f4886921dcaf491bc286486168d136dc3c3a5edae357094b63fc0600196dc6d
+  architectures:
+  - arm64
+  - x86_64
+  changed_from_1_0_0: false
+- product: StudioZIO Mastering Suite
+  product_version: 2.1.1
+  format: AAX
+  component_id: com.studiozio.masteringsuite.pkg.aax
+  component_version: 2.1.1
+  source_pkg: StudioZIO-Mastering-Suite-2.1.1.pkg
+  source_pkg_sha256: b054098c4f6565e5e469efd41554425d468830a001c9d4c531e72ab8c50f4cf1
+  payload_sha256: 7985fad82c9d10b60100584d5b066e26cf8a42d61193f87b1765b77c1fb5affb
+  bom_sha256: 6b56147f3adca403cf07082380b8bd6196e3c3f669bfdacc81067fb1193b8541
+  packageinfo_sha256: 6fe7206514c38a2c6fa34bb73220f8a326cc7eb9850db88a7856caf256135f77
+  architectures:
+  - arm64
+  - x86_64
+  changed_from_1_0_0: false
+- product: StudioZIO Mastering Suite
+  product_version: 2.1.1
+  format: AU
+  component_id: com.studiozio.masteringsuite.pkg.au
+  component_version: 2.1.1
+  source_pkg: StudioZIO-Mastering-Suite-2.1.1.pkg
+  source_pkg_sha256: b054098c4f6565e5e469efd41554425d468830a001c9d4c531e72ab8c50f4cf1
+  payload_sha256: bfab2fafe649a4b7df42f140025faadd0d8d4a2cabac32fe45ea4084208e2ee3
+  bom_sha256: 08c249238d7f26d7976397bfde2af71e17a0979a558058584a3df91609abb195
+  packageinfo_sha256: d42bb7d03e3be13202bf94554359e01a2d077149458898f4c35e5e9068c59cbc
+  architectures:
+  - arm64
+  - x86_64
+  changed_from_1_0_0: false
+- product: StudioZIO Mastering Suite
+  product_version: 2.1.1
+  format: Standalone
+  component_id: com.studiozio.masteringsuite.pkg.standalone
+  component_version: 2.1.1
+  source_pkg: StudioZIO-Mastering-Suite-2.1.1.pkg
+  source_pkg_sha256: b054098c4f6565e5e469efd41554425d468830a001c9d4c531e72ab8c50f4cf1
+  payload_sha256: c3104d424a42503cc146bb731c6dd9e1909291d0bb0ed02362534897faff294f
+  bom_sha256: 5f205484501df6b626698cb19ccdf5305b8d16fa494dd90ac206bbea588fb65e
+  packageinfo_sha256: 0b8525d4a5c698b81393965c5202b3ed428997b6abac474bc2a1bb6edfdec9ee
+  architectures:
+  - arm64
+  - x86_64
+  changed_from_1_0_0: false
+- product: StudioZIO Mastering Suite
+  product_version: 2.1.1
+  format: VST3
+  component_id: com.studiozio.masteringsuite.pkg.vst3
+  component_version: 2.1.1
+  source_pkg: StudioZIO-Mastering-Suite-2.1.1.pkg
+  source_pkg_sha256: b054098c4f6565e5e469efd41554425d468830a001c9d4c531e72ab8c50f4cf1
+  payload_sha256: 452d72cb38e4a4cf0165abe25c8a0c386bf789e62ac862214316756721f91046
+  bom_sha256: f843b1b632e1ff4677334f43d01e909deaaef6c3f1b5804c619417c55c07c73a
+  packageinfo_sha256: 8571f5f4c2beacc372ac64744f94626b4567ed7dd20f07a5cf1f88e8761b2a0e
+  architectures:
+  - arm64
+  - x86_64
+  changed_from_1_0_0: false
+- product: StudioZIO Maximizer
+  product_version: 1.0.3
+  format: AAX
+  component_id: com.studiozio.maximizer.pkg.aax
+  component_version: 1.0.3
+  source_pkg: StudioZIO-Maximizer-1.0.3.pkg
+  source_pkg_sha256: d589be77a2d72355a86a2bd2b7d5ea70dcd9d2b5871ec61c6960e5754abecc50
+  payload_sha256: 5cbbc5ead129db7ec38cad818373b03c33fb4642e8624c01e3bae28bf85221cf
+  bom_sha256: 254dd10d9dbf666e780db9650598d22d378d77d70cc7006a254642774ff8f5ee
+  packageinfo_sha256: aa83858de412f24d0bbb0ea20d456ec10d71ada492709f6c2d8845f0f292175d
+  architectures:
+  - arm64
+  - x86_64
+  changed_from_1_0_0: true
+  reason: Maximizer 1.0.3 hotfix
+- product: StudioZIO Maximizer
+  product_version: 1.0.3
+  format: AU
+  component_id: com.studiozio.maximizer.pkg.au
+  component_version: 1.0.3
+  source_pkg: StudioZIO-Maximizer-1.0.3.pkg
+  source_pkg_sha256: d589be77a2d72355a86a2bd2b7d5ea70dcd9d2b5871ec61c6960e5754abecc50
+  payload_sha256: af3d636ba578c3663b4fa6b2caa07b56a2b663bfc3d43ae319758a2a8aed4642
+  bom_sha256: 19666f935279c5fad4a7d06cb909fd60074dcee1ba96a05d537cbde35bd5d557
+  packageinfo_sha256: 8c8940e0c12341ef903a627365d7fd5566b7797881f3e3c57d12d5ee1ceea938
+  architectures:
+  - arm64
+  - x86_64
+  changed_from_1_0_0: true
+  reason: Maximizer 1.0.3 hotfix
+- product: StudioZIO Maximizer
+  product_version: 1.0.3
+  format: Standalone
+  component_id: com.studiozio.maximizer.pkg.standalone
+  component_version: 1.0.3
+  source_pkg: StudioZIO-Maximizer-1.0.3.pkg
+  source_pkg_sha256: d589be77a2d72355a86a2bd2b7d5ea70dcd9d2b5871ec61c6960e5754abecc50
+  payload_sha256: 8bd9036a5366b645c94ec08c1796f74f079e73f68ceb5d38329b6534c859d87f
+  bom_sha256: 5f20a4e27bb468be69ce92da90bd2d58d1101c6d479f60ede4bb56c0bf0cd228
+  packageinfo_sha256: 0c85540a0a0434f24e45cd8803b199531970b5b96295f00241f24a51e871fa0b
+  architectures:
+  - arm64
+  - x86_64
+  changed_from_1_0_0: true
+  reason: Maximizer 1.0.3 hotfix
+- product: StudioZIO Maximizer
+  product_version: 1.0.3
+  format: VST3
+  component_id: com.studiozio.maximizer.pkg.vst3
+  component_version: 1.0.3
+  source_pkg: StudioZIO-Maximizer-1.0.3.pkg
+  source_pkg_sha256: d589be77a2d72355a86a2bd2b7d5ea70dcd9d2b5871ec61c6960e5754abecc50
+  payload_sha256: a2c2a74b556f20b9b6e36435ea212aba69011018b441641bd1ec31deb5c2df4a
+  bom_sha256: 41c79f6ca07f3abd6030a7419ebd2c334d1f89c7979111a82133cd9e4103083b
+  packageinfo_sha256: 27812211e4f77afae1f57b960ea7860780fd5fb63d29f173b283f010f28e3720
+  architectures:
+  - arm64
+  - x86_64
+  changed_from_1_0_0: true
+  reason: Maximizer 1.0.3 hotfix
+- product: StudioZIO Mixrack
+  product_version: 1.0.0
+  format: AAX
+  component_id: com.studiozio.ziomixrack.pkg.aax
+  component_version: 1.0.0
+  source_pkg: StudioZIO-Mixrack-1.0.0.pkg
+  source_pkg_sha256: 9452403bf1150bd4188cbfe550f1ad0840087c68fe0b56f5036f08e17b4a4fda
+  payload_sha256: bef15cd1078f6c08cfbd2deb27705e1d88e2f477223afeaa43c831a42c88729a
+  bom_sha256: 36f6c4f10f5aca4d33c78425c6965cf8dfb2c9a3161bda2bb6d6919d095483da
+  packageinfo_sha256: fe5b68bf318a21316b0d4d0a1f400eed8ff039e0f232f2256643c98cf9faada7
+  architectures:
+  - arm64
+  - x86_64
+  changed_from_1_0_0: false
+- product: StudioZIO Mixrack
+  product_version: 1.0.0
+  format: AU
+  component_id: com.studiozio.ziomixrack.pkg.au
+  component_version: 1.0.0
+  source_pkg: StudioZIO-Mixrack-1.0.0.pkg
+  source_pkg_sha256: 9452403bf1150bd4188cbfe550f1ad0840087c68fe0b56f5036f08e17b4a4fda
+  payload_sha256: 19cfcf2ec72642fb48d433212c6822b1a2fd923385f0f673023d30e47984397e
+  bom_sha256: 89e75c81ecda7ad566f3ad2103a19f30594342c964abd6bc2087024255454571
+  packageinfo_sha256: c47615491534d44846492ac255bd63ed53923f39439185ceb70fd4eaca74e878
+  architectures:
+  - arm64
+  - x86_64
+  changed_from_1_0_0: false
+- product: StudioZIO Mixrack
+  product_version: 1.0.0
+  format: Standalone
+  component_id: com.studiozio.ziomixrack.pkg.standalone
+  component_version: 1.0.0
+  source_pkg: StudioZIO-Mixrack-1.0.0.pkg
+  source_pkg_sha256: 9452403bf1150bd4188cbfe550f1ad0840087c68fe0b56f5036f08e17b4a4fda
+  payload_sha256: 74d08b33e43e7bdd76f7d7f3839f3ff85d646b9946c24051bb443031ae18d7d3
+  bom_sha256: e8406c83b5e419759bdf2578ea2a563ec26b56212d61dca4925c00436d4490ca
+  packageinfo_sha256: c01dc002b1556ef9147e36b06d64d2e0babe8521922bebd46df66e3cf777c6c2
+  architectures:
+  - arm64
+  - x86_64
+  changed_from_1_0_0: false
+- product: StudioZIO Mixrack
+  product_version: 1.0.0
+  format: VST3
+  component_id: com.studiozio.ziomixrack.pkg.vst3
+  component_version: 1.0.0
+  source_pkg: StudioZIO-Mixrack-1.0.0.pkg
+  source_pkg_sha256: 9452403bf1150bd4188cbfe550f1ad0840087c68fe0b56f5036f08e17b4a4fda
+  payload_sha256: 27054fcd64310e9e36c3857c9c3f792bf896213979562f710374df0041245228
+  bom_sha256: e0bc4504545413eec5d8ffa4094b81f11a54cebe0ea1307f1adce4392a868f51
+  packageinfo_sha256: 83c05885cd5e3ae992fe8ecc6be8f8c845f25222a39b98896270eb4e6eedae94
+  architectures:
+  - arm64
+  - x86_64
+  changed_from_1_0_0: false
+- product: StudioZIO Tempo Delay
+  product_version: 4.1.0
+  format: AAX
+  component_id: com.StudioZIO.StudioZIOTempoDelay.aax.pkg
+  component_version: 4.1.0
+  source_pkg: StudioZIOTempoDelay-v4.1.0-macOS-arm64.pkg
+  source_pkg_sha256: fa16f0c9f04f5f56e446ae06074a0f3b0a8e193fa21089e0bf92c486d197910d
+  payload_sha256: a05b95136bd5d59d25863e5ebe7816d81ead880ab8dffcea020e973b9bd9ba71
+  bom_sha256: ff5aefa24bce23e0ad2bfe38f27ac8efda37825ea64ca156d174fb2a0237117a
+  packageinfo_sha256: 2e90bb08744d56754e6f45617073dccc35f04495784c6b59ba9703a056694ccb
+  architectures: &id001
+  - arm64
+  changed_from_1_0_0: false
+- product: StudioZIO Tempo Delay
+  product_version: 4.1.0
+  format: AU
+  component_id: com.StudioZIO.StudioZIOTempoDelay.component.pkg
+  component_version: 4.1.0
+  source_pkg: StudioZIOTempoDelay-v4.1.0-macOS-arm64.pkg
+  source_pkg_sha256: fa16f0c9f04f5f56e446ae06074a0f3b0a8e193fa21089e0bf92c486d197910d
+  payload_sha256: 682d7f527ae1e5ec502a1b72f47cba846206cb7a3403d2ddc904d7f7c3daa729
+  bom_sha256: e11ea77a37b6b337a31b4e0b4bf0e5259395af6cadb81fd66d54f0838bf47a88
+  packageinfo_sha256: 2a68dfe073d4b0db6d2893a92bebfb6850f460ca961c06e8bee8003dca887099
+  architectures: *id001
+  changed_from_1_0_0: false
+- product: StudioZIO Tempo Delay
+  product_version: 4.1.0
+  format: Standalone
+  component_id: com.StudioZIO.StudioZIOTempoDelay.app.pkg
+  component_version: 4.1.0
+  source_pkg: StudioZIOTempoDelay-v4.1.0-macOS-arm64.pkg
+  source_pkg_sha256: fa16f0c9f04f5f56e446ae06074a0f3b0a8e193fa21089e0bf92c486d197910d
+  payload_sha256: b2633b95f29f9b1a0d001444384cbf481717fa3a937dcdd5084eddf27eebcba0
+  bom_sha256: 008495cfa6736206f22000b90fdebe12e5af03a3071ebd531cdd54e6317cf276
+  packageinfo_sha256: c4c7d5f6cd47192eb873f68cb9a55e9d59e5aa033cb9af461943facef2852a9b
+  architectures: *id001
+  changed_from_1_0_0: false
+- product: StudioZIO Tempo Delay
+  product_version: 4.1.0
+  format: VST3
+  component_id: com.StudioZIO.StudioZIOTempoDelay.vst3.pkg
+  component_version: 4.1.0
+  source_pkg: StudioZIOTempoDelay-v4.1.0-macOS-arm64.pkg
+  source_pkg_sha256: fa16f0c9f04f5f56e446ae06074a0f3b0a8e193fa21089e0bf92c486d197910d
+  payload_sha256: f8f66650e691a9559e66452ff69273377e1e2f884da1fcc73bf562d03618e979
+  bom_sha256: 7f95c249dba0237991c5637c5b998feffda4fafb9928774d0e4deaceb631cd8f
+  packageinfo_sha256: 6fcd28ff5de352d038593fd6d30575d0a08124883a542964185ef524069ebd69
+  architectures: *id001
+  changed_from_1_0_0: false
+architecture:
+  safe_product_wide_claim: Apple Silicon; Intel supported by every included product except Tempo Delay (arm64 only)
+tempo_delay_installer_policy:
+  binary_architecture: arm64-only
+  rule: choice start_selected and start_enabled = system.sysctl('hw.optional.arm64') == 1, evaluated by the installer on the
+    target Mac
+  arm64_default_selected: true
+  intel_default_selected: false
+  intel_selectable: false
+  user_visible_note: Tempo Delay 4.0.1 requires Apple Silicon.
+  verification: STATIC_DISTRIBUTION_LOGIC + SIMULATED_INSTALLER_EVALUATION (arm64 evaluated by installer -showChoicesXML on
+    this Mac; Intel by the extracted function with sysctl mocked absent/null/0); no physical Intel hardware
+  binary_changed: false
+  open_note: Tempo Delay also needs macOS 12.0; on macOS 11 Apple Silicon it is still selected by default (unchanged from
+    1.0.0, owner decision 2026-09-16).
+payload_metadata:
+  appledouble: 0
+  ds_store: 0
+  resource_forks: 0
+qualification:
+  install:
+    type: reinstall over an existing full StudioZIO install on the build Mac (not a clean machine)
+    result: PASS
+    components_present_valid: 28/28
+  maximizer_in_everything:
+    bundle_trees_match_maximizer_1_0_3_release_truth: 4/4
+    standalone_microphone_usage_description: true
+    standalone_audio_input_entitlement: true
+    clipper: 0
+    auval: PASS
+    pluginval_strictness_10:
+      au: PASS
+      vst3: PASS
+  au_host_discovery: auval -v PASS for all 7 StudioZIO AUs (auval -a enumeration crashes on a third-party plug-in; not a StudioZIO
+    result)
+  reaper: NOT_RERUN (Maximizer bundles byte-identical to the REAPER-qualified 1.0.3 release)
+  logic: NOT_RUN_OWNER_INTERACTION_REQUIRED
+  pro_tools: NOT_RUN
+  user_domain_duplicates: 0 colliding; 6 unrelated user-domain dev bundles present (Audio Restoration Suite, Multiband Compressor,
+    Pro Limiter), left in place
+publication_status:
+  capability_gate_passed: true
+  source_surfaces_synchronized: false
+  live_surfaces_verified: false
+  third_party_verified: false
