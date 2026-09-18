@@ -8,20 +8,21 @@ Where stated for an individual release, macOS installers are Developer ID signed
 
 ## Current releases
 
-### StudioZIO Everything 1.0.0
+### StudioZIO Everything 1.0.2
 
-- Platform: macOS 11.0 or later (Tempo Delay requires macOS 12.0 or later)
+- Platform: macOS 11.0 or later (Tempo Delay requires Apple Silicon and macOS 12.0 or later)
 - Architecture: Universal — Apple Silicon and Intel, except Tempo Delay, which is Apple Silicon only
 - Formats: AU / VST3 / AAX / Standalone for every included product
-- Installer: [`StudioZIO-Everything-1.0.0.pkg`](https://github.com/StudioZIO/StudioZIO-Releases/releases/download/everything-v1.0.0/StudioZIO-Everything-1.0.0.pkg)
-- SHA256: `0f148ecd72c03bc38de9f6129f375f253f5a814f5606b812ce6c4f45ad248bcb`
-- Release: [`everything-v1.0.0`](https://github.com/StudioZIO/StudioZIO-Releases/releases/tag/everything-v1.0.0)
-- Release truth: [`release-truth/everything-1.0.0.yaml`](https://github.com/StudioZIO/StudioZIO-Releases/blob/main/release-truth/everything-1.0.0.yaml)
+- Installer: [`StudioZIO-Everything-1.0.2.pkg`](https://github.com/StudioZIO/StudioZIO-Releases/releases/download/everything-v1.0.2/StudioZIO-Everything-1.0.2.pkg)
+- SHA256: `9a51e7768f5bc8530c368b98bc79811144def1dfdcbb3f94143e1cbc13a43952`
+- Release: [`everything-v1.0.2`](https://github.com/StudioZIO/StudioZIO-Releases/releases/tag/everything-v1.0.2)
+- Release truth: [`release-truth/everything-1.0.2.yaml`](https://github.com/StudioZIO/StudioZIO-Releases/blob/main/release-truth/everything-1.0.2.yaml)
 - Status: Developer ID signed, Apple notarized and stapled
 
-One installer for all seven StudioZIO products: Mastering Suite 2.1.1, Tempo Delay 4.0.1, MixRack 1.0.0, Inflator 1.0.0, Maximizer 1.0.2, Compressor 1.0.0 and De-Esser 1.0.0. Every component package is the qualified individual installer's, byte for byte. Products are selectable in the installer's Customize panel; all seven are selected by default.
+One installer for all seven StudioZIO products: Mastering Suite 2.1.1, Tempo Delay 4.0.1, MixRack 1.0.0, Inflator 1.0.0, Maximizer 1.0.3, Compressor 1.0.0 and De-Esser 1.0.0. Every component package is the qualified individual installer's, byte for byte. Products are selectable in the installer's Customize panel and selected by default; on Intel Macs and on macOS 11 the installer disables Tempo Delay automatically, and the other six products install and run.
 
-**Intel Macs and macOS 11:** the installer runs on Intel Macs and on macOS 11, but the Tempo Delay it contains is Apple Silicon only and needs macOS 12. On those Macs, deselect Tempo Delay in the Customize panel; if it is installed there it will not load in any host. The other six products install and run.
+**Earlier releases:**
+- [`everything-v1.0.0`](https://github.com/StudioZIO/StudioZIO-Releases/releases/tag/everything-v1.0.0) (`StudioZIO-Everything-1.0.0.pkg`, SHA-256 `0f148ecd...`) remains available. It includes Maximizer 1.0.2; on Intel Macs and macOS 11, deselect Tempo Delay in its Customize panel.
 
 ### StudioZIO De-Esser 1.0.0
 
@@ -73,20 +74,21 @@ unchanged.
 - The `flicker-hold` release (`StudioZIO-Mastering-Suite-2.1.1.pkg`, SHA-256 `2345deeb...`) published on 8/9 September remains available.
 - The `signed` release (`StudioZIO-Mastering-Suite-2.1.1.pkg`, SHA-256 `68e7abb8...`) published on 7 September remains available.
 
-### StudioZIO Maximizer 1.0.2
+### StudioZIO Maximizer 1.0.3
 
 - Platform: macOS 11.0 or later
 - Architecture: Universal — Apple Silicon and Intel
 - Formats: AU / VST3 / AAX / Standalone
-- Installer: [`StudioZIO-Maximizer-1.0.2.pkg`](https://github.com/StudioZIO/StudioZIO-Releases/releases/download/maximizer-v1.0.2-clean-packaging-2026.09.16/StudioZIO-Maximizer-1.0.2.pkg)
-- SHA256: `69510b08a118aece2f8e33feb0d10d13b45458864d5696c49d897876860eedfe`
-- Release: [`maximizer-v1.0.2-clean-packaging-2026.09.16`](https://github.com/StudioZIO/StudioZIO-Releases/releases/tag/maximizer-v1.0.2-clean-packaging-2026.09.16)
-- Release truth: [`release-truth/maximizer-1.0.2-clean-packaging-2026.09.16.yaml`](https://github.com/StudioZIO/StudioZIO-Releases/blob/main/release-truth/maximizer-1.0.2-clean-packaging-2026.09.16.yaml)
+- Installer: [`StudioZIO-Maximizer-1.0.3.pkg`](https://github.com/StudioZIO/StudioZIO-Releases/releases/download/maximizer-v1.0.3/StudioZIO-Maximizer-1.0.3.pkg)
+- SHA256: `d589be77a2d72355a86a2bd2b7d5ea70dcd9d2b5871ec61c6960e5754abecc50`
+- Release: [`maximizer-v1.0.3`](https://github.com/StudioZIO/StudioZIO-Releases/releases/tag/maximizer-v1.0.3)
+- Release truth: [`release-truth/maximizer-1.0.3.yaml`](https://github.com/StudioZIO/StudioZIO-Releases/blob/main/release-truth/maximizer-1.0.3.yaml)
 - Status: Developer ID signed, Apple notarized and stapled
 
-Same 1.0.2 plug-in binaries as the first 1.0.2 release, repackaged around the unchanged signed bundles with clean payload metadata.
+Fixes Standalone microphone/live-input permission on macOS; the Standalone now uses the StudioZIO Maximizer name and icon. No DSP, sound, parameter or GUI design changes.
 
-**Historical 1.0.2 release:**
+**Earlier 1.0.2 releases:**
+- [`maximizer-v1.0.2-clean-packaging-2026.09.16`](https://github.com/StudioZIO/StudioZIO-Releases/releases/tag/maximizer-v1.0.2-clean-packaging-2026.09.16) (`StudioZIO-Maximizer-1.0.2.pkg`, SHA-256 `69510b08...`) remains available. Its Standalone cannot open audio input.
 - [`maximizer-v1.0.2`](https://github.com/StudioZIO/StudioZIO-Releases/releases/tag/maximizer-v1.0.2) (`StudioZIO-Maximizer-1.0.2.pkg`, SHA-256 `673da7c7...`) remains available. AppleDouble metadata records in its payload; superseded packaging.
 
 ### StudioZIO Inflator 1.0.0
