@@ -1,0 +1,159 @@
+# StudioZIO Maximizer 1.0.3 — Standalone microphone-permission and branding
+# hotfix. Built, signed, PACE-wrapped and packaged by the full canonical
+# pipeline (Distribution/Maximizer.cmake, SIGNED mode) from a clean
+# Terminal.app process. 1.0.0-1.0.2 bundles were hand-assembled and never
+# passed SignBundles, so the hardened-runtime Standalone shipped without
+# NSMicrophoneUsageDescription and without the audio-input entitlement and
+# could not open live input (clean QA, StudioZIOQA, macOS 26.5.2).
+# 1.0.2 (69510b08...eedfe, maximizer-1.0.2-clean-packaging-2026.09.16.yaml)
+# remains historical canonical evidence and is not modified.
+# Not published: no GitHub release, tag, website or KVR action.
+previous_release:
+  manifest: maximizer-1.0.2-clean-packaging-2026.09.16.yaml
+  artifact_sha256: 69510b08a118aece2f8e33feb0d10d13b45458864d5696c49d897876860eedfe
+  status: HISTORICAL_CANONICAL_UNCHANGED
+
+product:
+  id: maximizer
+  name: StudioZIO Maximizer
+  version: 1.0.3
+  release_tag: maximizer-v1.0.3
+
+source:
+  repository: StudioZIO/StudioZIO-Master-Plugin-Suite
+  branch: maximizer/1.0.3-hotfix
+  commit: 03d930a259fcafd0c96a253029a9b336bafdef1c
+  dsp_changed: false
+  gui_design_changed: false
+  note: >-
+    Source/Products/Maximizer, Source/Core and Source/Ui are unchanged since
+    the 1.0.2 source commit 152712a. Shared Source/UI popup-menu styling
+    changed after 1.0.2 (Compressor integration) is compiled in but not
+    reachable from the Maximizer editor, which has no popup or choice control.
+
+artifact:
+  filename: StudioZIO-Maximizer-1.0.3.pkg
+  canonical_path: ~/StudioZIO-Verification/Canonical-Releases/Maximizer-1.0.3/StudioZIO-Maximizer-1.0.3.pkg
+  sha256: d589be77a2d72355a86a2bd2b7d5ea70dcd9d2b5871ec61c6960e5754abecc50
+  byte_size: 27109849
+  package_identifier: com.studiozio.maximizer.pkg
+  status: CANONICAL
+
+components:
+  standalone:
+    receipt: com.studiozio.maximizer.pkg.standalone
+    version: 1.0.3
+    tree_sha256: e2b2d7648dd9abf68eeb010746de31e57a284aa8efadf029f56d95e8b5cd9fbd
+    executable_sha256: 49c6d9f95df7813ed5f194f70d58888444a7bea2069f6180a8012d9a14d7de67
+  au:
+    receipt: com.studiozio.maximizer.pkg.au
+    version: 1.0.3
+    tree_sha256: 9a6a1c9fd18049404671947b29a0c4a23d8fe546c83c3049247f0860aa26bc4d
+    executable_sha256: f34866ce2e1f339865f748186712a9c6c03bdeb79de51ac7eb0800f4bf584a5a
+  vst3:
+    receipt: com.studiozio.maximizer.pkg.vst3
+    version: 1.0.3
+    tree_sha256: 7698f58473b5aeba8f538f9eb64fb4594cbdc0bb6cb6a50311b150ea4adce8d5
+    executable_sha256: 4b206300b2b784555c5b4a5e41e4098542b5cafb885dc6f0793d74e7c0366df4
+  aax:
+    receipt: com.studiozio.maximizer.pkg.aax
+    version: 1.0.3
+    tree_sha256: b119a437503f4a1d7f013a52eb1de352a8970b6204fea9cb65b507fec5c250cc
+    executable_sha256: ead50a5771d0666537608285c06de2657f677d5c21155532f6ef237a64411618
+
+formats:
+  au:
+    present: true
+    bundle: StudioZIO Maximizer.component
+    destination: /Library/Audio/Plug-Ins/Components
+    architectures: [arm64, x86_64]
+    universal: true
+  vst3:
+    present: true
+    bundle: StudioZIO Maximizer.vst3
+    destination: /Library/Audio/Plug-Ins/VST3
+    architectures: [arm64, x86_64]
+    universal: true
+  aax:
+    present: true
+    bundle: StudioZIO Maximizer.aaxplugin
+    destination: /Library/Application Support/Avid/Audio/Plug-Ins
+    architectures: [arm64, x86_64]
+    universal: true
+  standalone:
+    present: true
+    bundle: StudioZIO Maximizer.app
+    destination: /Applications
+    architectures: [arm64, x86_64]
+    universal: true
+
+architecture:
+  all_formats_identical: true
+  safe_product_wide_claim: Universal — Apple Silicon and Intel
+
+standalone:
+  bundle_identifier: com.studiozio.maximizer
+  cfbundle_name: StudioZIO Maximizer
+  cfbundle_display_name: StudioZIO Maximizer
+  cfbundle_executable: StudioZIO Maximizer
+  icon: StudioZIO-Maximizer.icns (owner-approved Candidate B, 2026-09-18; icns sha256 0363034fa79c6f2b85cfc07a37be78ffd8b7c29debf36f1241634a33d8a04a06)
+  microphone_usage_description: StudioZIO Maximizer needs microphone access to process live audio input in the standalone application.
+  entitlements: [com.apple.security.device.audio-input]
+  hardened_runtime: true
+  user_visible_clipper_count: 0
+
+vst3_parameters:
+  host_names: [Input Gain, Ceiling, Bypass]
+  bypass_rename_to_engaged: NOT_APPLIED
+  reason: >-
+    "Bypass" is the processor bypass parameter (id "bypass", JUCE
+    getBypassParameter, VST3 kIsBypass, 1 = bypassed) created by the shared
+    single-module core; the GUI "Engaged" switch is an inverted view of it.
+    Renaming would mislabel the value and inverting it would break saved
+    automation. Unchanged from 1.0.2.
+
+signing:
+  package: Developer ID Installer signed, Apple notarized, stapled
+  au: Developer ID signed, hardened runtime
+  vst3: Developer ID signed, hardened runtime
+  standalone: Developer ID signed, hardened runtime, audio-input entitlement
+  aax: Developer ID signed by PACE wraptool (Wrap GUID C24B3EC0-AF7D-11F1-8437-00505692AD3E), __Pace_Eden.bundle present
+  aax_hardened_runtime: ABSENT_AS_PACE_APPLIED (CodeDirectory flags 0x0, unchanged from 1.0.2; no local Avid/PACE evidence requires a change)
+  notarization_submission: ba29b27f-8370-42f6-9d3e-9c5312bf918f
+  notarization_status: Accepted
+  stapled: true
+  gatekeeper: accepted (Notarized Developer ID)
+
+payload_metadata:
+  appledouble_records: 0
+  provenance_xattrs: 0
+  clean_process_lineage: bash < zsh < login < Terminal < launchd
+
+validation:
+  auval: AU VALIDATION SUCCEEDED (aufx Maxm Szio, 1.0.3 / 0x10003)
+  vst3_validator_standard: 47 passed, 0 failed (Steinberg 3.8.1 build 84)
+  vst3_validator_extensive: 537 passed, 0 failed
+  pluginval: strictness 10 PASS for AU and VST3 (pluginval 1.0.4)
+  qualification_harness: 10/10 (parity, TP oracle, breakability, strict ceiling, automation, meter truth, RT allocation, RT CPU, bypass, product tests)
+  reaper:
+    version: 7.78 macOS arm64
+    result: PASS
+    parameters: Input Gain / Ceiling / Bypass
+    latency_samples: {44100: 323, 48000: 328}
+    bypass_settled_bit_identical: {44100: true, 48000: true}
+    ceiling_held: true
+    state_restore: PASS
+    editor_open_close: PASS
+  standalone_microphone:
+    result: PASS
+    account: StudioZIOQA (standard, non-admin)
+    evidence: owner-reported; result file /Users/StudioZIOQA/Desktop/Maximizer-1.0.3-StandaloneQA.txt
+  logic: NOT_RUN_OWNER_INTERACTION_REQUIRED
+  pro_tools: NOT_RUN (AAX signing, PACE marker and architectures verified statically)
+  upgrade_1_0_2_to_1_0_3: PASS (receipts 1.0.2 -> 1.0.3, installed bundles byte-identical to the signed stage, no duplicates)
+
+publication_status:
+  capability_gate_passed: true
+  source_surfaces_synchronized: false
+  live_surfaces_verified: false
+  third_party_verified: false
