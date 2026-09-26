@@ -13,7 +13,7 @@
 # 4.1.0 was not produced from a single build: its signed bundles were reused
 # from the 4.0.1-AAX package and its source root was assembled outside the
 # repository (StudioZIO-Verification/Everything-Phase1/tempodelay/lift-job.sh).
-# Published on its own on 2026-09-26 (GitHub release tempo-delay-v4.0.3);
+# Published 2026-09-26 (GitHub release tempo-delay-v4.0.3);
 # StudioZIO Everything 1.0.3 is published the same day.
 supersedes:
   manifest: tempo-delay-4.1.0-clean-packaging-2026.09.16.yaml
