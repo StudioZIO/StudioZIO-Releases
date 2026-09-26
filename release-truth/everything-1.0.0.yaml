@@ -1,7 +1,26 @@
+# Read the superseded block before treating anything below as current truth.
+superseded:
+  by_release_tag: everything-v1.0.3
+  by_manifest: everything-1.0.3.yaml
+  superseded_on: 2026-09-26
+  earlier_superseded_by: everything-v1.0.2 (everything-1.0.2.yaml) on 2026-09-18
+  status: SUPERSEDED_ARTIFACT
+  published_on: 2026-09-16
+  published_as: everything-v1.0.0
+  install_status: installs_correctly
+  do_not_install: false
+  reason: >-
+    Published 2026-09-16 as everything-v1.0.0. It contains Maximizer 1.0.2,
+    whose Standalone cannot open audio input, and the 4.0.1 Tempo Delay
+    Standalone without microphone permission. Superseded by Everything 1.0.2
+    on 2026-09-18 and by Everything 1.0.3 on 2026-09-26. The asset stays
+    downloadable so that existing links keep working.
 # StudioZIO Everything 1.0.0 — canonical release-truth record (2026-09-16).
 # Aggregate installer composed from the seven qualified canonical individual
 # installers; every component package lifted byte-for-byte; no product bundle
-# rebuilt, re-signed, PACE-signed or wrapped. Not published.
+# rebuilt, re-signed, PACE-signed or wrapped. Published 2026-09-16 as GitHub
+# release everything-v1.0.0; superseded by 1.0.2 on 2026-09-18 and by 1.0.3 on
+# 2026-09-26.
 product:
   id: everything
   name: StudioZIO Everything
@@ -477,7 +496,8 @@ cross_product_regression:
   no_stale_product_replacement: PASS
   no_wrong_identity: PASS
 publication_status:
-  public_release_performed: false
-  website_updated: false
-  kvr_updated: false
-  github_release: false
+  capability_gate_passed: true
+  source_surfaces_synchronized: false
+  live_surfaces_verified: false
+  third_party_verified: false
+  note: GitHub release everything-v1.0.0 published 2026-09-16 (the earlier fields public_release_performed/github_release false were wrong); the hub listed Everything as Coming soon without a download and there was no KVR listing; superseded

@@ -1,57 +1,59 @@
-# Read the superseded block before treating anything below as current truth.
-superseded:
-  by_release_tag: everything-v1.0.3
-  by_manifest: everything-1.0.3.yaml
-  superseded_on: 2026-09-26
-  status: SUPERSEDED_ARTIFACT
-  published_on: 2026-09-18
-  published_as: everything-v1.0.2
-  install_status: installs_correctly
-  do_not_install: false
-  reason: >-
-    Published 2026-09-18 as everything-v1.0.2 (GitHub Latest until
-    2026-09-26); superseded by Everything 1.0.3 on 2026-09-26. Its Tempo Delay
-    is the 4.0.1 build, whose Standalone has no microphone usage text and no
-    audio-input entitlement, so macOS denies live input. The asset stays
-    downloadable so that existing links keep working.
-# StudioZIO Everything 1.0.2 — canonical release-truth record (2026-09-18).
+# StudioZIO Everything 1.0.3 — canonical release-truth record (2026-09-26).
 # Aggregate installer composed from the seven qualified canonical individual
-# installers; the 28 component packages are identical to Everything 1.0.1; only
-# the Tempo Delay installer rule changed (Apple Silicon AND macOS 12). No product
-# bundle rebuilt, re-signed, PACE-signed or wrapped.
+# installers by the canonical release driver from a clean process. Tempo Delay
+# 4.1.0 -> 4.0.3 (Standalone microphone permission); the other 24 component
+# packages are byte-identical to Everything 1.0.2. No product bundle rebuilt,
+# re-signed, PACE-signed or wrapped. Not published.
 product:
   id: everything
   name: StudioZIO Everything
-  version: 1.0.2
+  version: 1.0.3
   package_id: com.studiozio.everything.pkg
   installer_title: StudioZIO Everything
-  release_tag: everything-v1.0.2
+  release_tag: everything-v1.0.3
 previous_releases:
+- manifest: everything-1.0.2.yaml
+  artifact_sha256: 9a51e7768f5bc8530c368b98bc79811144def1dfdcbb3f94143e1cbc13a43952
+  status: HISTORICAL_CANONICAL_UNCHANGED
+  note: Carries Tempo Delay 4.1.0 (4.0.1 Standalone without microphone permission).
 - manifest: everything-1.0.1.yaml
   artifact_sha256: 45781858f38bca555b7e7056148e43b326ace0762f0332f3de55f20b833a7782
   status: QUALIFIED_NOT_PUBLISHED_HISTORICAL
-  note: Qualified; intentionally not published because Tempo Delay stayed selected on Apple Silicon Macs running macOS 11.
+  note: Qualified; intentionally not published because Tempo Delay stayed selected on Apple Silicon Macs running
+    macOS 11.
 - manifest: everything-1.0.0.yaml
   artifact_sha256: 0f148ecd72c03bc38de9f6129f375f253f5a814f5606b812ce6c4f45ad248bcb
   status: HISTORICAL_CANONICAL_UNCHANGED
-change: Includes StudioZIO Maximizer 1.0.3. Tempo Delay is selected and selectable only on Apple Silicon Macs running macOS
-  12 or later; product binaries identical to Everything 1.0.1.
+change: 'Tempo Delay 4.1.0 -> 4.0.3: Standalone microphone permission and one version 4.0.3 for bundles, installer
+  and receipts; Tempo Delay 4.0.3 produced by its canonical release driver from a clean process (0 AppleDouble records).
+  The other six products and their 24 components are byte-identical to Everything 1.0.2. EULA owner-approved. Tempo
+  Delay installer rule unchanged.'
 source:
   repository: StudioZIO/StudioZIO-Master-Plugin-Suite
-  branch: maximizer/1.0.3-hotfix
-  commit: 975571c
+  branch: release/everything-1.0.3
+  pull_request: StudioZIO/StudioZIO-Master-Plugin-Suite#97
+  commit: 035c5a7ff289bdc15949048ac26435a399af8788
+release_pipeline:
+  driver: Distribution/Everything/ReleaseDriver.sh
+  process_lineage: bash < zsh < zsh (kiro-cli-term) < login < Terminal < launchd
+  clean_release_process: PASS
+  contract_tests: PASS
+  lift: MANIFEST PASS, DRY PASS, SIGNED PASS
+  final_audit: PASS
+  driver_exit: 0
+  release_truth_head: 01487471f70921f75aeb3d3891755800eefa03ba
 artifact:
-  filename: StudioZIO-Everything-1.0.2.pkg
-  path: /Users/mert/StudioZIO-Verification/Canonical-Releases/Everything-1.0.2/StudioZIO-Everything-1.0.2.pkg
-  sha256: 9a51e7768f5bc8530c368b98bc79811144def1dfdcbb3f94143e1cbc13a43952
-  byte_size: 169208126
-  pre_notarization_sha256: ff076b14fdc5b6ea931010c83722fa915619486c4d7fe6011500d3a92ae0e4a7
+  filename: StudioZIO-Everything-1.0.3.pkg
+  path: /Users/mert/StudioZIO-Verification/Canonical-Releases/Everything-1.0.3/StudioZIO-Everything-1.0.3.pkg
+  sha256: 71b1f432463cc3659d2e810c7300282ac17b391cfd265c8eb461f80af08a1436
+  byte_size: 169176439
+  pre_notarization_sha256: c3f7beb19f9d62769d4c8a32709886f811a730d591043cb55dec0daf34f1e6fe
   status: CANONICAL
 signing:
   installer_identity: 'Developer ID Installer: MERT ERKAN (3734G7VLNA)'
   pkgutil_check_signature: PASS
   notarization:
-    submission_id: f074f3fa-33d4-42c6-9c4e-65bcdaea3869
+    submission_id: 0451384d-eb75-4429-88ba-81f8d8bc9e9c
     status: Accepted
   stapled: true
   gatekeeper: accepted (Notarized Developer ID)
@@ -61,23 +63,25 @@ signing:
     wrap_guid_metadata_only: 96C51E90-B1AF-11F1-8437-00505692AD3E
 eula:
   title: StudioZIO Everything End User License Agreement (EULA)
-  version_line: 'Version: 1.0.2'
+  version_line: 'Version: 1.0.3'
   source: Distribution/Everything/Legal/EULA-Everything-CANDIDATE.txt.in
-  eula_text_sha256: 686455df9d3dcdbafa9208c1690dce71401a1d62f0930a3426968fa2b44f658e
-  license_panel_sha256: 1b10f6178ec81fb4e88c7ffeba477b999b6eff3f162e87e4f7353e19b28ab0ce
+  source_file_sha256: 2931401fb5ab69c1fba834200ea5b115aef47ad8c673f01088c95f50876c2aab
+  eula_text_sha256: 4a7f5939d2b3d0893391dff36b6e6c924ccca4e0cb627f7207733b4dcf6226b1
+  license_panel_sha256: d2dc81c2500ba4eda54b3825cf2723127286c433e2eaeda75d14d3366660a45a
   owner_approved: true
-  note: Same owner-approved template; only the version line differs.
+  owner_approved_on: '2026-09-26'
+  license_status: OWNER_APPROVED
 composition:
   products: 7
   formats_per_product: 4
   components: 28
-  product_binary_drift_from_1_0_1: 0
-  unchanged_from_1_0_0: 24
-  maximizer_1_0_3_components: 4
-  maximizer:
-    version: 1.0.3
-    source_sha256: d589be77a2d72355a86a2bd2b7d5ea70dcd9d2b5871ec61c6960e5754abecc50
-    release_truth: maximizer-1.0.3.yaml
+  unchanged_from_1_0_2: 24
+  tempo_delay_4_0_3_components: 4
+  tempo_delay:
+    version: 4.0.3
+    source_sha256: 6ba310fadf4435a2929675035298b27da534d7215e2370c6b50075ab52d60330
+    release_truth: tempo-delay-4.0.3.yaml
+    components_identical_to_source: 4/4
 components:
 - product: StudioZIO Compressor
   product_version: 1.0.0
@@ -92,7 +96,7 @@ components:
   architectures:
   - arm64
   - x86_64
-  identical_to_1_0_1: true
+  identical_to_1_0_2: true
 - product: StudioZIO Compressor
   product_version: 1.0.0
   format: AU
@@ -106,7 +110,7 @@ components:
   architectures:
   - arm64
   - x86_64
-  identical_to_1_0_1: true
+  identical_to_1_0_2: true
 - product: StudioZIO Compressor
   product_version: 1.0.0
   format: Standalone
@@ -120,7 +124,7 @@ components:
   architectures:
   - arm64
   - x86_64
-  identical_to_1_0_1: true
+  identical_to_1_0_2: true
 - product: StudioZIO Compressor
   product_version: 1.0.0
   format: VST3
@@ -134,7 +138,7 @@ components:
   architectures:
   - arm64
   - x86_64
-  identical_to_1_0_1: true
+  identical_to_1_0_2: true
 - product: StudioZIO De-Esser
   product_version: 1.0.0
   format: AAX
@@ -148,7 +152,7 @@ components:
   architectures:
   - arm64
   - x86_64
-  identical_to_1_0_1: true
+  identical_to_1_0_2: true
 - product: StudioZIO De-Esser
   product_version: 1.0.0
   format: AU
@@ -162,7 +166,7 @@ components:
   architectures:
   - arm64
   - x86_64
-  identical_to_1_0_1: true
+  identical_to_1_0_2: true
 - product: StudioZIO De-Esser
   product_version: 1.0.0
   format: Standalone
@@ -176,7 +180,7 @@ components:
   architectures:
   - arm64
   - x86_64
-  identical_to_1_0_1: true
+  identical_to_1_0_2: true
 - product: StudioZIO De-Esser
   product_version: 1.0.0
   format: VST3
@@ -190,7 +194,7 @@ components:
   architectures:
   - arm64
   - x86_64
-  identical_to_1_0_1: true
+  identical_to_1_0_2: true
 - product: StudioZIO Inflator
   product_version: 1.0.0
   format: AAX
@@ -204,7 +208,7 @@ components:
   architectures:
   - arm64
   - x86_64
-  identical_to_1_0_1: true
+  identical_to_1_0_2: true
 - product: StudioZIO Inflator
   product_version: 1.0.0
   format: AU
@@ -218,7 +222,7 @@ components:
   architectures:
   - arm64
   - x86_64
-  identical_to_1_0_1: true
+  identical_to_1_0_2: true
 - product: StudioZIO Inflator
   product_version: 1.0.0
   format: Standalone
@@ -232,7 +236,7 @@ components:
   architectures:
   - arm64
   - x86_64
-  identical_to_1_0_1: true
+  identical_to_1_0_2: true
 - product: StudioZIO Inflator
   product_version: 1.0.0
   format: VST3
@@ -246,7 +250,7 @@ components:
   architectures:
   - arm64
   - x86_64
-  identical_to_1_0_1: true
+  identical_to_1_0_2: true
 - product: StudioZIO Mastering Suite
   product_version: 2.1.1
   format: AAX
@@ -260,7 +264,7 @@ components:
   architectures:
   - arm64
   - x86_64
-  identical_to_1_0_1: true
+  identical_to_1_0_2: true
 - product: StudioZIO Mastering Suite
   product_version: 2.1.1
   format: AU
@@ -274,7 +278,7 @@ components:
   architectures:
   - arm64
   - x86_64
-  identical_to_1_0_1: true
+  identical_to_1_0_2: true
 - product: StudioZIO Mastering Suite
   product_version: 2.1.1
   format: Standalone
@@ -288,7 +292,7 @@ components:
   architectures:
   - arm64
   - x86_64
-  identical_to_1_0_1: true
+  identical_to_1_0_2: true
 - product: StudioZIO Mastering Suite
   product_version: 2.1.1
   format: VST3
@@ -302,7 +306,7 @@ components:
   architectures:
   - arm64
   - x86_64
-  identical_to_1_0_1: true
+  identical_to_1_0_2: true
 - product: StudioZIO Maximizer
   product_version: 1.0.3
   format: AAX
@@ -316,7 +320,7 @@ components:
   architectures:
   - arm64
   - x86_64
-  identical_to_1_0_1: true
+  identical_to_1_0_2: true
 - product: StudioZIO Maximizer
   product_version: 1.0.3
   format: AU
@@ -330,7 +334,7 @@ components:
   architectures:
   - arm64
   - x86_64
-  identical_to_1_0_1: true
+  identical_to_1_0_2: true
 - product: StudioZIO Maximizer
   product_version: 1.0.3
   format: Standalone
@@ -344,7 +348,7 @@ components:
   architectures:
   - arm64
   - x86_64
-  identical_to_1_0_1: true
+  identical_to_1_0_2: true
 - product: StudioZIO Maximizer
   product_version: 1.0.3
   format: VST3
@@ -358,7 +362,7 @@ components:
   architectures:
   - arm64
   - x86_64
-  identical_to_1_0_1: true
+  identical_to_1_0_2: true
 - product: StudioZIO Mixrack
   product_version: 1.0.0
   format: AAX
@@ -372,7 +376,7 @@ components:
   architectures:
   - arm64
   - x86_64
-  identical_to_1_0_1: true
+  identical_to_1_0_2: true
 - product: StudioZIO Mixrack
   product_version: 1.0.0
   format: AU
@@ -386,7 +390,7 @@ components:
   architectures:
   - arm64
   - x86_64
-  identical_to_1_0_1: true
+  identical_to_1_0_2: true
 - product: StudioZIO Mixrack
   product_version: 1.0.0
   format: Standalone
@@ -400,7 +404,7 @@ components:
   architectures:
   - arm64
   - x86_64
-  identical_to_1_0_1: true
+  identical_to_1_0_2: true
 - product: StudioZIO Mixrack
   product_version: 1.0.0
   format: VST3
@@ -414,69 +418,69 @@ components:
   architectures:
   - arm64
   - x86_64
-  identical_to_1_0_1: true
+  identical_to_1_0_2: true
 - product: StudioZIO Tempo Delay
-  product_version: 4.1.0
+  product_version: 4.0.3
   format: AAX
   component_id: com.StudioZIO.StudioZIOTempoDelay.aax.pkg
-  component_version: 4.1.0
-  source_pkg: StudioZIOTempoDelay-v4.1.0-macOS-arm64.pkg
-  source_pkg_sha256: fa16f0c9f04f5f56e446ae06074a0f3b0a8e193fa21089e0bf92c486d197910d
-  payload_sha256: a05b95136bd5d59d25863e5ebe7816d81ead880ab8dffcea020e973b9bd9ba71
-  bom_sha256: ff5aefa24bce23e0ad2bfe38f27ac8efda37825ea64ca156d174fb2a0237117a
-  packageinfo_sha256: 2e90bb08744d56754e6f45617073dccc35f04495784c6b59ba9703a056694ccb
+  component_version: 4.0.3
+  source_pkg: StudioZIOTempoDelay-v4.0.3-macOS-arm64.pkg
+  source_pkg_sha256: 6ba310fadf4435a2929675035298b27da534d7215e2370c6b50075ab52d60330
+  payload_sha256: cd87a0b6b054512df43bf2591203e7bb9be9014d9a4fd38d157166c9de23fa17
+  bom_sha256: 98ed95535465876b5d3d008e7f5dfec63e43d599a7844ab6a4fabc338ab98e63
+  packageinfo_sha256: 20b7eb66dbacf8484092fb44937a83fc9496a5329e6f24bbc4199423ee3dabe1
   architectures:
   - arm64
-  identical_to_1_0_1: true
+  identical_to_1_0_2: false
 - product: StudioZIO Tempo Delay
-  product_version: 4.1.0
+  product_version: 4.0.3
   format: AU
   component_id: com.StudioZIO.StudioZIOTempoDelay.component.pkg
-  component_version: 4.1.0
-  source_pkg: StudioZIOTempoDelay-v4.1.0-macOS-arm64.pkg
-  source_pkg_sha256: fa16f0c9f04f5f56e446ae06074a0f3b0a8e193fa21089e0bf92c486d197910d
-  payload_sha256: 682d7f527ae1e5ec502a1b72f47cba846206cb7a3403d2ddc904d7f7c3daa729
-  bom_sha256: e11ea77a37b6b337a31b4e0b4bf0e5259395af6cadb81fd66d54f0838bf47a88
-  packageinfo_sha256: 2a68dfe073d4b0db6d2893a92bebfb6850f460ca961c06e8bee8003dca887099
+  component_version: 4.0.3
+  source_pkg: StudioZIOTempoDelay-v4.0.3-macOS-arm64.pkg
+  source_pkg_sha256: 6ba310fadf4435a2929675035298b27da534d7215e2370c6b50075ab52d60330
+  payload_sha256: 29bd08c14e2ff1df803db0eb7773a14a10263a111d635bb8be29c6bcf58aff95
+  bom_sha256: bf0ef02466d29bfcbdddff62991b780b96d003ddae60aef4ad40306436de6c01
+  packageinfo_sha256: 438d17115ef7d42096b2856942c70bd0de9940cd672ababf5708443753ccdbf1
   architectures:
   - arm64
-  identical_to_1_0_1: true
+  identical_to_1_0_2: false
 - product: StudioZIO Tempo Delay
-  product_version: 4.1.0
+  product_version: 4.0.3
   format: Standalone
   component_id: com.StudioZIO.StudioZIOTempoDelay.app.pkg
-  component_version: 4.1.0
-  source_pkg: StudioZIOTempoDelay-v4.1.0-macOS-arm64.pkg
-  source_pkg_sha256: fa16f0c9f04f5f56e446ae06074a0f3b0a8e193fa21089e0bf92c486d197910d
-  payload_sha256: b2633b95f29f9b1a0d001444384cbf481717fa3a937dcdd5084eddf27eebcba0
-  bom_sha256: 008495cfa6736206f22000b90fdebe12e5af03a3071ebd531cdd54e6317cf276
-  packageinfo_sha256: c4c7d5f6cd47192eb873f68cb9a55e9d59e5aa033cb9af461943facef2852a9b
+  component_version: 4.0.3
+  source_pkg: StudioZIOTempoDelay-v4.0.3-macOS-arm64.pkg
+  source_pkg_sha256: 6ba310fadf4435a2929675035298b27da534d7215e2370c6b50075ab52d60330
+  payload_sha256: 6beece74deae5207b6b5681319437f5d9b1639cf2a21530334e92160f8c0a0d2
+  bom_sha256: 181c5e886e7e686ecae51cddf18650ef2370f7cf0f43bf916f465b87e2ea2305
+  packageinfo_sha256: 36e0627a4fd333d3b9db056fc4dad2d8f295c2fd5059093f635c5e40dae71ae5
   architectures:
   - arm64
-  identical_to_1_0_1: true
+  identical_to_1_0_2: false
 - product: StudioZIO Tempo Delay
-  product_version: 4.1.0
+  product_version: 4.0.3
   format: VST3
   component_id: com.StudioZIO.StudioZIOTempoDelay.vst3.pkg
-  component_version: 4.1.0
-  source_pkg: StudioZIOTempoDelay-v4.1.0-macOS-arm64.pkg
-  source_pkg_sha256: fa16f0c9f04f5f56e446ae06074a0f3b0a8e193fa21089e0bf92c486d197910d
-  payload_sha256: f8f66650e691a9559e66452ff69273377e1e2f884da1fcc73bf562d03618e979
-  bom_sha256: 7f95c249dba0237991c5637c5b998feffda4fafb9928774d0e4deaceb631cd8f
-  packageinfo_sha256: 6fcd28ff5de352d038593fd6d30575d0a08124883a542964185ef524069ebd69
+  component_version: 4.0.3
+  source_pkg: StudioZIOTempoDelay-v4.0.3-macOS-arm64.pkg
+  source_pkg_sha256: 6ba310fadf4435a2929675035298b27da534d7215e2370c6b50075ab52d60330
+  payload_sha256: 5128b094aafb7f0e252a673c05ef9ad22dc3d1063c3e907e6ead3c7547b9319b
+  bom_sha256: bba70e943f9cceabcbf0738f0a7e585a2b423da8ab5e6552ea8ffd28643ce37a
+  packageinfo_sha256: a0e20f6aaf416d50e84724dd9bfce7fc1bebde7355bf11527d371a77d0b072b7
   architectures:
   - arm64
-  identical_to_1_0_1: true
+  identical_to_1_0_2: false
 platform:
   installer_minimum_macos: '11.0'
-  safe_product_wide_claim: macOS 11.0 or later; Tempo Delay requires Apple Silicon and macOS 12.0 or later and is offered
-    only there
+  safe_product_wide_claim: macOS 11.0 or later; Tempo Delay requires Apple Silicon and macOS 12.0 or later and is
+    offered only there
 tempo_delay_installer_policy:
   binary_architecture: arm64-only
   requires_macos: '12.0'
-  rule: choice start_selected = start_enabled = studiozio_supports('12.0') := system.sysctl('hw.optional.arm64') == 1 && system.compareVersions(system.version.ProductVersion,
-    '12.0') >= 0
-  user_visible_note: Tempo Delay 4.0.1 requires Apple Silicon and macOS 12 or later.
+  rule: choice start_selected = start_enabled = studiozio_supports('12.0') := system.sysctl('hw.optional.arm64')
+    == 1 && system.compareVersions(system.version.ProductVersion, '12.0') >= 0
+  user_visible_note: Tempo Delay 4.0.3 requires Apple Silicon and macOS 12 or later.
   matrix:
     A_ARM64_MACOS14:
       target: arm64, macOS 14.6.1
@@ -538,32 +542,30 @@ tempo_delay_installer_policy:
       selected: true
       selectable: true
       result: PASS
-  verification_method: 'SIMULATED_INSTALLER_EVALUATION: the script block extracted from the signed package, evaluated by Apple''s
-    installer JavaScript engine (installer -showChoicesXML) with each (hw.optional.arm64, ProductVersion) pair supplied; plus
-    the real evaluation on this Apple Silicon macOS 26.5.2 Mac. No physical Intel or macOS 11 hardware. Negative control:
-    a CPU-only rule fails cases C/C2.'
+  verification_method: 'SIMULATED_INSTALLER_EVALUATION: the script block extracted from the signed package, evaluated
+    by Apple''s installer JavaScript engine (installer -showChoicesXML) with each (hw.optional.arm64, ProductVersion)
+    pair supplied; plus the real evaluation on this Apple Silicon macOS 26.5.2 Mac. No physical Intel or macOS 11
+    hardware. Negative control: a CPU-only rule fails cases C/C2.'
   binary_changed: false
+  rule_matrix: PASS (12 cases, Apple installer JS engine, script from the signed package)
 payload_metadata:
   appledouble: 0
   ds_store: 0
   resource_forks: 0
+  staging: STAGE_COMPONENTS CLEAN (29 paths, provenance 0); STAGE_RESOURCES CLEAN (2 paths)
 qualification:
+  final_audit_stapled: PASS (28 components, 28 unique ids, byte identity to manifest 28/28, metadata 0)
+  byte_identity:
+    other_products_vs_everything_1_0_2: 24/24
+    tempo_delay_vs_tempo_delay_4_0_3: 4/4
   install:
-    type: reinstall over an existing full StudioZIO install, Apple Silicon macOS 26.5.2 (not a clean machine)
+    type: MacBook Air M5 short test, reinstall of the same versions over Everything 1.0.2 and Tempo Delay 4.0.3 (Installer Upgrade); first install on a Mac without StudioZIO plug-ins not covered
     result: PASS
-    components_installed_and_valid: 28/28
-    tempo_delay_selected_by_default_here: true
-  maximizer_1_0_3_intact:
-    bundle_trees_match_release_truth: 4/4
-    microphone_usage_description: true
-    audio_input_entitlement: true
-    clipper: 0
-  au_host_discovery: auval -v PASS for all 7 StudioZIO AUs
-  reaper: NOT_RERUN (binaries identical to qualified releases)
-  logic: NOT_RUN_OWNER_INTERACTION_REQUIRED
+    details: package SHA256 and size matched; 28 receipts and bundles at expected versions, one copy each; codesign strict 28/28; no xattr and no ._ file in any bundle; auval 7/7; Tempo Delay Standalone microphone input; Logic 7 AUs validated
+    report: StudioZIO-Master-Plugin-Suite docs/release/everything-1.0.3/clean-machine-results.md
 publication_status:
   capability_gate_passed: true
   source_surfaces_synchronized: false
   live_surfaces_verified: false
   third_party_verified: false
-  note: published 2026-09-18 as everything-v1.0.2 (GitHub Latest); the hub listed it as Coming soon without a download; superseded by everything-v1.0.3 on 2026-09-26
+  note: published 2026-09-26 as everything-v1.0.3 (GitHub Latest), together with Tempo Delay 4.0.3; SHA-256 and size verified from the file downloaded from GitHub; the studiozio.tech download page opens on 2026-09-29 00:00 +03
