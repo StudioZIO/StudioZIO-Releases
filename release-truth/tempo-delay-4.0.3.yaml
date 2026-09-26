@@ -149,4 +149,4 @@ publication_status:
   source_surfaces_synchronized: false
   live_surfaces_verified: false
   third_party_verified: false
-  note: published 2026-09-26 as tempo-delay-v4.0.3 on its own (owner decision); SHA-256 and size verified from the file downloaded from GitHub; StudioZIO Everything 1.0.3 is published the same day
+  note: published 2026-09-26 as tempo-delay-v4.0.3, the same day as StudioZIO Everything 1.0.3 (owner decision); SHA-256 and size verified from the file downloaded from GitHub
