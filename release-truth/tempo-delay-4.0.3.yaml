@@ -14,7 +14,7 @@
 # from the 4.0.1-AAX package and its source root was assembled outside the
 # repository (StudioZIO-Verification/Everything-Phase1/tempodelay/lift-job.sh).
 # Published on its own on 2026-09-26 (GitHub release tempo-delay-v4.0.3);
-# StudioZIO Everything 1.0.3 follows on 2026-09-29.
+# StudioZIO Everything 1.0.3 is published the same day.
 supersedes:
   manifest: tempo-delay-4.1.0-clean-packaging-2026.09.16.yaml
   artifact_sha256: fa16f0c9f04f5f56e446ae06074a0f3b0a8e193fa21089e0bf92c486d197910d
@@ -149,4 +149,4 @@ publication_status:
   source_surfaces_synchronized: false
   live_surfaces_verified: false
   third_party_verified: false
-  note: published 2026-09-26 as tempo-delay-v4.0.3 on its own (owner decision); SHA-256 and size verified from the file downloaded from GitHub; StudioZIO Everything 1.0.3 follows on 2026-09-29
+  note: published 2026-09-26 as tempo-delay-v4.0.3 on its own (owner decision); SHA-256 and size verified from the file downloaded from GitHub; StudioZIO Everything 1.0.3 is published the same day
