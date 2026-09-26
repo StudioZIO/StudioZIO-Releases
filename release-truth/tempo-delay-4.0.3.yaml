@@ -1,0 +1,152 @@
+# StudioZIO Tempo Delay 4.0.3 — Standalone microphone fix, clean installer
+# payload (2026-09-26).
+# The Standalone declares NSMicrophoneUsageDescription and is signed with the
+# com.apple.security.device.audio-input entitlement, so macOS asks for
+# microphone access under the hardened runtime instead of denying live input.
+# One version number: bundles, installer, component receipts and package name
+# are all 4.0.3. All four formats come from one -G Xcode build and the package
+# from the canonical release pipeline (scripts/release_driver.sh) run from a
+# clean Terminal.app process; its payload carries no AppleDouble or .DS_Store
+# record.
+# 4.0.2 was notarized but never published: its payload carried 50 AppleDouble
+# records (com.apple.provenance), see tempo-delay-4.0.2.yaml.
+# 4.1.0 was not produced from a single build: its signed bundles were reused
+# from the 4.0.1-AAX package and its source root was assembled outside the
+# repository (StudioZIO-Verification/Everything-Phase1/tempodelay/lift-job.sh).
+# Published 2026-09-26 (GitHub release tempo-delay-v4.0.3);
+# StudioZIO Everything 1.0.3 is published the same day.
+supersedes:
+  manifest: tempo-delay-4.1.0-clean-packaging-2026.09.16.yaml
+  artifact_sha256: fa16f0c9f04f5f56e446ae06074a0f3b0a8e193fa21089e0bf92c486d197910d
+  status: SUPERSEDED_ARTIFACT
+  reason: >-
+    4.1.0 carries the 4.0.1 Standalone, which has no microphone usage text and
+    no audio-input entitlement, so live input is denied under the hardened
+    runtime. It was also not produced from a single build.
+
+previous_candidates:
+  - manifest: tempo-delay-4.0.2.yaml
+    artifact_sha256: 8518a2446d697ddacbf6aaac30833eea49d537e1d610a875784214a59b878e18
+    status: SUPERSEDED_NEVER_PUBLISHED
+    note: >-
+      Notarized (5932b288-a7aa-48de-99cc-c8b368268fb6) and M5-tested PASS, but
+      never published: its payload carried 50 AppleDouble records
+      (com.apple.provenance), which StudioZIO Everything refuses.
+
+product:
+  id: tempo-delay
+  name: StudioZIO Tempo Delay
+  version: 4.0.3
+  release_tag: tempo-delay-v4.0.3
+  plugin_binary_version: 4.0.3
+  installer_version: 4.0.3
+  component_receipt_version: 4.0.3
+  version_note: >-
+    One version for bundles, installer, receipts and package name (owner
+    decision 2026-09-26). Component receipt identifiers are unchanged from
+    4.1.0 and 4.0.2.
+
+source:
+  repository: StudioZIO/StudioZIO-Tempo-Delay
+  branch: tempo-delay/4.0.2-microphone
+  pull_request: StudioZIO/StudioZIO-Tempo-Delay#4
+  commit: 6965a5cbbd3a0de93631ba29ef15c1f9e74b003a
+  evidence_commit: 2d65fb509ea3523dd96e0e876e329b2bb869cc85
+  build: one -G Xcode configure, STUDIOZIO_ENABLE_AAX=ON, arm64, macOS 12.0 deployment target, SDK 26.5, Xcode 26.6 (17F113)
+  source_diff_from_4_1_0_sources: none under Source/; CMakeLists.txt changes only VERSION
+
+release_pipeline:
+  driver: scripts/release_driver.sh
+  process_lineage: bash < zsh < zsh (kiro-cli-term) < login < Terminal < launchd
+  clean_release_process: PASS
+  steps: stage_rc.sh --with-aax, sign_release.sh --with-aax (PACE WRAPTOOL_KEYCHAIN), build_pkg.sh --with-aax --signed-staging, verify_pkg.sh PRE_NOTARY
+  driver_exit: 0
+
+artifact:
+  filename: StudioZIOTempoDelay-v4.0.3-macOS-arm64.pkg
+  sha256: 6ba310fadf4435a2929675035298b27da534d7215e2370c6b50075ab52d60330
+  byte_size: 15847757
+  pre_notarization_sha256: c369b212b7c1ff32efa648d389754a5ea97240d9bba1e40e36dde18e1fd8abb5
+  status: CANONICAL
+
+formats:
+  au:
+    present: true
+    bundle: StudioZIOTempoDelay.component
+    executable: Contents/MacOS/StudioZIOTempoDelay
+    destination: /Library/Audio/Plug-Ins/Components
+    architectures:
+      - arm64
+    universal: false
+  vst3:
+    present: true
+    bundle: StudioZIOTempoDelay.vst3
+    executable: Contents/MacOS/StudioZIOTempoDelay
+    destination: /Library/Audio/Plug-Ins/VST3
+    architectures:
+      - arm64
+    universal: false
+  aax:
+    present: true
+    bundle: StudioZIOTempoDelay.aaxplugin
+    executable: Contents/MacOS/StudioZIOTempoDelay
+    destination: /Library/Application Support/Avid/Audio/Plug-Ins
+    architectures:
+      - arm64
+    universal: false
+  standalone:
+    present: true
+    bundle: StudioZIOTempoDelay.app
+    executable: Contents/MacOS/StudioZIOTempoDelay
+    destination: /Applications
+    architectures:
+      - arm64
+    universal: false
+
+component_packages:
+  - identifier: com.StudioZIO.StudioZIOTempoDelay.component.pkg
+    version: 4.0.3
+  - identifier: com.StudioZIO.StudioZIOTempoDelay.vst3.pkg
+    version: 4.0.3
+  - identifier: com.StudioZIO.StudioZIOTempoDelay.aax.pkg
+    version: 4.0.3
+  - identifier: com.StudioZIO.StudioZIOTempoDelay.app.pkg
+    version: 4.0.3
+
+architecture:
+  all_formats_identical: true
+  safe_product_wide_claim: Apple Silicon (arm64) only
+
+host_validation:
+  pro_tools:
+    validated: true
+    claim: AAX loads in retail Pro Tools (MacBook Air M5 clean-machine test of 4.0.2, same product code; 4.0.3 short test PASS)
+
+clean_machine_test:
+  machine: MacBook Air M5
+  date: 2026-09-26
+  result: PASS
+  scope: short test of 4.0.3 (package SHA256 and size matched 6ba310fa…; payload AppleDouble 0/0/0/0; Upgrade over 4.0.2; receipts and bundles 4.0.3, one copy each; codesign strict 4/4; installed bundles carry no extended attribute and no ._ file, no ._codesign.dsig in the AAX; auval SUCCEEDED 4.0.3; Standalone microphone input; Logic AU); the full 4.0.2 test covered install over 4.1.0, first install, Standalone microphone, Logic Pro (AU), REAPER (VST3) and Pro Tools retail (AAX) with the same product code
+  reports: StudioZIO-Tempo-Delay evidence/4.0.3-clean-payload/M5-RAPOR-4.0.3.md and evidence/4.0.2-microphone/M5-RAPOR-4.0.2.md
+
+signing:
+  package: Developer ID Installer signed and Apple notarized, stapled
+  au: Developer ID signed, hardened runtime, no audio-input entitlement
+  vst3: Developer ID signed, hardened runtime, no audio-input entitlement
+  aax: PACE signed (sign-only, wraptool keychain credential) with Developer ID Application; flags=0x0 as shipped PACE-signed AAX; no audio-input entitlement
+  standalone: Developer ID signed, hardened runtime, NSMicrophoneUsageDescription and com.apple.security.device.audio-input
+  notarization: true
+  notary_submission_id: f579d677-ae65-4771-b225-fe5a8820f807
+  notary_status: Accepted
+  gatekeeper: accepted (Notarized Developer ID)
+  verify_pkg: PRE_NOTARY PASS, POST_NOTARY PASS
+  payload_appledouble_records: 0
+  payload_ds_store: 0
+  payload_metadata_method: raw cpio listing of each component Payload and lsbom of each Bom (the StudioZIO Everything method)
+
+publication_status:
+  capability_gate_passed: true
+  source_surfaces_synchronized: false
+  live_surfaces_verified: false
+  third_party_verified: false
+  note: published 2026-09-26 as tempo-delay-v4.0.3, the same day as StudioZIO Everything 1.0.3 (owner decision); SHA-256 and size verified from the file downloaded from GitHub
