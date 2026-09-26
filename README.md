@@ -8,21 +8,22 @@ Where stated for an individual release, macOS installers are Developer ID signed
 
 ## Current releases
 
-### StudioZIO Everything 1.0.2
+### StudioZIO Everything 1.0.3
 
 - Platform: macOS 11.0 or later (Tempo Delay requires Apple Silicon and macOS 12.0 or later)
 - Architecture: Universal — Apple Silicon and Intel, except Tempo Delay, which is Apple Silicon only
 - Formats: AU / VST3 / AAX / Standalone for every included product
-- Installer: [`StudioZIO-Everything-1.0.2.pkg`](https://github.com/StudioZIO/StudioZIO-Releases/releases/download/everything-v1.0.2/StudioZIO-Everything-1.0.2.pkg)
-- SHA256: `9a51e7768f5bc8530c368b98bc79811144def1dfdcbb3f94143e1cbc13a43952`
-- Release: [`everything-v1.0.2`](https://github.com/StudioZIO/StudioZIO-Releases/releases/tag/everything-v1.0.2)
-- Release truth: [`release-truth/everything-1.0.2.yaml`](https://github.com/StudioZIO/StudioZIO-Releases/blob/main/release-truth/everything-1.0.2.yaml)
+- Installer: [`StudioZIO-Everything-1.0.3.pkg`](https://github.com/StudioZIO/StudioZIO-Releases/releases/download/everything-v1.0.3/StudioZIO-Everything-1.0.3.pkg)
+- SHA256: `71b1f432463cc3659d2e810c7300282ac17b391cfd265c8eb461f80af08a1436`
+- Release: [`everything-v1.0.3`](https://github.com/StudioZIO/StudioZIO-Releases/releases/tag/everything-v1.0.3)
+- Release truth: [`release-truth/everything-1.0.3.yaml`](https://github.com/StudioZIO/StudioZIO-Releases/blob/main/release-truth/everything-1.0.3.yaml)
 - Status: Developer ID signed, Apple notarized and stapled
 
-One installer for all seven StudioZIO products: Mastering Suite 2.1.1, Tempo Delay 4.0.1, MixRack 1.0.0, Inflator 1.0.0, Maximizer 1.0.3, Compressor 1.0.0 and De-Esser 1.0.0. Every component package is the qualified individual installer's, byte for byte. Products are selectable in the installer's Customize panel and selected by default; on Intel Macs and on macOS 11 the installer disables Tempo Delay automatically, and the other six products install and run.
+One installer for all seven StudioZIO products: Mastering Suite 2.1.1, Tempo Delay 4.0.3, MixRack 1.0.0, Inflator 1.0.0, Maximizer 1.0.3, Compressor 1.0.0 and De-Esser 1.0.0. Every component package is the qualified individual installer's, byte for byte. Products are selectable in the installer's Customize panel and selected by default; on Intel Macs and on macOS 11 the installer disables Tempo Delay automatically, and the other six products install and run.
 
-**Earlier releases:**
-- [`everything-v1.0.0`](https://github.com/StudioZIO/StudioZIO-Releases/releases/tag/everything-v1.0.0) (`StudioZIO-Everything-1.0.0.pkg`, SHA-256 `0f148ecd...`) remains available. It includes Maximizer 1.0.2; on Intel Macs and macOS 11, deselect Tempo Delay in its Customize panel.
+**Earlier releases (superseded — do not use):**
+- [`everything-v1.0.2`](https://github.com/StudioZIO/StudioZIO-Releases/releases/tag/everything-v1.0.2) (`StudioZIO-Everything-1.0.2.pkg`, SHA-256 `9a51e776...`): includes Tempo Delay 4.0.1, whose Standalone cannot request microphone access. Remains available.
+- [`everything-v1.0.0`](https://github.com/StudioZIO/StudioZIO-Releases/releases/tag/everything-v1.0.0) (`StudioZIO-Everything-1.0.0.pkg`, SHA-256 `0f148ecd...`): includes Maximizer 1.0.2; on Intel Macs and macOS 11, deselect Tempo Delay in its Customize panel. Remains available.
 
 ### StudioZIO De-Esser 1.0.0
 
