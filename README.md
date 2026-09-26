@@ -8,21 +8,22 @@ Where stated for an individual release, macOS installers are Developer ID signed
 
 ## Current releases
 
-### StudioZIO Everything 1.0.2
+### StudioZIO Everything 1.0.3
 
 - Platform: macOS 11.0 or later (Tempo Delay requires Apple Silicon and macOS 12.0 or later)
 - Architecture: Universal — Apple Silicon and Intel, except Tempo Delay, which is Apple Silicon only
 - Formats: AU / VST3 / AAX / Standalone for every included product
-- Installer: [`StudioZIO-Everything-1.0.2.pkg`](https://github.com/StudioZIO/StudioZIO-Releases/releases/download/everything-v1.0.2/StudioZIO-Everything-1.0.2.pkg)
-- SHA256: `9a51e7768f5bc8530c368b98bc79811144def1dfdcbb3f94143e1cbc13a43952`
-- Release: [`everything-v1.0.2`](https://github.com/StudioZIO/StudioZIO-Releases/releases/tag/everything-v1.0.2)
-- Release truth: [`release-truth/everything-1.0.2.yaml`](https://github.com/StudioZIO/StudioZIO-Releases/blob/main/release-truth/everything-1.0.2.yaml)
+- Installer: [`StudioZIO-Everything-1.0.3.pkg`](https://github.com/StudioZIO/StudioZIO-Releases/releases/download/everything-v1.0.3/StudioZIO-Everything-1.0.3.pkg)
+- SHA256: `71b1f432463cc3659d2e810c7300282ac17b391cfd265c8eb461f80af08a1436`
+- Release: [`everything-v1.0.3`](https://github.com/StudioZIO/StudioZIO-Releases/releases/tag/everything-v1.0.3)
+- Release truth: [`release-truth/everything-1.0.3.yaml`](https://github.com/StudioZIO/StudioZIO-Releases/blob/main/release-truth/everything-1.0.3.yaml)
 - Status: Developer ID signed, Apple notarized and stapled
 
-One installer for all seven StudioZIO products: Mastering Suite 2.1.1, Tempo Delay 4.0.1, MixRack 1.0.0, Inflator 1.0.0, Maximizer 1.0.3, Compressor 1.0.0 and De-Esser 1.0.0. Every component package is the qualified individual installer's, byte for byte. Products are selectable in the installer's Customize panel and selected by default; on Intel Macs and on macOS 11 the installer disables Tempo Delay automatically, and the other six products install and run.
+One installer for all seven StudioZIO products: Mastering Suite 2.1.1, Tempo Delay 4.0.3, MixRack 1.0.0, Inflator 1.0.0, Maximizer 1.0.3, Compressor 1.0.0 and De-Esser 1.0.0. Every component package is the qualified individual installer's, byte for byte. Products are selectable in the installer's Customize panel and selected by default; on Intel Macs and on macOS 11 the installer disables Tempo Delay automatically, and the other six products install and run.
 
-**Earlier releases:**
-- [`everything-v1.0.0`](https://github.com/StudioZIO/StudioZIO-Releases/releases/tag/everything-v1.0.0) (`StudioZIO-Everything-1.0.0.pkg`, SHA-256 `0f148ecd...`) remains available. It includes Maximizer 1.0.2; on Intel Macs and macOS 11, deselect Tempo Delay in its Customize panel.
+**Earlier releases (superseded — do not use):**
+- [`everything-v1.0.2`](https://github.com/StudioZIO/StudioZIO-Releases/releases/tag/everything-v1.0.2) (`StudioZIO-Everything-1.0.2.pkg`, SHA-256 `9a51e776...`): includes Tempo Delay 4.0.1, whose Standalone cannot request microphone access. Remains available.
+- [`everything-v1.0.0`](https://github.com/StudioZIO/StudioZIO-Releases/releases/tag/everything-v1.0.0) (`StudioZIO-Everything-1.0.0.pkg`, SHA-256 `0f148ecd...`): includes Maximizer 1.0.2; on Intel Macs and macOS 11, deselect Tempo Delay in its Customize panel. Remains available.
 
 ### StudioZIO De-Esser 1.0.0
 
@@ -114,22 +115,23 @@ Pro Tools host validation is not claimed for this release.
 - Release truth: [`release-truth/mixrack-1.0.0.yaml`](https://github.com/StudioZIO/StudioZIO-Releases/blob/main/release-truth/mixrack-1.0.0.yaml)
 - Status: Developer ID signed, Apple notarized and stapled
 
-### StudioZIO Tempo Delay 4.0.1 (clean installer 2026-09-16)
+### StudioZIO Tempo Delay 4.0.3
 
 - Platform: macOS 12.0 or later
 - Architecture: Apple Silicon (arm64) only — no Intel build
 - Formats: AU / VST3 / AAX / Standalone
-- Installer: [`StudioZIOTempoDelay-v4.1.0-macOS-arm64.pkg`](https://github.com/StudioZIO/StudioZIO-Releases/releases/download/tempo-delay-v4.1.0-clean-packaging-2026.09.16/StudioZIOTempoDelay-v4.1.0-macOS-arm64.pkg)
-- SHA256: `fa16f0c9f04f5f56e446ae06074a0f3b0a8e193fa21089e0bf92c486d197910d`
-- Release: [`tempo-delay-v4.1.0-clean-packaging-2026.09.16`](https://github.com/StudioZIO/StudioZIO-Releases/releases/tag/tempo-delay-v4.1.0-clean-packaging-2026.09.16)
-- Release truth: [`release-truth/tempo-delay-4.1.0-clean-packaging-2026.09.16.yaml`](https://github.com/StudioZIO/StudioZIO-Releases/blob/main/release-truth/tempo-delay-4.1.0-clean-packaging-2026.09.16.yaml)
+- Installer: [`StudioZIOTempoDelay-v4.0.3-macOS-arm64.pkg`](https://github.com/StudioZIO/StudioZIO-Releases/releases/download/tempo-delay-v4.0.3/StudioZIOTempoDelay-v4.0.3-macOS-arm64.pkg)
+- SHA256: `6ba310fadf4435a2929675035298b27da534d7215e2370c6b50075ab52d60330`
+- Release: [`tempo-delay-v4.0.3`](https://github.com/StudioZIO/StudioZIO-Releases/releases/tag/tempo-delay-v4.0.3)
+- Release truth: [`release-truth/tempo-delay-4.0.3.yaml`](https://github.com/StudioZIO/StudioZIO-Releases/blob/main/release-truth/tempo-delay-4.0.3.yaml)
 - Status: Developer ID signed, Apple notarized and stapled
 
-The product is 4.0.1: the plug-ins report 4.0.1 in every host. The installer file and its four component receipts carry 4.1.0, the version the four-component package topology uses; that number is an installer detail, not a plug-in version.
+The Standalone app asks for microphone access and takes live input. The plug-ins, the installer and its receipts all carry 4.0.3.
 
-**Historical 4.0.1 releases:**
-- [`tempo-delay-v4.0.1-aax-2026.09.10`](https://github.com/StudioZIO/StudioZIO-Releases/releases/tag/tempo-delay-v4.0.1-aax-2026.09.10) (`StudioZIOTempoDelay-v4.0.1-macOS-arm64-AAX.pkg`, SHA-256 `4e919c50...`) remains available; same plug-ins, superseded packaging.
-- [`tempo-delay-v4.0.1`](https://github.com/StudioZIO/StudioZIO-Releases/releases/tag/tempo-delay-v4.0.1) (`StudioZIOTempoDelay-v4.0.1-macOS-arm64.pkg`, SHA-256 `adae5102...`) remains available.
+**Earlier releases (superseded — do not use):**
+- [`tempo-delay-v4.1.0-clean-packaging-2026.09.16`](https://github.com/StudioZIO/StudioZIO-Releases/releases/tag/tempo-delay-v4.1.0-clean-packaging-2026.09.16) (`StudioZIOTempoDelay-v4.1.0-macOS-arm64.pkg`, SHA-256 `fa16f0c9...`): 4.0.1 plug-ins in a 4.1.0 installer; the Standalone cannot request microphone access. Remains available.
+- [`tempo-delay-v4.0.1-aax-2026.09.10`](https://github.com/StudioZIO/StudioZIO-Releases/releases/tag/tempo-delay-v4.0.1-aax-2026.09.10) (`StudioZIOTempoDelay-v4.0.1-macOS-arm64-AAX.pkg`, SHA-256 `4e919c50...`): superseded packaging. Remains available.
+- [`tempo-delay-v4.0.1`](https://github.com/StudioZIO/StudioZIO-Releases/releases/tag/tempo-delay-v4.0.1) (`StudioZIOTempoDelay-v4.0.1-macOS-arm64.pkg`, SHA-256 `adae5102...`): remains available.
 
 ## Release artifact immutability
 
