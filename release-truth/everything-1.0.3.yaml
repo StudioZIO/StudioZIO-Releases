@@ -559,8 +559,10 @@ qualification:
     other_products_vs_everything_1_0_2: 24/24
     tempo_delay_vs_tempo_delay_4_0_3: 4/4
   install:
-    result: NOT_RUN
-    note: clean-machine test of Everything 1.0.3 pending
+    type: MacBook Air M5 short test, reinstall of the same versions over Everything 1.0.2 and Tempo Delay 4.0.3 (Installer Upgrade); first install on a Mac without StudioZIO plug-ins not covered
+    result: PASS
+    details: package SHA256 and size matched; 28 receipts and bundles at expected versions, one copy each; codesign strict 28/28; no xattr and no ._ file in any bundle; auval 7/7; Tempo Delay Standalone microphone input; Logic 7 AUs validated
+    report: StudioZIO-Master-Plugin-Suite docs/release/everything-1.0.3/clean-machine-results.md
 publication_status:
   capability_gate_passed: true
   source_surfaces_synchronized: false
