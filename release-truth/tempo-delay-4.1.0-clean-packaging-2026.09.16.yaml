@@ -1,3 +1,20 @@
+# Read the superseded block before treating anything below as current truth.
+superseded:
+  by_release_tag: tempo-delay-v4.0.3
+  by_manifest: tempo-delay-4.0.3.yaml
+  superseded_on: 2026-09-26
+  status: SUPERSEDED_ARTIFACT
+  install_status: installs_correctly
+  do_not_install: false
+  reason: >-
+    The Standalone in this package is the 4.0.1 build, which has no
+    NSMicrophoneUsageDescription and no audio-input entitlement, so macOS
+    denies live input under the hardened runtime (MacBook Air M5 clean-machine
+    test, 2026-09-26). The 4.1.0 installer number was also a mistake: the
+    product is one version, 4.0.3, for bundles, installer and receipts. This
+    package was not produced from a single build; its signed bundles were
+    reused from the 4.0.1-AAX package and its source root was assembled outside
+    the repository. Never published; not admissible into StudioZIO Everything.
 # StudioZIO Tempo Delay 4.1.0 — clean canonical four-component installer around
 # the unchanged, already-qualified 4.0.1 bundles (packaging-hygiene correction,
 # 2026-09-16). Plug-in binaries stay 4.0.1 and were not rebuilt, re-signed or
