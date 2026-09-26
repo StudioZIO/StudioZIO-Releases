@@ -568,4 +568,4 @@ publication_status:
   source_surfaces_synchronized: false
   live_surfaces_verified: false
   third_party_verified: false
-  note: not published; publication with Tempo Delay 4.0.3 after the clean-machine test and owner approval
+  note: published 2026-09-26 as everything-v1.0.3 (GitHub Latest), together with Tempo Delay 4.0.3; SHA-256 and size verified from the file downloaded from GitHub; the studiozio.tech download page opens on 2026-09-29 00:00 +03

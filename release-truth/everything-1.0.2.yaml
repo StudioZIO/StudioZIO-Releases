@@ -2,7 +2,7 @@
 superseded:
   by_release_tag: everything-v1.0.3
   by_manifest: everything-1.0.3.yaml
-  superseded_on: 2026-09-29
+  superseded_on: 2026-09-26
   status: SUPERSEDED_ARTIFACT
   published_on: 2026-09-18
   published_as: everything-v1.0.2
@@ -10,7 +10,7 @@ superseded:
   do_not_install: false
   reason: >-
     Published 2026-09-18 as everything-v1.0.2 (GitHub Latest until
-    2026-09-29); superseded by Everything 1.0.3 on 2026-09-29. Its Tempo Delay
+    2026-09-26); superseded by Everything 1.0.3 on 2026-09-26. Its Tempo Delay
     is the 4.0.1 build, whose Standalone has no microphone usage text and no
     audio-input entitlement, so macOS denies live input. The asset stays
     downloadable so that existing links keep working.
@@ -566,4 +566,4 @@ publication_status:
   source_surfaces_synchronized: false
   live_surfaces_verified: false
   third_party_verified: false
-  note: published 2026-09-18 as everything-v1.0.2 (GitHub Latest); the hub listed it as Coming soon without a download; superseded by everything-v1.0.3 on 2026-09-29
+  note: published 2026-09-18 as everything-v1.0.2 (GitHub Latest); the hub listed it as Coming soon without a download; superseded by everything-v1.0.3 on 2026-09-26
