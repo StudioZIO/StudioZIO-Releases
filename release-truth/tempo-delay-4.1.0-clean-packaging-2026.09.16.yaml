@@ -1,3 +1,25 @@
+# Read the superseded block before treating anything below as current truth.
+superseded:
+  by_release_tag: tempo-delay-v4.0.3
+  by_manifest: tempo-delay-4.0.3.yaml
+  superseded_on: 2026-09-26
+  status: SUPERSEDED_ARTIFACT
+  published_on: 2026-09-16
+  published_as: tempo-delay-v4.1.0-clean-packaging-2026.09.16
+  install_status: installs_correctly
+  do_not_install: false
+  reason: >-
+    The Standalone in this package is the 4.0.1 build, which has no
+    NSMicrophoneUsageDescription and no audio-input entitlement, so macOS
+    denies live input under the hardened runtime (MacBook Air M5 clean-machine
+    test, 2026-09-26). The 4.1.0 installer number was also a mistake: the
+    product is one version, 4.0.3, for bundles, installer and receipts. This
+    package was not produced from a single build; its signed bundles were
+    reused from the 4.0.1-AAX package and its source root was assembled outside
+    the repository. Published 2026-09-16 as
+    tempo-delay-v4.1.0-clean-packaging-2026.09.16; superseded by 4.0.3 on
+    2026-09-26. The asset stays downloadable so that existing links keep
+    working; it is not admissible into StudioZIO Everything 1.0.3.
 # StudioZIO Tempo Delay 4.1.0 — clean canonical four-component installer around
 # the unchanged, already-qualified 4.0.1 bundles (packaging-hygiene correction,
 # 2026-09-16). Plug-in binaries stay 4.0.1 and were not rebuilt, re-signed or
@@ -6,7 +28,9 @@
 # topology (build_pkg.sh --with-aax, receipt token AAX-v4.1.0-receipt-4.1.0).
 # Produced from a launchd clean process at StudioZIO-Tempo-Delay commit
 # 72e85e897b3ebe0a053c3c5e9b8670d1d8dda249 (branch tempo-delay/clean-canonical-4.1.0).
-# Not published: no GitHub release, tag, website or KVR action.
+# Published 2026-09-16 as GitHub release tempo-delay-v4.1.0-clean-packaging-2026.09.16
+# (the then-current Tempo Delay installer; linked from tempodelay.tech, the hub
+# catalog and the Homebrew cask). Superseded by 4.0.3 on 2026-09-26.
 supersedes:
   manifest: tempo-delay-4.0.1.yaml
   artifact_sha256: 4e919c509cca196e178a0a991d24c02eb7e1ba81c5890e0f4fce16aba94ec055
@@ -88,4 +112,4 @@ publication_status:
   source_surfaces_synchronized: false
   live_surfaces_verified: false
   third_party_verified: false
-  note: not published; the public 4.0.1 release is untouched
+  note: published 2026-09-16 as tempo-delay-v4.1.0-clean-packaging-2026.09.16 and current until 2026-09-26; superseded by tempo-delay-v4.0.3 on 2026-09-26, so the propagation gates are false (release-truth/README.md)

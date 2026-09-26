@@ -4,14 +4,19 @@ superseded:
   by_manifest: tempo-delay-4.1.0-clean-packaging-2026.09.16.yaml
   superseded_on: 2026-09-16
   status: SUPERSEDED_PACKAGING_ARTIFACT
+  published_on: 2026-09-10
+  published_as: tempo-delay-v4.0.1-aax-2026.09.10
+  later_superseded_by: tempo-delay-v4.0.3 (tempo-delay-4.0.3.yaml) on 2026-09-26
   install_status: installs_correctly
   do_not_install: false
   reason: >-
     This package's payload carries 50 AppleDouble "._" records (dropped by the
-    macOS Installer, so the installed files were correct). It remains the
-    public 4.0.1 release and is not withdrawn; it is not admissible into
+    macOS Installer, so the installed files were correct). Published
+    2026-09-10 as tempo-delay-v4.0.1-aax-2026.09.10; superseded by the 4.1.0
+    clean-packaging installer on 2026-09-16 and by 4.0.3 on 2026-09-26. The
+    asset stays downloadable (not withdrawn); it is not admissible into
     StudioZIO Everything, whose policy admits only artifacts with zero such
-    records. The corrected installer packages the same 4.0.1 bundles unchanged
+    records. The 4.1.0 installer packaged the same 4.0.1 bundles unchanged
     under receipt version 4.1.0.
 
 product:
@@ -78,6 +83,7 @@ signing:
 
 publication_status:
   capability_gate_passed: true
-  source_surfaces_synchronized: true
-  live_surfaces_verified: true
-  third_party_verified: true
+  source_surfaces_synchronized: false
+  live_surfaces_verified: false
+  third_party_verified: false
+  note: published 2026-09-10 and current until 2026-09-16; superseded, so the propagation gates are false (release-truth/README.md)
